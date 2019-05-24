@@ -6,6 +6,7 @@ import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPort;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -44,6 +46,7 @@ public class BNodeImpl extends BPlaceImpl implements BNode {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,6 +56,7 @@ public class BNodeImpl extends BPlaceImpl implements BNode {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getBPorts() <em>BPorts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

@@ -14,8 +14,9 @@ import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BRoot;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BSite;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelFactory;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
-
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -106,6 +107,13 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * @generated
 	 */
 	private EClass nameableTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass indexableTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -212,15 +220,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBRoot_Index() {
-		return (EAttribute) bRootEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBNode() {
 		return bNodeEClass;
 	}
@@ -241,15 +240,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 */
 	public EClass getBSite() {
 		return bSiteEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBSite_Index() {
-		return (EAttribute) bSiteEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -302,17 +292,8 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBPort_Index() {
-		return (EAttribute) bPortEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getBPort_BNode() {
-		return (EReference) bPortEClass.getEStructuralFeatures().get(1);
+		return (EReference) bPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -365,6 +346,24 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIndexableType() {
+		return indexableTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndexableType_Index() {
+		return (EAttribute) indexableTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BigraphBaseModelFactory getBigraphBaseModelFactory() {
 		return (BigraphBaseModelFactory) getEFactoryInstance();
 	}
@@ -394,13 +393,11 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bPlaceEClass, BPLACE__BPRNT);
 
 		bRootEClass = createEClass(BROOT);
-		createEAttribute(bRootEClass, BROOT__INDEX);
 
 		bNodeEClass = createEClass(BNODE);
 		createEReference(bNodeEClass, BNODE__BPORTS);
 
 		bSiteEClass = createEClass(BSITE);
-		createEAttribute(bSiteEClass, BSITE__INDEX);
 
 		bPointEClass = createEClass(BPOINT);
 		createEReference(bPointEClass, BPOINT__BLINK);
@@ -409,7 +406,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bLinkEClass, BLINK__BPOINTS);
 
 		bPortEClass = createEClass(BPORT);
-		createEAttribute(bPortEClass, BPORT__INDEX);
 		createEReference(bPortEClass, BPORT__BNODE);
 
 		bInnerNameEClass = createEClass(BINNER_NAME);
@@ -420,6 +416,9 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 
 		nameableTypeEClass = createEClass(NAMEABLE_TYPE);
 		createEAttribute(nameableTypeEClass, NAMEABLE_TYPE__NAME);
+
+		indexableTypeEClass = createEClass(INDEXABLE_TYPE);
+		createEAttribute(indexableTypeEClass, INDEXABLE_TYPE__INDEX);
 	}
 
 	/**
@@ -452,11 +451,14 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 
 		// Add supertypes to classes
 		bRootEClass.getESuperTypes().add(this.getBPlace());
+		bRootEClass.getESuperTypes().add(this.getIndexableType());
 		bNodeEClass.getESuperTypes().add(this.getBPlace());
 		bNodeEClass.getESuperTypes().add(this.getNameableType());
 		bSiteEClass.getESuperTypes().add(this.getBPlace());
+		bSiteEClass.getESuperTypes().add(this.getIndexableType());
 		bLinkEClass.getESuperTypes().add(this.getNameableType());
 		bPortEClass.getESuperTypes().add(this.getBPoint());
+		bPortEClass.getESuperTypes().add(this.getIndexableType());
 		bInnerNameEClass.getESuperTypes().add(this.getBPoint());
 		bInnerNameEClass.getESuperTypes().add(this.getNameableType());
 		bEdgeEClass.getESuperTypes().add(this.getBLink());
@@ -472,8 +474,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bRootEClass, BRoot.class, "BRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBRoot_Index(), ecorePackage.getEInt(), "index", null, 0, 1, BRoot.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bNodeEClass, BNode.class, "BNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBNode_BPorts(), this.getBPort(), this.getBPort_BNode(), "bPorts", null, 0, -1, BNode.class,
@@ -481,8 +481,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bSiteEClass, BSite.class, "BSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBSite_Index(), ecorePackage.getEInt(), "index", null, 0, 1, BSite.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bPointEClass, BPoint.class, "BPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBPoint_BLink(), this.getBLink(), this.getBLink_BPoints(), "bLink", null, 1, 1, BPoint.class,
@@ -495,8 +493,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bPortEClass, BPort.class, "BPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBPort_Index(), ecorePackage.getEInt(), "index", null, 0, 1, BPort.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBPort_BNode(), this.getBNode(), this.getBNode_BPorts(), "bNode", null, 1, 1, BPort.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -512,7 +508,12 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		initEClass(nameableTypeEClass, NameableType.class, "NameableType", IS_ABSTRACT, IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNameableType_Name(), ecorePackage.getEString(), "name", null, 0, 1, NameableType.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(indexableTypeEClass, IndexableType.class, "IndexableType", IS_ABSTRACT, IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIndexableType_Index(), ecorePackage.getEInt(), "index", null, 0, 1, IndexableType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

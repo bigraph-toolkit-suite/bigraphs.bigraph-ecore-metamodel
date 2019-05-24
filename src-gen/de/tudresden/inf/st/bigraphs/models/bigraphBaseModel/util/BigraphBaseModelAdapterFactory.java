@@ -3,6 +3,7 @@
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.util;
 
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -118,6 +119,11 @@ public class BigraphBaseModelAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseNameableType(NameableType object) {
 			return createNameableTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseIndexableType(IndexableType object) {
+			return createIndexableTypeAdapter();
 		}
 
 		@Override
@@ -290,6 +296,20 @@ public class BigraphBaseModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNameableTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType <em>Indexable Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType
+	 * @generated
+	 */
+	public Adapter createIndexableTypeAdapter() {
 		return null;
 	}
 

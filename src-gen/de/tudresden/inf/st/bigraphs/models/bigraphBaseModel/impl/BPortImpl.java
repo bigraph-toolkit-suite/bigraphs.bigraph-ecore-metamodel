@@ -6,6 +6,7 @@ import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPort;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
 
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -39,7 +40,7 @@ public class BPortImpl extends BPointImpl implements BPort {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int INDEX_EDEFAULT = 20;
+	protected static final int INDEX_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
@@ -73,26 +74,20 @@ public class BPortImpl extends BPointImpl implements BPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public int getIndex() {
-		updateIndex();
 		return index;
-	}
-
-	public void updateIndex() {
-		index = getBNode().getBPorts().indexOf(this);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setIndex(int newIndex) {
 		int oldIndex = index;
 		index = newIndex;
-		updateIndex();
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BigraphBaseModelPackage.BPORT__INDEX, oldIndex,
 					index));
@@ -253,6 +248,42 @@ public class BPortImpl extends BPointImpl implements BPort {
 			return getBNode() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IndexableType.class) {
+			switch (derivedFeatureID) {
+			case BigraphBaseModelPackage.BPORT__INDEX:
+				return BigraphBaseModelPackage.INDEXABLE_TYPE__INDEX;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IndexableType.class) {
+			switch (baseFeatureID) {
+			case BigraphBaseModelPackage.INDEXABLE_TYPE__INDEX:
+				return BigraphBaseModelPackage.BPORT__INDEX;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

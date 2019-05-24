@@ -3,6 +3,7 @@
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.util;
 
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -78,6 +79,8 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBPlace(bRoot);
 			if (result == null)
+				result = caseIndexableType(bRoot);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -97,6 +100,8 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 			T result = caseBSite(bSite);
 			if (result == null)
 				result = caseBPlace(bSite);
+			if (result == null)
+				result = caseIndexableType(bSite);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -122,6 +127,8 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 			T result = caseBPort(bPort);
 			if (result == null)
 				result = caseBPoint(bPort);
+			if (result == null)
+				result = caseIndexableType(bPort);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -162,6 +169,13 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 		case BigraphBaseModelPackage.NAMEABLE_TYPE: {
 			NameableType nameableType = (NameableType) theEObject;
 			T result = caseNameableType(nameableType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BigraphBaseModelPackage.INDEXABLE_TYPE: {
+			IndexableType indexableType = (IndexableType) theEObject;
+			T result = caseIndexableType(indexableType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -333,6 +347,21 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNameableType(NameableType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Indexable Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Indexable Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIndexableType(IndexableType object) {
 		return null;
 	}
 

@@ -8,16 +8,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bPrnt" eType="#//BPlace"
         eOpposite="#//BPlace/bChild"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BRoot" eSuperTypes="#//BPlace">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BRoot" eSuperTypes="#//BPlace #//IndexableType"/>
   <eClassifiers xsi:type="ecore:EClass" name="BNode" eSuperTypes="#//BPlace #//NameableType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bPorts" upperBound="-1"
         eType="#//BPort" containment="true" eOpposite="#//BPort/bNode"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BSite" eSuperTypes="#//BPlace">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BSite" eSuperTypes="#//BPlace #//IndexableType"/>
   <eClassifiers xsi:type="ecore:EClass" name="BPoint" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bLink" lowerBound="1" eType="#//BLink"
         eOpposite="#//BLink/bPoints"/>
@@ -26,8 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bPoints" lowerBound="1"
         upperBound="-1" eType="#//BPoint" eOpposite="#//BPoint/bLink"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BPort" eSuperTypes="#//BPoint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BPort" eSuperTypes="#//BPoint #//IndexableType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bNode" lowerBound="1" eType="#//BNode"
         eOpposite="#//BNode/bPorts"/>
   </eClassifiers>
@@ -35,7 +30,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="BEdge" eSuperTypes="#//BLink"/>
   <eClassifiers xsi:type="ecore:EClass" name="BOuterName" eSuperTypes="#//BLink"/>
   <eClassifiers xsi:type="ecore:EClass" name="NameableType" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IndexableType" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

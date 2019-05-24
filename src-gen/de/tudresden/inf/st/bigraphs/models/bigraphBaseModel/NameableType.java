@@ -32,7 +32,7 @@ public interface NameableType extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getNameableType_Name()
-	 * @model id="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();

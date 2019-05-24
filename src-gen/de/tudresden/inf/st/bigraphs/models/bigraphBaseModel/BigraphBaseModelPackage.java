@@ -591,6 +591,43 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BOUTER_NAME_OPERATION_COUNT = BLINK_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType <em>Indexable Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getIndexableType()
+	 * @generated
+	 */
+	int INDEXABLE_TYPE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEXABLE_TYPE__INDEX = 0;
+
+	/**
+	 * The number of structural features of the '<em>Indexable Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEXABLE_TYPE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Indexable Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEXABLE_TYPE_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPlace <em>BPlace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -633,17 +670,6 @@ public interface BigraphBaseModelPackage extends EPackage {
 	EClass getBRoot();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BRoot#getIndex <em>Index</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Index</em>'.
-	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BRoot#getIndex()
-	 * @see #getBRoot()
-	 * @generated
-	 */
-	EAttribute getBRoot_Index();
-
-	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode <em>BNode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -673,17 +699,6 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBSite();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BSite#getIndex <em>Index</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Index</em>'.
-	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BSite#getIndex()
-	 * @see #getBSite()
-	 * @generated
-	 */
-	EAttribute getBSite_Index();
 
 	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPoint <em>BPoint</em>}'.
@@ -736,17 +751,6 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPort#getIndex <em>Index</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Index</em>'.
-	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPort#getIndex()
-	 * @see #getBPort()
-	 * @generated
-	 */
-	EAttribute getBPort_Index();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPort#getBNode <em>BNode</em>}'.
@@ -811,6 +815,27 @@ public interface BigraphBaseModelPackage extends EPackage {
 	EAttribute getNameableType_Name();
 
 	/**
+	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType <em>Indexable Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Indexable Type</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType
+	 * @generated
+	 */
+	EClass getIndexableType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType#getIndex <em>Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Index</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType#getIndex()
+	 * @see #getIndexableType()
+	 * @generated
+	 */
+	EAttribute getIndexableType_Index();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -870,14 +895,6 @@ public interface BigraphBaseModelPackage extends EPackage {
 		EClass BROOT = eINSTANCE.getBRoot();
 
 		/**
-		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BROOT__INDEX = eINSTANCE.getBRoot_Index();
-
-		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BNodeImpl <em>BNode</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -904,14 +921,6 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BSITE = eINSTANCE.getBSite();
-
-		/**
-		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BSITE__INDEX = eINSTANCE.getBSite_Index();
 
 		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BPointImpl <em>BPoint</em>}' class.
@@ -958,14 +967,6 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BPORT = eINSTANCE.getBPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BPORT__INDEX = eINSTANCE.getBPort_Index();
 
 		/**
 		 * The meta object literal for the '<em><b>BNode</b></em>' container reference feature.
@@ -1022,6 +1023,24 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMEABLE_TYPE__NAME = eINSTANCE.getNameableType_Name();
+
+		/**
+		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType <em>Indexable Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getIndexableType()
+		 * @generated
+		 */
+		EClass INDEXABLE_TYPE = eINSTANCE.getIndexableType();
+
+		/**
+		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEXABLE_TYPE__INDEX = eINSTANCE.getIndexableType_Index();
 
 	}
 

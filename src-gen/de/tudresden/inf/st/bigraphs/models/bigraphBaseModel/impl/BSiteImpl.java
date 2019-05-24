@@ -5,6 +5,7 @@ package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BSite;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
 
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -142,6 +143,42 @@ public class BSiteImpl extends BPlaceImpl implements BSite {
 			return index != INDEX_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IndexableType.class) {
+			switch (derivedFeatureID) {
+			case BigraphBaseModelPackage.BSITE__INDEX:
+				return BigraphBaseModelPackage.INDEXABLE_TYPE__INDEX;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IndexableType.class) {
+			switch (baseFeatureID) {
+			case BigraphBaseModelPackage.INDEXABLE_TYPE__INDEX:
+				return BigraphBaseModelPackage.BSITE__INDEX;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
