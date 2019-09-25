@@ -2,15 +2,12 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BRoot;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
-
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType;
-import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,31 +18,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BRootImpl#getIndex <em>Index</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BRootImpl#getBBigraph <em>BBigraph</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BRootImpl extends BPlaceImpl implements BRoot {
-	/**
-	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIndex()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int INDEX_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIndex()
-	 * @generated
-	 * @ordered
-	 */
-	protected int index = INDEX_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,7 +49,7 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * @generated
 	 */
 	public int getIndex() {
-		return index;
+		return (Integer) eGet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, true);
 	}
 
 	/**
@@ -80,11 +58,7 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * @generated
 	 */
 	public void setIndex(int newIndex) {
-		int oldIndex = index;
-		index = newIndex;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BigraphBaseModelPackage.BROOT__INDEX, oldIndex,
-					index));
+		eSet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, newIndex);
 	}
 
 	/**
@@ -92,13 +66,8 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BROOT__INDEX:
-			return getIndex();
-		}
-		return super.eGet(featureID, resolve, coreType);
+	public BBigraph getBBigraph() {
+		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BROOT__BBIGRAPH, true);
 	}
 
 	/**
@@ -106,43 +75,8 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BROOT__INDEX:
-			setIndex((Integer) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BROOT__INDEX:
-			setIndex(INDEX_EDEFAULT);
-			return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BROOT__INDEX:
-			return index != INDEX_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
+	public void setBBigraph(BBigraph newBBigraph) {
+		eSet(BigraphBaseModelPackage.Literals.BROOT__BBIGRAPH, newBBigraph);
 	}
 
 	/**
@@ -179,23 +113,6 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (index: ");
-		result.append(index);
-		result.append(')');
-		return result.toString();
 	}
 
 } //BRootImpl

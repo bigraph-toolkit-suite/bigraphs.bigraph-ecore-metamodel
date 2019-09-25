@@ -180,6 +180,13 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case BigraphBaseModelPackage.BBIGRAPH: {
+			BBigraph bBigraph = (BBigraph) theEObject;
+			T result = caseBBigraph(bBigraph);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -362,6 +369,21 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIndexableType(IndexableType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>BBigraph</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>BBigraph</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBBigraph(BBigraph object) {
 		return null;
 	}
 

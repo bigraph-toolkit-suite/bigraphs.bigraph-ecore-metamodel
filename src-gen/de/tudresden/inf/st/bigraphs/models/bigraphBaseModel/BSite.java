@@ -13,5 +13,4 @@ package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel;
  * @generated
  */
 public interface BSite extends BPlace, IndexableType {
-
 } // BSite

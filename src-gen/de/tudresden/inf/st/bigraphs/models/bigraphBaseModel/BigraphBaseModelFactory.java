@@ -86,6 +86,15 @@ public interface BigraphBaseModelFactory extends EFactory {
 	BOuterName createBOuterName();
 
 	/**
+	 * Returns a new object of class '<em>BBigraph</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>BBigraph</em>'.
+	 * @generated
+	 */
+	BBigraph createBBigraph();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

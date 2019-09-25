@@ -3,10 +3,13 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
     modelDirectory="/BigraphBaseModel/src-gen" creationIcons="false"
     editDirectory="/BigraphBaseModel.edit/src-gen" editorDirectory="/BigraphBaseModel.editor/src-gen"
-    modelPluginID="BigraphBaseModel" modelName="BigraphBaseModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    modelPluginID="BigraphBaseModel" modelName="BigraphBaseModel" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" reflectiveDelegation="true"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" featureDelegation="Reflective"
+    complianceLevel="8.0" copyrightFields="false" providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>bigraphBaseModel.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="BigraphBaseModel" basePackage="de.tudresden.inf.st.bigraphs.models"
       disposableProviderFactory="true" ecorePackage="bigraphBaseModel.ecore#/">
@@ -14,7 +17,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BPlace/bChild"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BPlace/bPrnt"/>
     </genClasses>
-    <genClasses ecoreClass="bigraphBaseModel.ecore#//BRoot"/>
+    <genClasses ecoreClass="bigraphBaseModel.ecore#//BRoot">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BRoot/bBigraph"/>
+    </genClasses>
     <genClasses ecoreClass="bigraphBaseModel.ecore#//BNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BNode/bPorts"/>
     </genClasses>
@@ -28,14 +33,26 @@
     <genClasses ecoreClass="bigraphBaseModel.ecore#//BPort">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BPort/bNode"/>
     </genClasses>
-    <genClasses ecoreClass="bigraphBaseModel.ecore#//BInnerName"/>
-    <genClasses ecoreClass="bigraphBaseModel.ecore#//BEdge"/>
-    <genClasses ecoreClass="bigraphBaseModel.ecore#//BOuterName"/>
+    <genClasses ecoreClass="bigraphBaseModel.ecore#//BInnerName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BInnerName/bBigraph"/>
+    </genClasses>
+    <genClasses ecoreClass="bigraphBaseModel.ecore#//BEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BEdge/bBigraph"/>
+    </genClasses>
+    <genClasses ecoreClass="bigraphBaseModel.ecore#//BOuterName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BOuterName/bBigraph"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="bigraphBaseModel.ecore#//NameableType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bigraphBaseModel.ecore#//NameableType/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="bigraphBaseModel.ecore#//IndexableType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bigraphBaseModel.ecore#//IndexableType/index"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="bigraphBaseModel.ecore#//BBigraph">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bRoots"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bEdges"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bInnerNames"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bOuterNames"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

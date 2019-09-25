@@ -2,15 +2,12 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BInnerName;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,31 +18,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BInnerNameImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BInnerNameImpl#getBBigraph <em>BBigraph</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BInnerNameImpl extends BPointImpl implements BInnerName {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,7 +49,7 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * @generated
 	 */
 	public String getName() {
-		return name;
+		return (String) eGet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, true);
 	}
 
 	/**
@@ -80,11 +58,7 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * @generated
 	 */
 	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BigraphBaseModelPackage.BINNER_NAME__NAME, oldName,
-					name));
+		eSet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, newName);
 	}
 
 	/**
@@ -92,13 +66,8 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BINNER_NAME__NAME:
-			return getName();
-		}
-		return super.eGet(featureID, resolve, coreType);
+	public BBigraph getBBigraph() {
+		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BINNER_NAME__BBIGRAPH, true);
 	}
 
 	/**
@@ -106,43 +75,8 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BINNER_NAME__NAME:
-			setName((String) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BINNER_NAME__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case BigraphBaseModelPackage.BINNER_NAME__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		}
-		return super.eIsSet(featureID);
+	public void setBBigraph(BBigraph newBBigraph) {
+		eSet(BigraphBaseModelPackage.Literals.BINNER_NAME__BBIGRAPH, newBBigraph);
 	}
 
 	/**
@@ -179,23 +113,6 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //BInnerNameImpl

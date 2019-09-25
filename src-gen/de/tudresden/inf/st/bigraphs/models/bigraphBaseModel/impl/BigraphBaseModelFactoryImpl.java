@@ -57,19 +57,21 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case BigraphBaseModelPackage.BROOT:
-			return createBRoot();
+			return (EObject) createBRoot();
 		case BigraphBaseModelPackage.BNODE:
-			return createBNode();
+			return (EObject) createBNode();
 		case BigraphBaseModelPackage.BSITE:
-			return createBSite();
+			return (EObject) createBSite();
 		case BigraphBaseModelPackage.BPORT:
-			return createBPort();
+			return (EObject) createBPort();
 		case BigraphBaseModelPackage.BINNER_NAME:
-			return createBInnerName();
+			return (EObject) createBInnerName();
 		case BigraphBaseModelPackage.BEDGE:
-			return createBEdge();
+			return (EObject) createBEdge();
 		case BigraphBaseModelPackage.BOUTER_NAME:
-			return createBOuterName();
+			return (EObject) createBOuterName();
+		case BigraphBaseModelPackage.BBIGRAPH:
+			return (EObject) createBBigraph();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -143,6 +145,16 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	public BOuterName createBOuterName() {
 		BOuterNameImpl bOuterName = new BOuterNameImpl();
 		return bOuterName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BBigraph createBBigraph() {
+		BBigraphImpl bBigraph = new BBigraphImpl();
+		return bBigraph;
 	}
 
 	/**

@@ -8,7 +8,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bPrnt" eType="#//BPlace"
         eOpposite="#//BPlace/bChild"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BRoot" eSuperTypes="#//BPlace #//IndexableType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BRoot" eSuperTypes="#//BPlace #//IndexableType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bBigraph" lowerBound="1"
+        eType="#//BBigraph" eOpposite="#//BBigraph/bRoots"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BNode" eSuperTypes="#//BPlace #//NameableType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bPorts" upperBound="-1"
         eType="#//BPort" containment="true" eOpposite="#//BPort/bNode"/>
@@ -26,13 +29,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bNode" lowerBound="1" eType="#//BNode"
         eOpposite="#//BNode/bPorts"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BInnerName" eSuperTypes="#//BPoint #//NameableType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BEdge" eSuperTypes="#//BLink"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BOuterName" eSuperTypes="#//BLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BInnerName" eSuperTypes="#//BPoint #//NameableType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bBigraph" lowerBound="1"
+        eType="#//BBigraph" eOpposite="#//BBigraph/bInnerNames"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BEdge" eSuperTypes="#//BLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bBigraph" lowerBound="1"
+        eType="#//BBigraph" eOpposite="#//BBigraph/bEdges"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BOuterName" eSuperTypes="#//BLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bBigraph" lowerBound="1"
+        eType="#//BBigraph" eOpposite="#//BBigraph/bOuterNames"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameableType" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexableType" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BBigraph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bRoots" upperBound="-1"
+        eType="#//BRoot" containment="true" eOpposite="#//BRoot/bBigraph"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bEdges" upperBound="-1"
+        eType="#//BEdge" containment="true" eOpposite="#//BEdge/bBigraph"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bInnerNames" upperBound="-1"
+        eType="#//BInnerName" containment="true" eOpposite="#//BInnerName/bBigraph"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bOuterNames" upperBound="-1"
+        eType="#//BOuterName" containment="true" eOpposite="#//BOuterName/bBigraph"/>
   </eClassifiers>
 </ecore:EPackage>

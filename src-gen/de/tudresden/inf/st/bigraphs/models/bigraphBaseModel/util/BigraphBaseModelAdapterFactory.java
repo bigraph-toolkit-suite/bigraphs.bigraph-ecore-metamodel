@@ -127,6 +127,11 @@ public class BigraphBaseModelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseBBigraph(BBigraph object) {
+			return createBBigraphAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -310,6 +315,20 @@ public class BigraphBaseModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIndexableTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph
+	 * @generated
+	 */
+	public Adapter createBBigraphAdapter() {
 		return null;
 	}
 

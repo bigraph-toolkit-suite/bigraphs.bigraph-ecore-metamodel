@@ -2,7 +2,7 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.cdo.CDOObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getBPoint()
  * @model abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface BPoint extends EObject {
+public interface BPoint extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>BLink</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BLink#getBPoints <em>BPoints</em>}'.

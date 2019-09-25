@@ -2,9 +2,9 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.cdo.CDOObject;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getBPlace()
  * @model abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface BPlace extends EObject {
+public interface BPlace extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>BChild</b></em>' containment reference list.
 	 * The list contents are of type {@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPlace}.

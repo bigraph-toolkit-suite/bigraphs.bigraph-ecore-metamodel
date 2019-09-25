@@ -2,6 +2,7 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BEdge;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BInnerName;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BLink;
@@ -116,6 +117,13 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	private EClass indexableTypeEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bBigraphEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -220,6 +228,15 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBRoot_BBigraph() {
+		return (EReference) bRootEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBNode() {
 		return bNodeEClass;
 	}
@@ -310,6 +327,15 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBInnerName_BBigraph() {
+		return (EReference) bInnerNameEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBEdge() {
 		return bEdgeEClass;
 	}
@@ -319,8 +345,26 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBEdge_BBigraph() {
+		return (EReference) bEdgeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBOuterName() {
 		return bOuterNameEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBOuterName_BBigraph() {
+		return (EReference) bOuterNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -364,6 +408,51 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBBigraph() {
+		return bBigraphEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBBigraph_BRoots() {
+		return (EReference) bBigraphEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBBigraph_BEdges() {
+		return (EReference) bBigraphEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBBigraph_BInnerNames() {
+		return (EReference) bBigraphEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBBigraph_BOuterNames() {
+		return (EReference) bBigraphEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BigraphBaseModelFactory getBigraphBaseModelFactory() {
 		return (BigraphBaseModelFactory) getEFactoryInstance();
 	}
@@ -393,6 +482,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bPlaceEClass, BPLACE__BPRNT);
 
 		bRootEClass = createEClass(BROOT);
+		createEReference(bRootEClass, BROOT__BBIGRAPH);
 
 		bNodeEClass = createEClass(BNODE);
 		createEReference(bNodeEClass, BNODE__BPORTS);
@@ -409,16 +499,25 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bPortEClass, BPORT__BNODE);
 
 		bInnerNameEClass = createEClass(BINNER_NAME);
+		createEReference(bInnerNameEClass, BINNER_NAME__BBIGRAPH);
 
 		bEdgeEClass = createEClass(BEDGE);
+		createEReference(bEdgeEClass, BEDGE__BBIGRAPH);
 
 		bOuterNameEClass = createEClass(BOUTER_NAME);
+		createEReference(bOuterNameEClass, BOUTER_NAME__BBIGRAPH);
 
 		nameableTypeEClass = createEClass(NAMEABLE_TYPE);
 		createEAttribute(nameableTypeEClass, NAMEABLE_TYPE__NAME);
 
 		indexableTypeEClass = createEClass(INDEXABLE_TYPE);
 		createEAttribute(indexableTypeEClass, INDEXABLE_TYPE__INDEX);
+
+		bBigraphEClass = createEClass(BBIGRAPH);
+		createEReference(bBigraphEClass, BBIGRAPH__BROOTS);
+		createEReference(bBigraphEClass, BBIGRAPH__BEDGES);
+		createEReference(bBigraphEClass, BBIGRAPH__BINNER_NAMES);
+		createEReference(bBigraphEClass, BBIGRAPH__BOUTER_NAMES);
 	}
 
 	/**
@@ -474,6 +573,9 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bRootEClass, BRoot.class, "BRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBRoot_BBigraph(), this.getBBigraph(), this.getBBigraph_BRoots(), "bBigraph", null, 1, 1,
+				BRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bNodeEClass, BNode.class, "BNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBNode_BPorts(), this.getBPort(), this.getBPort_BNode(), "bPorts", null, 0, -1, BNode.class,
@@ -499,11 +601,20 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 
 		initEClass(bInnerNameEClass, BInnerName.class, "BInnerName", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBInnerName_BBigraph(), this.getBBigraph(), this.getBBigraph_BInnerNames(), "bBigraph", null,
+				1, 1, BInnerName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bEdgeEClass, BEdge.class, "BEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBEdge_BBigraph(), this.getBBigraph(), this.getBBigraph_BEdges(), "bBigraph", null, 1, 1,
+				BEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bOuterNameEClass, BOuterName.class, "BOuterName", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBOuterName_BBigraph(), this.getBBigraph(), this.getBBigraph_BOuterNames(), "bBigraph", null,
+				1, 1, BOuterName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nameableTypeEClass, NameableType.class, "NameableType", IS_ABSTRACT, IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -514,6 +625,21 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIndexableType_Index(), ecorePackage.getEInt(), "index", null, 0, 1, IndexableType.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bBigraphEClass, BBigraph.class, "BBigraph", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBBigraph_BRoots(), this.getBRoot(), this.getBRoot_BBigraph(), "bRoots", null, 0, -1,
+				BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBBigraph_BEdges(), this.getBEdge(), this.getBEdge_BBigraph(), "bEdges", null, 0, -1,
+				BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBBigraph_BInnerNames(), this.getBInnerName(), this.getBInnerName_BBigraph(), "bInnerNames",
+				null, 0, -1, BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBBigraph_BOuterNames(), this.getBOuterName(), this.getBOuterName_BBigraph(), "bOuterNames",
+				null, 0, -1, BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

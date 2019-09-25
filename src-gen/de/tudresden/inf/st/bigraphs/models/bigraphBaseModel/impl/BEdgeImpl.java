@@ -2,6 +2,7 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BEdge;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
 
@@ -11,6 +12,12 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>BEdge</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BEdgeImpl#getBBigraph <em>BBigraph</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -32,6 +39,24 @@ public class BEdgeImpl extends BLinkImpl implements BEdge {
 	@Override
 	protected EClass eStaticClass() {
 		return BigraphBaseModelPackage.Literals.BEDGE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BBigraph getBBigraph() {
+		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BEDGE__BBIGRAPH, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBBigraph(BBigraph newBBigraph) {
+		eSet(BigraphBaseModelPackage.Literals.BEDGE__BBIGRAPH, newBBigraph);
 	}
 
 } //BEdgeImpl

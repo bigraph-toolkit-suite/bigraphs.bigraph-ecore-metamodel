@@ -2,7 +2,7 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.cdo.CDOObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getIndexableType()
  * @model interface="true" abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface IndexableType extends EObject {
+public interface IndexableType extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->

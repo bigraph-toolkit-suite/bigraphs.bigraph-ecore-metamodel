@@ -12,5 +12,6 @@ Export-Package: de.tudresden.inf.st.bigraphs.models.bigraphBaseModel,
  de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl,
  de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.cdo;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

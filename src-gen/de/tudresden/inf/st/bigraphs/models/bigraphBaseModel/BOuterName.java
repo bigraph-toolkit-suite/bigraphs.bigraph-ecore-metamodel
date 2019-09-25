@@ -7,10 +7,44 @@ package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel;
  * A representation of the model object '<em><b>BOuter Name</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BOuterName#getBBigraph <em>BBigraph</em>}</li>
+ * </ul>
  *
  * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getBOuterName()
  * @model
  * @generated
  */
 public interface BOuterName extends BLink {
+	/**
+	 * Returns the value of the '<em><b>BBigraph</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBOuterNames <em>BOuter Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>BBigraph</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>BBigraph</em>' container reference.
+	 * @see #setBBigraph(BBigraph)
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getBOuterName_BBigraph()
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBOuterNames
+	 * @model opposite="bOuterNames" required="true" transient="false"
+	 * @generated
+	 */
+	BBigraph getBBigraph();
+
+	/**
+	 * Sets the value of the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BOuterName#getBBigraph <em>BBigraph</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>BBigraph</em>' container reference.
+	 * @see #getBBigraph()
+	 * @generated
+	 */
+	void setBBigraph(BBigraph value);
+
 } // BOuterName

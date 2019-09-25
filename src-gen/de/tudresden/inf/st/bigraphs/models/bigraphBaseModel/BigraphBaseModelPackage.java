@@ -141,13 +141,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BROOT__INDEX = BPLACE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BROOT__BBIGRAPH = BPLACE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>BRoot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROOT_FEATURE_COUNT = BPLACE_FEATURE_COUNT + 1;
+	int BROOT_FEATURE_COUNT = BPLACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>BRoot</em>' class.
@@ -481,13 +490,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BINNER_NAME__NAME = BPOINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINNER_NAME__BBIGRAPH = BPOINT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>BInner Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINNER_NAME_FEATURE_COUNT = BPOINT_FEATURE_COUNT + 1;
+	int BINNER_NAME_FEATURE_COUNT = BPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>BInner Name</em>' class.
@@ -527,13 +545,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BEDGE__BPOINTS = BLINK__BPOINTS;
 
 	/**
+	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEDGE__BBIGRAPH = BLINK_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>BEdge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEDGE_FEATURE_COUNT = BLINK_FEATURE_COUNT + 0;
+	int BEDGE_FEATURE_COUNT = BLINK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>BEdge</em>' class.
@@ -573,13 +600,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BOUTER_NAME__BPOINTS = BLINK__BPOINTS;
 
 	/**
+	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOUTER_NAME__BBIGRAPH = BLINK_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>BOuter Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOUTER_NAME_FEATURE_COUNT = BLINK_FEATURE_COUNT + 0;
+	int BOUTER_NAME_FEATURE_COUNT = BLINK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>BOuter Name</em>' class.
@@ -628,6 +664,70 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int INDEXABLE_TYPE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BBigraphImpl <em>BBigraph</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BBigraphImpl
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getBBigraph()
+	 * @generated
+	 */
+	int BBIGRAPH = 12;
+
+	/**
+	 * The feature id for the '<em><b>BRoots</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH__BROOTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>BEdges</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH__BEDGES = 1;
+
+	/**
+	 * The feature id for the '<em><b>BInner Names</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH__BINNER_NAMES = 2;
+
+	/**
+	 * The feature id for the '<em><b>BOuter Names</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH__BOUTER_NAMES = 3;
+
+	/**
+	 * The number of structural features of the '<em>BBigraph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>BBigraph</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPlace <em>BPlace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -668,6 +768,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBRoot();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BRoot#getBBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>BBigraph</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BRoot#getBBigraph()
+	 * @see #getBRoot()
+	 * @generated
+	 */
+	EReference getBRoot_BBigraph();
 
 	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode <em>BNode</em>}'.
@@ -774,6 +885,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	EClass getBInnerName();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BInnerName#getBBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>BBigraph</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BInnerName#getBBigraph()
+	 * @see #getBInnerName()
+	 * @generated
+	 */
+	EReference getBInnerName_BBigraph();
+
+	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BEdge <em>BEdge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -784,6 +906,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	EClass getBEdge();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BEdge#getBBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>BBigraph</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BEdge#getBBigraph()
+	 * @see #getBEdge()
+	 * @generated
+	 */
+	EReference getBEdge_BBigraph();
+
+	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BOuterName <em>BOuter Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -792,6 +925,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBOuterName();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BOuterName#getBBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>BBigraph</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BOuterName#getBBigraph()
+	 * @see #getBOuterName()
+	 * @generated
+	 */
+	EReference getBOuterName_BBigraph();
 
 	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType <em>Nameable Type</em>}'.
@@ -834,6 +978,60 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIndexableType_Index();
+
+	/**
+	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>BBigraph</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph
+	 * @generated
+	 */
+	EClass getBBigraph();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBRoots <em>BRoots</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>BRoots</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBRoots()
+	 * @see #getBBigraph()
+	 * @generated
+	 */
+	EReference getBBigraph_BRoots();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBEdges <em>BEdges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>BEdges</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBEdges()
+	 * @see #getBBigraph()
+	 * @generated
+	 */
+	EReference getBBigraph_BEdges();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBInnerNames <em>BInner Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>BInner Names</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBInnerNames()
+	 * @see #getBBigraph()
+	 * @generated
+	 */
+	EReference getBBigraph_BInnerNames();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBOuterNames <em>BOuter Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>BOuter Names</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BBigraph#getBOuterNames()
+	 * @see #getBBigraph()
+	 * @generated
+	 */
+	EReference getBBigraph_BOuterNames();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -893,6 +1091,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BROOT = eINSTANCE.getBRoot();
+
+		/**
+		 * The meta object literal for the '<em><b>BBigraph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BROOT__BBIGRAPH = eINSTANCE.getBRoot_BBigraph();
 
 		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BNodeImpl <em>BNode</em>}' class.
@@ -987,6 +1193,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		EClass BINNER_NAME = eINSTANCE.getBInnerName();
 
 		/**
+		 * The meta object literal for the '<em><b>BBigraph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINNER_NAME__BBIGRAPH = eINSTANCE.getBInnerName_BBigraph();
+
+		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BEdgeImpl <em>BEdge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -997,6 +1211,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		EClass BEDGE = eINSTANCE.getBEdge();
 
 		/**
+		 * The meta object literal for the '<em><b>BBigraph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEDGE__BBIGRAPH = eINSTANCE.getBEdge_BBigraph();
+
+		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BOuterNameImpl <em>BOuter Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1005,6 +1227,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BOUTER_NAME = eINSTANCE.getBOuterName();
+
+		/**
+		 * The meta object literal for the '<em><b>BBigraph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOUTER_NAME__BBIGRAPH = eINSTANCE.getBOuterName_BBigraph();
 
 		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType <em>Nameable Type</em>}' class.
@@ -1041,6 +1271,48 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INDEXABLE_TYPE__INDEX = eINSTANCE.getIndexableType_Index();
+
+		/**
+		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BBigraphImpl <em>BBigraph</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BBigraphImpl
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getBBigraph()
+		 * @generated
+		 */
+		EClass BBIGRAPH = eINSTANCE.getBBigraph();
+
+		/**
+		 * The meta object literal for the '<em><b>BRoots</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BBIGRAPH__BROOTS = eINSTANCE.getBBigraph_BRoots();
+
+		/**
+		 * The meta object literal for the '<em><b>BEdges</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BBIGRAPH__BEDGES = eINSTANCE.getBBigraph_BEdges();
+
+		/**
+		 * The meta object literal for the '<em><b>BInner Names</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BBIGRAPH__BINNER_NAMES = eINSTANCE.getBBigraph_BInnerNames();
+
+		/**
+		 * The meta object literal for the '<em><b>BOuter Names</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BBIGRAPH__BOUTER_NAMES = eINSTANCE.getBBigraph_BOuterNames();
 
 	}
 
