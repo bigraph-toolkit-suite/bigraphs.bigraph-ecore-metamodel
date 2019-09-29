@@ -72,10 +72,13 @@ if you want to try out the latest version, the project can be easily built
 with the regular `mvn` command. Therefore, you will need 
 [Maven v3.5.0 or above](https://maven.apache.org/run-maven/index.html).
 
-Execute the following goals to run the build:
+First, checkout the `master` branch of this project.
+Then, execute the following goals to run the build:
 ```bash
 $ mvn clean install
 ```
+The dependency will be installed in the Maven Local Repository, usually 
+located under `~/.m2/`.
 
 ### Deploy Artifacts
 
