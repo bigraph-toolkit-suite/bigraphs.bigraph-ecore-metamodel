@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.tudresden.inf.st.bigraphs.model</groupId>
+    <artifactId>bigraph-ecore-model</artifactId>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+    <name>Bigraph Meta Model - Ecore</name>
+    <description>EMOF-based Bigraph Meta Model</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <emf.version>2.16.0</emf.version>
+        <emf.ecore.version>2.18.0</emf.ecore.version>
+        <emf.codegen.version>2.16.0</emf.codegen.version>
+        <emf.cdo.version>4.7.0</emf.cdo.version>
+        <emf.core.runtime.version>3.7.0</emf.core.runtime.version>
+        <eclipse.mirror>http://download.eclipse.org/</eclipse.mirror>
+        <junit.version>5.4.0</junit.version>
+        <bintray.organization>st-tu-dresden</bintray.organization>
+        <bintray.repo>maven-repository</bintray.repo>
+        <bintray.package>${project.artifactId}</bintray.package>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>dgrzelak</id>
+            <name>Dominik Grzelak</name>
+            <email>dominik.grzelak@tu-dresden.de</email>
+            <organization>Technische Universität Dresden</organization>
+            <organizationUrl>https://tu-dresden.de/ing/informatik/smt/st</organizationUrl>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+2</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://git-st.inf.tu-dresden.de/bigraphs/ecore-bigraph-meta-model.git</connection>
+        <developerConnection>scm:git@git-st.inf.tu-dresden.de:bigraphs/ecore-bigraph-meta-model.git
+        </developerConnection>
+        <url>https://git-st.inf.tu-dresden.de/bigraphs/ecore-bigraph-meta-model</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>Eclipse</id>
+            <layout>p2</layout>
+            <url>${eclipse.mirror}/releases/photon/</url>
+        </repository>
+        <!-- add TMF repository for latest Xtend -->
+        <repository>
+            <id>TMF Repo</id>
+            <layout>p2</layout>
+            <url>${eclipse.mirror}/modeling/tmf/xtext/updates/releases/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-st-tu-dresden-maven-repository</id>
+            <name>st-tu-dresden-maven-repository</name>
+            <url>
+                https://api.bintray.com/maven/${bintray.organization}/${bintray.repo}/${bintray.package}/;publish=1
+            </url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>model</directory>
+                <targetPath>model</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src-gen</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <url>
+                                https://api.bintray.com/maven/${bintray.organization}/${bintray.repo}/${bintray.package}/;publish=1
+                            </url>
+                            <repositoryId>bintray-st-tu-dresden-maven-repository</repositoryId>
+                            <file>${project.build.directory}/${project.build.finalName}.jar</file>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <groupId>${project.groupId}</groupId>
+                            <version>${project.version}</version>
+                            <packaging>jar</packaging>
+                        </configuration>
+                        <phase>deploy</phase>
+                        <id>bintray-deploy</id>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- EMF -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore</artifactId>
+            <version>${emf.ecore.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.common</artifactId>
+            <version>${emf.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore.xmi -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+            <version>${emf.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.core/org.eclipse.core.runtime -->
+        <dependency>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>org.eclipse.core.runtime</artifactId>
+            <version>${emf.core.runtime.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.codegen -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.codegen</artifactId>
+            <version>${emf.codegen.version}</version>
+        </dependency>
+        <!-- https://github.com/ghillairet/cdo-maven -->
+        <dependency>
+            <groupId>org.eclipselabs</groupId>
+            <artifactId>cdo</artifactId>
+            <version>${emf.cdo.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipselabs</groupId>
+            <artifactId>net4j</artifactId>
+            <version>${emf.cdo.version}</version>
+            <type>pom</type>
+        </dependency>
+        <!-- Test -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
