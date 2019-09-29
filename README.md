@@ -1,6 +1,10 @@
 # An EMOF-Compliant Model for Bigraphs
 
-*This project is an analogous implementation of [1] with some minor changes.*
+**Version**: ${revision}
+
+**Notice**: *This project is an analogous implementation of [1] with some minor changes.*
+
+----------
 
 The bigraphical meta model is implemented using EMF's Ecore meta model. 
 The model serves as pure data model to improve the interoperability with other tools, thus, 
@@ -60,7 +64,7 @@ the constituent of the bigraph were loosely coupled
 - Some interfaces are added for easier object management
 
 
-## Build configuration and Deployment
+## Build configuration
 
 The artifact includes the Ecore meta model and the generated API. 
 Everything is packed within the `*.jar`. The artifact is deployed to [Bintray](https://bintray.com/).
@@ -72,10 +76,13 @@ if you want to try out the latest version, the project can be easily built
 with the regular `mvn` command. Therefore, you will need 
 [Maven v3.5.0 or above](https://maven.apache.org/run-maven/index.html).
 
-Execute the following goals to run the build:
+First, checkout the `master` branch of this project.
+Then, execute the following goals to run the build:
 ```bash
 $ mvn clean install
 ```
+The dependency will be installed in the Maven Local Repository, usually 
+located under `~/.m2/`.
 
 ### Deploy Artifacts
 
@@ -85,6 +92,26 @@ $ mvn clean deploy
 ```
 
 A working API key is needed and you must join the [st-tu-dresden organization](https://bintray.com/st-tu-dresden) at Bintray.
+
+## License
+
+This library is Open Source software released under the Apache 2.0 license.
+
+```text
+   Copyright [2019] Dominik Grzelak
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License. 
+```
 
 ## References
 
