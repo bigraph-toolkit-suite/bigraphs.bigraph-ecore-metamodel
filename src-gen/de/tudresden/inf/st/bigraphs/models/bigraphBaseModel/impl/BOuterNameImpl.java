@@ -46,6 +46,7 @@ public class BOuterNameImpl extends BLinkImpl implements BOuterName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BBigraph getBBigraph() {
 		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BOUTER_NAME__BBIGRAPH, true);
 	}
@@ -55,6 +56,7 @@ public class BOuterNameImpl extends BLinkImpl implements BOuterName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBBigraph(BBigraph newBBigraph) {
 		eSet(BigraphBaseModelPackage.Literals.BOUTER_NAME__BBIGRAPH, newBBigraph);
 	}

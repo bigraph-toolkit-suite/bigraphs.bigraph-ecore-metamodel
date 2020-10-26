@@ -82,6 +82,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BRoot createBRoot() {
 		BRootImpl bRoot = new BRootImpl();
 		return bRoot;
@@ -92,6 +93,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BNode createBNode() {
 		BNodeImpl bNode = new BNodeImpl();
 		return bNode;
@@ -102,6 +104,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BSite createBSite() {
 		BSiteImpl bSite = new BSiteImpl();
 		return bSite;
@@ -112,6 +115,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPort createBPort() {
 		BPortImpl bPort = new BPortImpl();
 		return bPort;
@@ -122,6 +126,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BInnerName createBInnerName() {
 		BInnerNameImpl bInnerName = new BInnerNameImpl();
 		return bInnerName;
@@ -132,6 +137,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BEdge createBEdge() {
 		BEdgeImpl bEdge = new BEdgeImpl();
 		return bEdge;
@@ -142,6 +148,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BOuterName createBOuterName() {
 		BOuterNameImpl bOuterName = new BOuterNameImpl();
 		return bOuterName;
@@ -152,6 +159,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BBigraph createBBigraph() {
 		BBigraphImpl bBigraph = new BBigraphImpl();
 		return bBigraph;
@@ -162,6 +170,7 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BigraphBaseModelPackage getBigraphBaseModelPackage() {
 		return (BigraphBaseModelPackage) getEPackage();
 	}

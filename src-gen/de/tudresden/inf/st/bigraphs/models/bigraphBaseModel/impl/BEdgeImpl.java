@@ -46,6 +46,7 @@ public class BEdgeImpl extends BLinkImpl implements BEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BBigraph getBBigraph() {
 		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BEDGE__BBIGRAPH, true);
 	}
@@ -55,6 +56,7 @@ public class BEdgeImpl extends BLinkImpl implements BEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBBigraph(BBigraph newBBigraph) {
 		eSet(BigraphBaseModelPackage.Literals.BEDGE__BBIGRAPH, newBBigraph);
 	}

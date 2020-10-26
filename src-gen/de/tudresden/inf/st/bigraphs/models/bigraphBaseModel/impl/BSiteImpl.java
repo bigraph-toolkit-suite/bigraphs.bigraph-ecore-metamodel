@@ -46,6 +46,7 @@ public class BSiteImpl extends BPlaceImpl implements BSite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getIndex() {
 		return (Integer) eGet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, true);
 	}
@@ -55,6 +56,7 @@ public class BSiteImpl extends BPlaceImpl implements BSite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIndex(int newIndex) {
 		eSet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, newIndex);
 	}

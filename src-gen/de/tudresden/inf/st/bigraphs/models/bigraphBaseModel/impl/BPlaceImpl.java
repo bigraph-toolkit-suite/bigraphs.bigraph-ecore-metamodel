@@ -61,6 +61,7 @@ public abstract class BPlaceImpl extends CDOObjectImpl implements BPlace {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BPlace> getBChild() {
 		return (EList<BPlace>) eGet(BigraphBaseModelPackage.Literals.BPLACE__BCHILD, true);
 	}
@@ -70,6 +71,7 @@ public abstract class BPlaceImpl extends CDOObjectImpl implements BPlace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPlace getBPrnt() {
 		return (BPlace) eGet(BigraphBaseModelPackage.Literals.BPLACE__BPRNT, true);
 	}
@@ -79,6 +81,7 @@ public abstract class BPlaceImpl extends CDOObjectImpl implements BPlace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBPrnt(BPlace newBPrnt) {
 		eSet(BigraphBaseModelPackage.Literals.BPLACE__BPRNT, newBPrnt);
 	}

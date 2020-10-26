@@ -5,7 +5,7 @@
 
     <groupId>de.tudresden.inf.st.bigraphs.model</groupId>
     <artifactId>bigraph-ecore-model</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
     <name>Bigraph Meta Model - Ecore</name>
     <description>EMOF-based Meta Model for Bigraphs</description>
