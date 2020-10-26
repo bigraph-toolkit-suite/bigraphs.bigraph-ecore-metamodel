@@ -17,7 +17,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * </ul>
  *
  * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getNameableType()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @extends CDOObject
  * @generated
  */

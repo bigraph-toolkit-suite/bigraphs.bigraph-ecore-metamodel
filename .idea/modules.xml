@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BigraphBaseModel.iml" filepath="$PROJECT_DIR$/BigraphBaseModel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bigraph-ecore-model.iml" filepath="$PROJECT_DIR$/bigraph-ecore-model.iml" />
     </modules>
   </component>
 </project>

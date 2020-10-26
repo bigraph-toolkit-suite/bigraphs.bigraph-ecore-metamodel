@@ -48,6 +48,7 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eGet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, true);
 	}
@@ -57,6 +58,7 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eSet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, newName);
 	}
@@ -66,6 +68,7 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BBigraph getBBigraph() {
 		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BINNER_NAME__BBIGRAPH, true);
 	}
@@ -75,6 +78,7 @@ public class BInnerNameImpl extends BPointImpl implements BInnerName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBBigraph(BBigraph newBBigraph) {
 		eSet(BigraphBaseModelPackage.Literals.BINNER_NAME__BBIGRAPH, newBBigraph);
 	}

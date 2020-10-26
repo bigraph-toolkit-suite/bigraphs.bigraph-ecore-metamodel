@@ -324,10 +324,10 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BPOINT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType <em>Nameable Type</em>}' class.
+	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.NameableTypeImpl <em>Nameable Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.NameableTypeImpl
 	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getNameableType()
 	 * @generated
 	 */
@@ -1237,10 +1237,10 @@ public interface BigraphBaseModelPackage extends EPackage {
 		EReference BOUTER_NAME__BBIGRAPH = eINSTANCE.getBOuterName_BBigraph();
 
 		/**
-		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType <em>Nameable Type</em>}' class.
+		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.NameableTypeImpl <em>Nameable Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.NameableTypeImpl
 		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getNameableType()
 		 * @generated
 		 */

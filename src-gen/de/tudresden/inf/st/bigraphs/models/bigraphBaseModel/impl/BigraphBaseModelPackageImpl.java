@@ -192,6 +192,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPlace() {
 		return bPlaceEClass;
 	}
@@ -201,6 +202,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPlace_BChild() {
 		return (EReference) bPlaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -210,6 +212,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPlace_BPrnt() {
 		return (EReference) bPlaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -219,6 +222,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBRoot() {
 		return bRootEClass;
 	}
@@ -228,6 +232,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBRoot_BBigraph() {
 		return (EReference) bRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -237,6 +242,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBNode() {
 		return bNodeEClass;
 	}
@@ -246,6 +252,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBNode_BPorts() {
 		return (EReference) bNodeEClass.getEStructuralFeatures().get(0);
 	}
@@ -255,6 +262,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBSite() {
 		return bSiteEClass;
 	}
@@ -264,6 +272,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPoint() {
 		return bPointEClass;
 	}
@@ -273,6 +282,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPoint_BLink() {
 		return (EReference) bPointEClass.getEStructuralFeatures().get(0);
 	}
@@ -282,6 +292,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBLink() {
 		return bLinkEClass;
 	}
@@ -291,6 +302,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBLink_BPoints() {
 		return (EReference) bLinkEClass.getEStructuralFeatures().get(0);
 	}
@@ -300,6 +312,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPort() {
 		return bPortEClass;
 	}
@@ -309,6 +322,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPort_BNode() {
 		return (EReference) bPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -318,6 +332,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBInnerName() {
 		return bInnerNameEClass;
 	}
@@ -327,6 +342,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBInnerName_BBigraph() {
 		return (EReference) bInnerNameEClass.getEStructuralFeatures().get(0);
 	}
@@ -336,6 +352,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBEdge() {
 		return bEdgeEClass;
 	}
@@ -345,6 +362,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBEdge_BBigraph() {
 		return (EReference) bEdgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -354,6 +372,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBOuterName() {
 		return bOuterNameEClass;
 	}
@@ -363,6 +382,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBOuterName_BBigraph() {
 		return (EReference) bOuterNameEClass.getEStructuralFeatures().get(0);
 	}
@@ -372,6 +392,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNameableType() {
 		return nameableTypeEClass;
 	}
@@ -381,6 +402,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNameableType_Name() {
 		return (EAttribute) nameableTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -390,6 +412,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIndexableType() {
 		return indexableTypeEClass;
 	}
@@ -399,6 +422,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getIndexableType_Index() {
 		return (EAttribute) indexableTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -408,6 +432,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBBigraph() {
 		return bBigraphEClass;
 	}
@@ -417,6 +442,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBBigraph_BRoots() {
 		return (EReference) bBigraphEClass.getEStructuralFeatures().get(0);
 	}
@@ -426,6 +452,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBBigraph_BEdges() {
 		return (EReference) bBigraphEClass.getEStructuralFeatures().get(1);
 	}
@@ -435,6 +462,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBBigraph_BInnerNames() {
 		return (EReference) bBigraphEClass.getEStructuralFeatures().get(2);
 	}
@@ -444,6 +472,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBBigraph_BOuterNames() {
 		return (EReference) bBigraphEClass.getEStructuralFeatures().get(3);
 	}
@@ -453,6 +482,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BigraphBaseModelFactory getBigraphBaseModelFactory() {
 		return (BigraphBaseModelFactory) getEFactoryInstance();
 	}
@@ -616,7 +646,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				1, 1, BOuterName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nameableTypeEClass, NameableType.class, "NameableType", IS_ABSTRACT, IS_INTERFACE,
+		initEClass(nameableTypeEClass, NameableType.class, "NameableType", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNameableType_Name(), ecorePackage.getEString(), "name", null, 0, 1, NameableType.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

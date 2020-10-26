@@ -67,6 +67,7 @@ public class BBigraphImpl extends CDOObjectImpl implements BBigraph {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BRoot> getBRoots() {
 		return (EList<BRoot>) eGet(BigraphBaseModelPackage.Literals.BBIGRAPH__BROOTS, true);
 	}
@@ -77,6 +78,7 @@ public class BBigraphImpl extends CDOObjectImpl implements BBigraph {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BEdge> getBEdges() {
 		return (EList<BEdge>) eGet(BigraphBaseModelPackage.Literals.BBIGRAPH__BEDGES, true);
 	}
@@ -87,6 +89,7 @@ public class BBigraphImpl extends CDOObjectImpl implements BBigraph {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BInnerName> getBInnerNames() {
 		return (EList<BInnerName>) eGet(BigraphBaseModelPackage.Literals.BBIGRAPH__BINNER_NAMES, true);
 	}
@@ -97,6 +100,7 @@ public class BBigraphImpl extends CDOObjectImpl implements BBigraph {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BOuterName> getBOuterNames() {
 		return (EList<BOuterName>) eGet(BigraphBaseModelPackage.Literals.BBIGRAPH__BOUTER_NAMES, true);
 	}

@@ -50,6 +50,7 @@ public class BNodeImpl extends BPlaceImpl implements BNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eGet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, true);
 	}
@@ -59,6 +60,7 @@ public class BNodeImpl extends BPlaceImpl implements BNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eSet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, newName);
 	}
@@ -69,6 +71,7 @@ public class BNodeImpl extends BPlaceImpl implements BNode {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BPort> getBPorts() {
 		return (EList<BPort>) eGet(BigraphBaseModelPackage.Literals.BNODE__BPORTS, true);
 	}

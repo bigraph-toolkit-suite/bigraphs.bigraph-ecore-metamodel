@@ -48,6 +48,7 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getIndex() {
 		return (Integer) eGet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, true);
 	}
@@ -57,6 +58,7 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIndex(int newIndex) {
 		eSet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, newIndex);
 	}
@@ -66,6 +68,7 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BBigraph getBBigraph() {
 		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BROOT__BBIGRAPH, true);
 	}
@@ -75,6 +78,7 @@ public class BRootImpl extends BPlaceImpl implements BRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBBigraph(BBigraph newBBigraph) {
 		eSet(BigraphBaseModelPackage.Literals.BROOT__BBIGRAPH, newBBigraph);
 	}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="signatureBaseModel" nsURI="http://de.tudresden.inf.st.bigraphs.signature"
+    nsPrefix="signatureBaseModel">
+  <eClassifiers xsi:type="ecore:EClass" name="BSignature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bControls" upperBound="-1"
+        eType="#//BControl" eKeys="#//BControl/name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BControl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//BControlStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BControlStatus">
+    <eLiterals name="ACTIVE"/>
+    <eLiterals name="ATOMIC" value="1"/>
+    <eLiterals name="PASSIVE" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

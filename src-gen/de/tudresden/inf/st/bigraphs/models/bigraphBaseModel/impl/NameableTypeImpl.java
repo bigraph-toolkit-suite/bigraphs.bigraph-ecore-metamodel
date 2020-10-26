@@ -2,9 +2,8 @@
  */
 package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 
-import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BLink;
-import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPoint;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
+import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -12,24 +11,24 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>BPoint</b></em>'.
+ * An implementation of the model object '<em><b>Nameable Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BPointImpl#getBLink <em>BLink</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.NameableTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class BPointImpl extends CDOObjectImpl implements BPoint {
+public abstract class NameableTypeImpl extends CDOObjectImpl implements NameableType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BPointImpl() {
+	protected NameableTypeImpl() {
 		super();
 	}
 
@@ -40,7 +39,7 @@ public abstract class BPointImpl extends CDOObjectImpl implements BPoint {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BigraphBaseModelPackage.Literals.BPOINT;
+		return BigraphBaseModelPackage.Literals.NAMEABLE_TYPE;
 	}
 
 	/**
@@ -59,8 +58,8 @@ public abstract class BPointImpl extends CDOObjectImpl implements BPoint {
 	 * @generated
 	 */
 	@Override
-	public BLink getBLink() {
-		return (BLink) eGet(BigraphBaseModelPackage.Literals.BPOINT__BLINK, true);
+	public String getName() {
+		return (String) eGet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, true);
 	}
 
 	/**
@@ -69,8 +68,8 @@ public abstract class BPointImpl extends CDOObjectImpl implements BPoint {
 	 * @generated
 	 */
 	@Override
-	public void setBLink(BLink newBLink) {
-		eSet(BigraphBaseModelPackage.Literals.BPOINT__BLINK, newBLink);
+	public void setName(String newName) {
+		eSet(BigraphBaseModelPackage.Literals.NAMEABLE_TYPE__NAME, newName);
 	}
 
-} //BPointImpl
+} //NameableTypeImpl
