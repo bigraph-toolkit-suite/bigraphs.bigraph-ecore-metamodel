@@ -620,7 +620,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bLinkEClass, BLink.class, "BLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBLink_BPoints(), this.getBPoint(), this.getBPoint_BLink(), "bPoints", null, 1, -1,
+		initEReference(getBLink_BPoints(), this.getBPoint(), this.getBPoint_BLink(), "bPoints", null, 0, -1,
 				BLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
