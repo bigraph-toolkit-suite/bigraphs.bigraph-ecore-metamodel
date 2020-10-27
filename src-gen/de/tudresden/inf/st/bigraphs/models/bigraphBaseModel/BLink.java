@@ -34,7 +34,7 @@ public interface BLink extends NameableType {
 	 * @return the value of the '<em>BPoints</em>' reference list.
 	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getBLink_BPoints()
 	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPoint#getBLink
-	 * @model opposite="bLink" required="true"
+	 * @model opposite="bLink"
 	 * @generated
 	 */
 	EList<BPoint> getBPoints();
