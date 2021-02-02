@@ -2,18 +2,32 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="signatureBaseModel" nsURI="http://de.tudresden.inf.st.bigraphs.signature"
     nsPrefix="signatureBaseModel">
-  <eClassifiers xsi:type="ecore:EClass" name="BSignature">
+  <eClassifiers xsi:type="ecore:EClass" name="BDynamicSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bControls" upperBound="-1"
         eType="#//BControl" eKeys="#//BControl/name"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BControl">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BControl" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//BControlStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" ordered="false"
+        lowerBound="1" eType="#//BControlStatus" defaultValueLiteral="ACTIVE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BControlStatus">
     <eLiterals name="ACTIVE"/>
     <eLiterals name="ATOMIC" value="1"/>
     <eLiterals name="PASSIVE" value="2"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindPlaceSortings" abstract="true"
+      interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindSortNonAtomic" abstract="true"
+      eSuperTypes="#//BKindPlaceSortings">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bKindSorts" upperBound="-1"
+        eType="#//BKindPlaceSortings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindSignature" eSuperTypes="#//BDynamicSignature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bKindPlaceSorts" upperBound="-1"
+        eType="#//BKindPlaceSortings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindSortAtomic" abstract="true" eSuperTypes="#//BKindPlaceSortings"/>
 </ecore:EPackage>

@@ -26,7 +26,9 @@ public enum BControlStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTIVE(0, "ACTIVE", "ACTIVE"), /**
+	ACTIVE(0, "ACTIVE", "ACTIVE"),
+
+	/**
 	 * The '<em><b>ATOMIC</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

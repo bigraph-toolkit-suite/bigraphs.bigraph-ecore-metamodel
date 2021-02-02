@@ -2,8 +2,8 @@
  */
 package de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl;
 
-import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl;
-import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSignature;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSortings;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortNonAtomic;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage;
 
 import java.util.Collection;
@@ -18,34 +18,34 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>BSignature</b></em>'.
+ * An implementation of the model object '<em><b>BKind Sort Non Atomic</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BSignatureImpl#getBControls <em>BControls</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSortNonAtomicImpl#getBKindSorts <em>BKind Sorts</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSignature {
+public abstract class BKindSortNonAtomicImpl extends MinimalEObjectImpl.Container implements BKindSortNonAtomic {
 	/**
-	 * The cached value of the '{@link #getBControls() <em>BControls</em>}' reference list.
+	 * The cached value of the '{@link #getBKindSorts() <em>BKind Sorts</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBControls()
+	 * @see #getBKindSorts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BControl> bControls;
+	protected EList<BKindPlaceSortings> bKindSorts;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BSignatureImpl() {
+	protected BKindSortNonAtomicImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSig
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SignatureBaseModelPackage.Literals.BSIGNATURE;
+		return SignatureBaseModelPackage.Literals.BKIND_SORT_NON_ATOMIC;
 	}
 
 	/**
@@ -65,11 +65,11 @@ public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSig
 	 * @generated
 	 */
 	@Override
-	public EList<BControl> getBControls() {
-		if (bControls == null) {
-			bControls = new EObjectResolvingEList<BControl>(BControl.class, this, SignatureBaseModelPackage.BSIGNATURE__BCONTROLS);
+	public EList<BKindPlaceSortings> getBKindSorts() {
+		if (bKindSorts == null) {
+			bKindSorts = new EObjectResolvingEList<BKindPlaceSortings>(BKindPlaceSortings.class, this, SignatureBaseModelPackage.BKIND_SORT_NON_ATOMIC__BKIND_SORTS);
 		}
-		return bControls;
+		return bKindSorts;
 	}
 
 	/**
@@ -80,8 +80,8 @@ public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSig
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SignatureBaseModelPackage.BSIGNATURE__BCONTROLS:
-				return getBControls();
+			case SignatureBaseModelPackage.BKIND_SORT_NON_ATOMIC__BKIND_SORTS:
+				return getBKindSorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -95,9 +95,9 @@ public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSig
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SignatureBaseModelPackage.BSIGNATURE__BCONTROLS:
-				getBControls().clear();
-				getBControls().addAll((Collection<? extends BControl>)newValue);
+			case SignatureBaseModelPackage.BKIND_SORT_NON_ATOMIC__BKIND_SORTS:
+				getBKindSorts().clear();
+				getBKindSorts().addAll((Collection<? extends BKindPlaceSortings>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,8 +111,8 @@ public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSig
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SignatureBaseModelPackage.BSIGNATURE__BCONTROLS:
-				getBControls().clear();
+			case SignatureBaseModelPackage.BKIND_SORT_NON_ATOMIC__BKIND_SORTS:
+				getBKindSorts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -126,10 +126,10 @@ public class BSignatureImpl extends MinimalEObjectImpl.Container implements BSig
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SignatureBaseModelPackage.BSIGNATURE__BCONTROLS:
-				return bControls != null && !bControls.isEmpty();
+			case SignatureBaseModelPackage.BKIND_SORT_NON_ATOMIC__BKIND_SORTS:
+				return bKindSorts != null && !bKindSorts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //BSignatureImpl
+} //BKindSortNonAtomicImpl

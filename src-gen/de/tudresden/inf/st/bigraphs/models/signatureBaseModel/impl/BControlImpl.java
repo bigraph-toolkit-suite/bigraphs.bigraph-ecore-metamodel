@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class BControlImpl extends MinimalEObjectImpl.Container implements BControl {
+public abstract class BControlImpl extends MinimalEObjectImpl.Container implements BControl {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
