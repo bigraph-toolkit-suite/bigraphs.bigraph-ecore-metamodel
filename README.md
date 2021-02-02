@@ -1,4 +1,6 @@
-# An EMOF-Compliant Model for Bigraphs
+<img src="./etc/logo-bigraph-metamodel-dark.png" style="zoom:90%;" />
+
+# An EMOF-Compliant Metamodel for Bigraphs based on Ecore
 
 **Version**: 1.2.0
 
