@@ -68,12 +68,28 @@ public class SignatureBaseModelAdapterFactory extends AdapterFactoryImpl {
 	protected SignatureBaseModelSwitch<Adapter> modelSwitch =
 		new SignatureBaseModelSwitch<Adapter>() {
 			@Override
-			public Adapter caseBSignature(BSignature object) {
-				return createBSignatureAdapter();
+			public Adapter caseBDynamicSignature(BDynamicSignature object) {
+				return createBDynamicSignatureAdapter();
 			}
 			@Override
 			public Adapter caseBControl(BControl object) {
 				return createBControlAdapter();
+			}
+			@Override
+			public Adapter caseBKindPlaceSortings(BKindPlaceSortings object) {
+				return createBKindPlaceSortingsAdapter();
+			}
+			@Override
+			public Adapter caseBKindSortNonAtomic(BKindSortNonAtomic object) {
+				return createBKindSortNonAtomicAdapter();
+			}
+			@Override
+			public Adapter caseBKindSignature(BKindSignature object) {
+				return createBKindSignatureAdapter();
+			}
+			@Override
+			public Adapter caseBKindSortAtomic(BKindSortAtomic object) {
+				return createBKindSortAtomicAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -96,16 +112,16 @@ public class SignatureBaseModelAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSignature <em>BSignature</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BDynamicSignature <em>BDynamic Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSignature
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BDynamicSignature
 	 * @generated
 	 */
-	public Adapter createBSignatureAdapter() {
+	public Adapter createBDynamicSignatureAdapter() {
 		return null;
 	}
 
@@ -120,6 +136,62 @@ public class SignatureBaseModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBControlAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSortings <em>BKind Place Sortings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSortings
+	 * @generated
+	 */
+	public Adapter createBKindPlaceSortingsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortNonAtomic <em>BKind Sort Non Atomic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortNonAtomic
+	 * @generated
+	 */
+	public Adapter createBKindSortNonAtomicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature <em>BKind Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature
+	 * @generated
+	 */
+	public Adapter createBKindSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortAtomic <em>BKind Sort Atomic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortAtomic
+	 * @generated
+	 */
+	public Adapter createBKindSortAtomicAdapter() {
 		return null;
 	}
 

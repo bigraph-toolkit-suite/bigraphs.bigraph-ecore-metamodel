@@ -45,4 +45,12 @@
             genModel="model/signatureBaseModel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated kindSignatureBaseModel -->
+      <package
+            uri="http://de.tudresden.inf.st.bigraphs.sortings"
+            class="de.tudresden.inf.st.bigraphs.models.kindSignatureBaseModel.KindSignatureBaseModelPackage"
+            genModel="model/kindSignatureBaseModel.genmodel"/>
+   </extension>
+
 </plugin>

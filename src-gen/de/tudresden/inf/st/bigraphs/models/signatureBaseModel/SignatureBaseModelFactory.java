@@ -22,22 +22,22 @@ public interface SignatureBaseModelFactory extends EFactory {
 	SignatureBaseModelFactory eINSTANCE = de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.SignatureBaseModelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>BSignature</em>'.
+	 * Returns a new object of class '<em>BDynamic Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>BSignature</em>'.
+	 * @return a new object of class '<em>BDynamic Signature</em>'.
 	 * @generated
 	 */
-	BSignature createBSignature();
+	BDynamicSignature createBDynamicSignature();
 
 	/**
-	 * Returns a new object of class '<em>BControl</em>'.
+	 * Returns a new object of class '<em>BKind Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>BControl</em>'.
+	 * @return a new object of class '<em>BKind Signature</em>'.
 	 * @generated
 	 */
-	BControl createBControl();
+	BKindSignature createBKindSignature();
 
 	/**
 	 * Returns the package supported by this factory.
