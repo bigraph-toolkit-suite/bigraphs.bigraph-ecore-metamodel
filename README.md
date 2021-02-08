@@ -113,14 +113,6 @@ $ mvn clean deploy
 $ mvn deploy -Dusername=username -Dpassword=password
 ```
 
-<!--
-# provide a dedicated Maven settings.xml
-$ mvn deploy -Dbuildnumber=1 -s settings.xml
--->
-
-<!--
-A working API key is needed and you must join the [st-tu-dresden organization](https://bintray.com/st-tu-dresden) at Bintray.
--->
 
 
 ## References

@@ -153,16 +153,6 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	 * @generated
 	 */
 	@Override
-	public EReference getBDynamicSignature_BControls() {
-		return (EReference)bDynamicSignatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getBControl() {
 		return bControlEClass;
 	}
@@ -253,6 +243,16 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	 * @generated
 	 */
 	@Override
+	public EReference getBKindSignature_BControls() {
+		return (EReference)bKindSignatureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBKindSortAtomic() {
 		return bKindSortAtomicEClass;
 	}
@@ -297,7 +297,6 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 
 		// Create classes and their features
 		bDynamicSignatureEClass = createEClass(BDYNAMIC_SIGNATURE);
-		createEReference(bDynamicSignatureEClass, BDYNAMIC_SIGNATURE__BCONTROLS);
 
 		bControlEClass = createEClass(BCONTROL);
 		createEAttribute(bControlEClass, BCONTROL__NAME);
@@ -311,6 +310,7 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 
 		bKindSignatureEClass = createEClass(BKIND_SIGNATURE);
 		createEReference(bKindSignatureEClass, BKIND_SIGNATURE__BKIND_PLACE_SORTS);
+		createEReference(bKindSignatureEClass, BKIND_SIGNATURE__BCONTROLS);
 
 		bKindSortAtomicEClass = createEClass(BKIND_SORT_ATOMIC);
 
@@ -346,14 +346,12 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		bDynamicSignatureEClass.getESuperTypes().add(this.getBKindSignature());
 		bKindSortNonAtomicEClass.getESuperTypes().add(this.getBKindPlaceSortings());
-		bKindSignatureEClass.getESuperTypes().add(this.getBDynamicSignature());
 		bKindSortAtomicEClass.getESuperTypes().add(this.getBKindPlaceSortings());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(bDynamicSignatureEClass, BDynamicSignature.class, "BDynamicSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBDynamicSignature_BControls(), this.getBControl(), null, "bControls", null, 0, -1, BDynamicSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getBDynamicSignature_BControls().getEKeys().add(this.getBControl_Name());
 
 		initEClass(bControlEClass, BControl.class, "BControl", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBControl_Name(), ecorePackage.getEString(), "name", null, 0, 1, BControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -367,6 +365,8 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 
 		initEClass(bKindSignatureEClass, BKindSignature.class, "BKindSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBKindSignature_BKindPlaceSorts(), this.getBKindPlaceSortings(), null, "bKindPlaceSorts", null, 0, -1, BKindSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBKindSignature_BControls(), this.getBControl(), null, "bControls", null, 0, -1, BKindSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getBKindSignature_BControls().getEKeys().add(this.getBControl_Name());
 
 		initEClass(bKindSortAtomicEClass, BKindSortAtomic.class, "BKindSortAtomic", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

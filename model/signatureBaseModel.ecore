@@ -2,10 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="signatureBaseModel" nsURI="http://de.tudresden.inf.st.bigraphs.signature"
     nsPrefix="signatureBaseModel">
-  <eClassifiers xsi:type="ecore:EClass" name="BDynamicSignature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bControls" upperBound="-1"
-        eType="#//BControl" eKeys="#//BControl/name"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BDynamicSignature" eSuperTypes="#//BKindSignature"/>
   <eClassifiers xsi:type="ecore:EClass" name="BControl" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
@@ -25,9 +22,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bKindSorts" upperBound="-1"
         eType="#//BKindPlaceSortings"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BKindSignature" eSuperTypes="#//BDynamicSignature">
+  <eClassifiers xsi:type="ecore:EClass" name="BKindSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bKindPlaceSorts" upperBound="-1"
         eType="#//BKindPlaceSortings"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bControls" upperBound="-1"
+        eType="#//BControl" eKeys="#//BControl/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BKindSortAtomic" abstract="true" eSuperTypes="#//BKindPlaceSortings"/>
 </ecore:EPackage>

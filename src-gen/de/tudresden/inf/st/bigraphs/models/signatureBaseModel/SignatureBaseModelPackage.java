@@ -58,6 +58,52 @@ public interface SignatureBaseModelPackage extends EPackage {
 	SignatureBaseModelPackage eINSTANCE = de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.SignatureBaseModelPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSignatureImpl <em>BKind Signature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSignatureImpl
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.SignatureBaseModelPackageImpl#getBKindSignature()
+	 * @generated
+	 */
+	int BKIND_SIGNATURE = 4;
+
+	/**
+	 * The feature id for the '<em><b>BKind Place Sorts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BKIND_SIGNATURE__BKIND_PLACE_SORTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>BControls</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BKIND_SIGNATURE__BCONTROLS = 1;
+
+	/**
+	 * The number of structural features of the '<em>BKind Signature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BKIND_SIGNATURE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>BKind Signature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BKIND_SIGNATURE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BDynamicSignatureImpl <em>BDynamic Signature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,13 +114,22 @@ public interface SignatureBaseModelPackage extends EPackage {
 	int BDYNAMIC_SIGNATURE = 0;
 
 	/**
+	 * The feature id for the '<em><b>BKind Place Sorts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BDYNAMIC_SIGNATURE__BKIND_PLACE_SORTS = BKIND_SIGNATURE__BKIND_PLACE_SORTS;
+
+	/**
 	 * The feature id for the '<em><b>BControls</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BDYNAMIC_SIGNATURE__BCONTROLS = 0;
+	int BDYNAMIC_SIGNATURE__BCONTROLS = BKIND_SIGNATURE__BCONTROLS;
 
 	/**
 	 * The number of structural features of the '<em>BDynamic Signature</em>' class.
@@ -83,7 +138,7 @@ public interface SignatureBaseModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BDYNAMIC_SIGNATURE_FEATURE_COUNT = 1;
+	int BDYNAMIC_SIGNATURE_FEATURE_COUNT = BKIND_SIGNATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>BDynamic Signature</em>' class.
@@ -92,7 +147,7 @@ public interface SignatureBaseModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BDYNAMIC_SIGNATURE_OPERATION_COUNT = 0;
+	int BDYNAMIC_SIGNATURE_OPERATION_COUNT = BKIND_SIGNATURE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BControlImpl <em>BControl</em>}' class.
@@ -215,52 +270,6 @@ public interface SignatureBaseModelPackage extends EPackage {
 	int BKIND_SORT_NON_ATOMIC_OPERATION_COUNT = BKIND_PLACE_SORTINGS_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSignatureImpl <em>BKind Signature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSignatureImpl
-	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.SignatureBaseModelPackageImpl#getBKindSignature()
-	 * @generated
-	 */
-	int BKIND_SIGNATURE = 4;
-
-	/**
-	 * The feature id for the '<em><b>BControls</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BKIND_SIGNATURE__BCONTROLS = BDYNAMIC_SIGNATURE__BCONTROLS;
-
-	/**
-	 * The feature id for the '<em><b>BKind Place Sorts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BKIND_SIGNATURE__BKIND_PLACE_SORTS = BDYNAMIC_SIGNATURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>BKind Signature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BKIND_SIGNATURE_FEATURE_COUNT = BDYNAMIC_SIGNATURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>BKind Signature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BKIND_SIGNATURE_OPERATION_COUNT = BDYNAMIC_SIGNATURE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSortAtomicImpl <em>BKind Sort Atomic</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,17 +317,6 @@ public interface SignatureBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBDynamicSignature();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BDynamicSignature#getBControls <em>BControls</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>BControls</em>'.
-	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BDynamicSignature#getBControls()
-	 * @see #getBDynamicSignature()
-	 * @generated
-	 */
-	EReference getBDynamicSignature_BControls();
 
 	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl <em>BControl</em>}'.
@@ -416,6 +414,17 @@ public interface SignatureBaseModelPackage extends EPackage {
 	EReference getBKindSignature_BKindPlaceSorts();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature#getBControls <em>BControls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>BControls</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature#getBControls()
+	 * @see #getBKindSignature()
+	 * @generated
+	 */
+	EReference getBKindSignature_BControls();
+
+	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortAtomic <em>BKind Sort Atomic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,14 +476,6 @@ public interface SignatureBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BDYNAMIC_SIGNATURE = eINSTANCE.getBDynamicSignature();
-
-		/**
-		 * The meta object literal for the '<em><b>BControls</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BDYNAMIC_SIGNATURE__BCONTROLS = eINSTANCE.getBDynamicSignature_BControls();
 
 		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BControlImpl <em>BControl</em>}' class.
@@ -555,6 +556,14 @@ public interface SignatureBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BKIND_SIGNATURE__BKIND_PLACE_SORTS = eINSTANCE.getBKindSignature_BKindPlaceSorts();
+
+		/**
+		 * The meta object literal for the '<em><b>BControls</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BKIND_SIGNATURE__BCONTROLS = eINSTANCE.getBKindSignature_BControls();
 
 		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BKindSortAtomicImpl <em>BKind Sort Atomic</em>}' class.

@@ -69,6 +69,7 @@ public class SignatureBaseModelSwitch<T> extends Switch<T> {
 			case SignatureBaseModelPackage.BDYNAMIC_SIGNATURE: {
 				BDynamicSignature bDynamicSignature = (BDynamicSignature)theEObject;
 				T result = caseBDynamicSignature(bDynamicSignature);
+				if (result == null) result = caseBKindSignature(bDynamicSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -94,7 +95,6 @@ public class SignatureBaseModelSwitch<T> extends Switch<T> {
 			case SignatureBaseModelPackage.BKIND_SIGNATURE: {
 				BKindSignature bKindSignature = (BKindSignature)theEObject;
 				T result = caseBKindSignature(bKindSignature);
-				if (result == null) result = caseBDynamicSignature(bKindSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

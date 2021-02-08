@@ -12,9 +12,7 @@
       <genEnumLiterals ecoreEnumLiteral="signatureBaseModel.ecore#//BControlStatus/ATOMIC"/>
       <genEnumLiterals ecoreEnumLiteral="signatureBaseModel.ecore#//BControlStatus/PASSIVE"/>
     </genEnums>
-    <genClasses ecoreClass="signatureBaseModel.ecore#//BDynamicSignature">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BDynamicSignature/bControls"/>
-    </genClasses>
+    <genClasses ecoreClass="signatureBaseModel.ecore#//BDynamicSignature"/>
     <genClasses ecoreClass="signatureBaseModel.ecore#//BControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute signatureBaseModel.ecore#//BControl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute signatureBaseModel.ecore#//BControl/arity"/>
@@ -26,6 +24,7 @@
     </genClasses>
     <genClasses ecoreClass="signatureBaseModel.ecore#//BKindSignature">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindSignature/bKindPlaceSorts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindSignature/bControls"/>
     </genClasses>
     <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BKindSortAtomic"/>
   </genPackages>
