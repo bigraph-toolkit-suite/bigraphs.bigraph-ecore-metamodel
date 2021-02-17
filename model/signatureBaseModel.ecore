@@ -9,24 +9,32 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" ordered="false"
         lowerBound="1" eType="#//BControlStatus" defaultValueLiteral="ACTIVE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bSig" lowerBound="1" eType="#//BSorting"
+        eOpposite="#//BSorting/bControls"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BControlStatus">
     <eLiterals name="ACTIVE"/>
     <eLiterals name="ATOMIC" value="1"/>
     <eLiterals name="PASSIVE" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BKindPlaceSortings" abstract="true"
-      interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindPlaceSorting" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bPlaceSorting" lowerBound="1"
+        eType="#//BKindSignature" eOpposite="#//BKindSignature/bKindPlaceSorts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bContainedBy" upperBound="-1"
+        eType="#//BKindPlaceSorting" eOpposite="#//BKindPlaceSorting/bCanContain"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bCanContain" upperBound="-1"
+        eType="#//BKindPlaceSorting" eOpposite="#//BKindPlaceSorting/bContainedBy"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BKindSortNonAtomic" abstract="true"
-      eSuperTypes="#//BKindPlaceSortings">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bKindSorts" upperBound="-1"
-        eType="#//BKindPlaceSortings"/>
+      eSuperTypes="#//BKindPlaceSorting"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindSignature" eSuperTypes="#//BSorting">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bKindPlaceSorts" lowerBound="1"
+        upperBound="-1" eType="#//BKindPlaceSorting" containment="true" eOpposite="#//BKindPlaceSorting/bPlaceSorting"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BKindSignature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bKindPlaceSorts" upperBound="-1"
-        eType="#//BKindPlaceSortings"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BKindSortAtomic" abstract="true" eSuperTypes="#//BKindPlaceSorting"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BSorting" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bControls" upperBound="-1"
-        eType="#//BControl" eKeys="#//BControl/name"/>
+        eType="#//BControl" containment="true" eOpposite="#//BControl/bSig"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BKindSortAtomic" abstract="true" eSuperTypes="#//BKindPlaceSortings"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BBasicSignature" eSuperTypes="#//BKindSignature"/>
 </ecore:EPackage>

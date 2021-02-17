@@ -2,25 +2,25 @@
  */
 package de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl;
 
-import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortAtomic;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BBasicSignature;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>BKind Sort Atomic</b></em>'.
+ * An implementation of the model object '<em><b>BBasic Signature</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class BKindSortAtomicImpl extends BKindPlaceSortingImpl implements BKindSortAtomic {
+public class BBasicSignatureImpl extends BKindSignatureImpl implements BBasicSignature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BKindSortAtomicImpl() {
+	protected BBasicSignatureImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public abstract class BKindSortAtomicImpl extends BKindPlaceSortingImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SignatureBaseModelPackage.Literals.BKIND_SORT_ATOMIC;
+		return SignatureBaseModelPackage.Literals.BBASIC_SIGNATURE;
 	}
 
-} //BKindSortAtomicImpl
+} //BBasicSignatureImpl

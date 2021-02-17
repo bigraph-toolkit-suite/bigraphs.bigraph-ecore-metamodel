@@ -4,8 +4,6 @@ package de.tudresden.inf.st.bigraphs.models.signatureBaseModel;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>BKind Signature</b></em>'.
@@ -16,36 +14,25 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature#getBKindPlaceSorts <em>BKind Place Sorts</em>}</li>
- *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature#getBControls <em>BControls</em>}</li>
  * </ul>
  *
  * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage#getBKindSignature()
  * @model
  * @generated
  */
-public interface BKindSignature extends EObject {
+public interface BKindSignature extends BSorting {
 	/**
-	 * Returns the value of the '<em><b>BKind Place Sorts</b></em>' reference list.
-	 * The list contents are of type {@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSortings}.
+	 * Returns the value of the '<em><b>BKind Place Sorts</b></em>' containment reference list.
+	 * The list contents are of type {@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting}.
+	 * It is bidirectional and its opposite is '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting#getBPlaceSorting <em>BPlace Sorting</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>BKind Place Sorts</em>' reference list.
+	 * @return the value of the '<em>BKind Place Sorts</em>' containment reference list.
 	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage#getBKindSignature_BKindPlaceSorts()
-	 * @model
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting#getBPlaceSorting
+	 * @model opposite="bPlaceSorting" containment="true" required="true"
 	 * @generated
 	 */
-	EList<BKindPlaceSortings> getBKindPlaceSorts();
-
-	/**
-	 * Returns the value of the '<em><b>BControls</b></em>' reference list.
-	 * The list contents are of type {@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>BControls</em>' reference list.
-	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage#getBKindSignature_BControls()
-	 * @model keys="name"
-	 * @generated
-	 */
-	EList<BControl> getBControls();
+	EList<BKindPlaceSorting> getBKindPlaceSorts();
 
 } // BKindSignature

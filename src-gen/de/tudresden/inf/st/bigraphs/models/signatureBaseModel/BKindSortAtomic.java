@@ -13,5 +13,5 @@ package de.tudresden.inf.st.bigraphs.models.signatureBaseModel;
  * @model abstract="true"
  * @generated
  */
-public interface BKindSortAtomic extends BKindPlaceSortings {
+public interface BKindSortAtomic extends BKindPlaceSorting {
 } // BKindSortAtomic
