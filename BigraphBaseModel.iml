@@ -21,20 +21,12 @@
     <orderEntry type="library" name="ECLIPSE" level="application" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
-    <orderEntry type="library" name="Maven: org.eclipselabs:cdo.p2:repackaged:4.7.0" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipselabs:net4j.p2:repackaged:4.7.0" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.core.runtime:3.15.200" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.osgi:3.13.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.core.contenttype:3.7.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.core.jobs:3.10.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.equinox.common:3.10.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.equinox.app:1.4.100" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.equinox.registry:3.8.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.platform:org.eclipse.equinox.preferences:3.7.300" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore.change:2.13.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore:2.23.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.16.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.emf:org.eclipse.emf.common:2.21.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.emf.cdo:org.eclipse.emf.cdo:4.11.0.v20200902-0811" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.emf.cdo.common:org.eclipse.emf.cdo.common:4.11.0.v20200901-0616" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.emf.cdo.net4j:org.eclipse.emf.cdo.net4j:4.3.1.v20200825-1015" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore:2.23.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.16.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.common:2.21.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.4.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.1.1" level="project" />
