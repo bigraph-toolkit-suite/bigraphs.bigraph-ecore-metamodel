@@ -11,7 +11,7 @@
     <description>EMOF-compliant Metamodel for Bigraphical Objects based on Ecore</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <emf.ecore.version>2.23.0</emf.ecore.version>
         <emf.ecore.xmi.version>2.16.0</emf.ecore.xmi.version>
@@ -111,6 +111,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.2.0</version>
+                <configuration>
+                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
