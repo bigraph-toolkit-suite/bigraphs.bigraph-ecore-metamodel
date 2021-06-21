@@ -5,7 +5,7 @@
 
 Version | Notice | 
 --- | ---
-|1.3.0| *This project is an analogous implementation of [[1]](#References) with some minor changes.*|
+|1.4.0-SNAPSHOT| *This project is an analogous implementation of [[1]](#References) with some minor changes.*|
 
 
 The metamodel for bigraphs, devised by Robin Milner, is implemented using EMF's Ecore metamodel. 
