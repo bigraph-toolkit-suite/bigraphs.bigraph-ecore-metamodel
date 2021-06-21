@@ -5,7 +5,7 @@
 
 Version | Notice | 
 --- | ---
-|1.3.0-SNAPSHOT| *This project is an analogous implementation of [[1]](#References) with some minor changes.*|
+|1.3.0| *This project is an analogous implementation of [[1]](#References) with some minor changes.*|
 
 
 The metamodel for bigraphs, devised by Robin Milner, is implemented using EMF's Ecore metamodel. 
@@ -35,16 +35,19 @@ To use the Ecore bigraph metamodel in a Maven project:
 <dependency>
     <groupId>org.eclipse.emf</groupId>
     <artifactId>org.eclipse.emf.ecore</artifactId>
+    <!-- Minimum: 2.23.0 -->
     <version>${emf.ecore.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.emf</groupId>
     <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+    <!-- Minimum: 2.16.0 -->
     <version>${emf.ecore.xmi.version}</version>
 </dependency>
 <dependency>
     <groupId>org.eclipse.emf</groupId>
     <artifactId>org.eclipse.emf.common</artifactId>
+    <!-- Minimum: 2.21.0 -->
     <version>${emf.common.version}</version>
 </dependency>
 ```
@@ -124,7 +127,7 @@ $ mvn deploy -Dusername=username -Dpassword=password
 This library is Open Source software released under the Apache 2.0 license.
 
 ```text
-   Copyright 2020 Dominik Grzelak
+   Copyright 2020-present Dominik Grzelak
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
