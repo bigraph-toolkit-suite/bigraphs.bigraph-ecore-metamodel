@@ -58,7 +58,6 @@
     <eStructuralFeatures
         xsi:type="ecore:EReference"
         name="bLink"
-        lowerBound="1"
         eType="#//BLink"
         eOpposite="#//BLink/bPoints"/>
   </eClassifiers>

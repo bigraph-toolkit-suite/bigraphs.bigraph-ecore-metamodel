@@ -2,13 +2,15 @@
  */
 package de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl;
 
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BBasicSignature;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControlStatus;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BDynamicSignature;
-import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSortings;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSignature;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortAtomic;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindSortNonAtomic;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSorting;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelFactory;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage;
 
@@ -46,7 +48,7 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bKindPlaceSortingsEClass = null;
+	private EClass bKindPlaceSortingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +70,20 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	 * @generated
 	 */
 	private EClass bKindSortAtomicEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bSortingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bBasicSignatureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,16 +169,6 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	 * @generated
 	 */
 	@Override
-	public EReference getBDynamicSignature_BControls() {
-		return (EReference)bDynamicSignatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getBControl() {
 		return bControlEClass;
 	}
@@ -203,8 +209,48 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	 * @generated
 	 */
 	@Override
-	public EClass getBKindPlaceSortings() {
-		return bKindPlaceSortingsEClass;
+	public EReference getBControl_BSig() {
+		return (EReference)bControlEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getBKindPlaceSorting() {
+		return bKindPlaceSortingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBKindPlaceSorting_BPlaceSorting() {
+		return (EReference)bKindPlaceSortingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBKindPlaceSorting_BContainedBy() {
+		return (EReference)bKindPlaceSortingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBKindPlaceSorting_BCanContain() {
+		return (EReference)bKindPlaceSortingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -215,16 +261,6 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	@Override
 	public EClass getBKindSortNonAtomic() {
 		return bKindSortNonAtomicEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBKindSortNonAtomic_BKindSorts() {
-		return (EReference)bKindSortNonAtomicEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -255,6 +291,36 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 	@Override
 	public EClass getBKindSortAtomic() {
 		return bKindSortAtomicEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getBSorting() {
+		return bSortingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBSorting_BControls() {
+		return (EReference)bSortingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getBBasicSignature() {
+		return bBasicSignatureEClass;
 	}
 
 	/**
@@ -297,22 +363,29 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 
 		// Create classes and their features
 		bDynamicSignatureEClass = createEClass(BDYNAMIC_SIGNATURE);
-		createEReference(bDynamicSignatureEClass, BDYNAMIC_SIGNATURE__BCONTROLS);
 
 		bControlEClass = createEClass(BCONTROL);
 		createEAttribute(bControlEClass, BCONTROL__NAME);
 		createEAttribute(bControlEClass, BCONTROL__ARITY);
 		createEAttribute(bControlEClass, BCONTROL__STATUS);
+		createEReference(bControlEClass, BCONTROL__BSIG);
 
-		bKindPlaceSortingsEClass = createEClass(BKIND_PLACE_SORTINGS);
+		bKindPlaceSortingEClass = createEClass(BKIND_PLACE_SORTING);
+		createEReference(bKindPlaceSortingEClass, BKIND_PLACE_SORTING__BPLACE_SORTING);
+		createEReference(bKindPlaceSortingEClass, BKIND_PLACE_SORTING__BCONTAINED_BY);
+		createEReference(bKindPlaceSortingEClass, BKIND_PLACE_SORTING__BCAN_CONTAIN);
 
 		bKindSortNonAtomicEClass = createEClass(BKIND_SORT_NON_ATOMIC);
-		createEReference(bKindSortNonAtomicEClass, BKIND_SORT_NON_ATOMIC__BKIND_SORTS);
 
 		bKindSignatureEClass = createEClass(BKIND_SIGNATURE);
 		createEReference(bKindSignatureEClass, BKIND_SIGNATURE__BKIND_PLACE_SORTS);
 
 		bKindSortAtomicEClass = createEClass(BKIND_SORT_ATOMIC);
+
+		bSortingEClass = createEClass(BSORTING);
+		createEReference(bSortingEClass, BSORTING__BCONTROLS);
+
+		bBasicSignatureEClass = createEClass(BBASIC_SIGNATURE);
 
 		// Create enums
 		bControlStatusEEnum = createEEnum(BCONTROL_STATUS);
@@ -346,29 +419,37 @@ public class SignatureBaseModelPackageImpl extends EPackageImpl implements Signa
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		bKindSortNonAtomicEClass.getESuperTypes().add(this.getBKindPlaceSortings());
-		bKindSignatureEClass.getESuperTypes().add(this.getBDynamicSignature());
-		bKindSortAtomicEClass.getESuperTypes().add(this.getBKindPlaceSortings());
+		bDynamicSignatureEClass.getESuperTypes().add(this.getBKindSignature());
+		bKindSortNonAtomicEClass.getESuperTypes().add(this.getBKindPlaceSorting());
+		bKindSignatureEClass.getESuperTypes().add(this.getBSorting());
+		bKindSortAtomicEClass.getESuperTypes().add(this.getBKindPlaceSorting());
+		bBasicSignatureEClass.getESuperTypes().add(this.getBKindSignature());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(bDynamicSignatureEClass, BDynamicSignature.class, "BDynamicSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBDynamicSignature_BControls(), this.getBControl(), null, "bControls", null, 0, -1, BDynamicSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getBDynamicSignature_BControls().getEKeys().add(this.getBControl_Name());
 
 		initEClass(bControlEClass, BControl.class, "BControl", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBControl_Name(), ecorePackage.getEString(), "name", null, 0, 1, BControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBControl_Arity(), ecorePackage.getEInt(), "arity", null, 0, 1, BControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBControl_Status(), this.getBControlStatus(), "status", "ACTIVE", 1, 1, BControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBControl_BSig(), this.getBSorting(), this.getBSorting_BControls(), "bSig", null, 1, 1, BControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(bKindPlaceSortingsEClass, BKindPlaceSortings.class, "BKindPlaceSortings", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(bKindPlaceSortingEClass, BKindPlaceSorting.class, "BKindPlaceSorting", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBKindPlaceSorting_BPlaceSorting(), this.getBKindSignature(), this.getBKindSignature_BKindPlaceSorts(), "bPlaceSorting", null, 1, 1, BKindPlaceSorting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBKindPlaceSorting_BContainedBy(), this.getBKindPlaceSorting(), this.getBKindPlaceSorting_BCanContain(), "bContainedBy", null, 0, -1, BKindPlaceSorting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBKindPlaceSorting_BCanContain(), this.getBKindPlaceSorting(), this.getBKindPlaceSorting_BContainedBy(), "bCanContain", null, 0, -1, BKindPlaceSorting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bKindSortNonAtomicEClass, BKindSortNonAtomic.class, "BKindSortNonAtomic", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBKindSortNonAtomic_BKindSorts(), this.getBKindPlaceSortings(), null, "bKindSorts", null, 0, -1, BKindSortNonAtomic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bKindSignatureEClass, BKindSignature.class, "BKindSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBKindSignature_BKindPlaceSorts(), this.getBKindPlaceSortings(), null, "bKindPlaceSorts", null, 0, -1, BKindSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBKindSignature_BKindPlaceSorts(), this.getBKindPlaceSorting(), this.getBKindPlaceSorting_BPlaceSorting(), "bKindPlaceSorts", null, 1, -1, BKindSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bKindSortAtomicEClass, BKindSortAtomic.class, "BKindSortAtomic", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(bSortingEClass, BSorting.class, "BSorting", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBSorting_BControls(), this.getBControl(), this.getBControl_BSig(), "bControls", null, 0, -1, BSorting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bBasicSignatureEClass, BBasicSignature.class, "BBasicSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(bControlStatusEEnum, BControlStatus.class, "BControlStatus");

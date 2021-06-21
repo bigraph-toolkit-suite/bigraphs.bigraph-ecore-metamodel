@@ -12,21 +12,26 @@
       <genEnumLiterals ecoreEnumLiteral="signatureBaseModel.ecore#//BControlStatus/ATOMIC"/>
       <genEnumLiterals ecoreEnumLiteral="signatureBaseModel.ecore#//BControlStatus/PASSIVE"/>
     </genEnums>
-    <genClasses ecoreClass="signatureBaseModel.ecore#//BDynamicSignature">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BDynamicSignature/bControls"/>
-    </genClasses>
+    <genClasses ecoreClass="signatureBaseModel.ecore#//BDynamicSignature"/>
     <genClasses ecoreClass="signatureBaseModel.ecore#//BControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute signatureBaseModel.ecore#//BControl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute signatureBaseModel.ecore#//BControl/arity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute signatureBaseModel.ecore#//BControl/status"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BControl/bSig"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BKindPlaceSortings"/>
-    <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BKindSortNonAtomic">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindSortNonAtomic/bKindSorts"/>
+    <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BKindPlaceSorting">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindPlaceSorting/bPlaceSorting"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindPlaceSorting/bContainedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindPlaceSorting/bCanContain"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BKindSortNonAtomic"/>
     <genClasses ecoreClass="signatureBaseModel.ecore#//BKindSignature">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BKindSignature/bKindPlaceSorts"/>
     </genClasses>
     <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BKindSortAtomic"/>
+    <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BSorting">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference signatureBaseModel.ecore#//BSorting/bControls"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="signatureBaseModel.ecore#//BBasicSignature"/>
   </genPackages>
 </genmodel:GenModel>

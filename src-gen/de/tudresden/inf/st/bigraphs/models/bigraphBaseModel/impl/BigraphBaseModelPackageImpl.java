@@ -615,7 +615,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		initEClass(bSiteEClass, BSite.class, "BSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bPointEClass, BPoint.class, "BPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBPoint_BLink(), this.getBLink(), this.getBLink_BPoints(), "bLink", null, 1, 1, BPoint.class,
+		initEReference(getBPoint_BLink(), this.getBLink(), this.getBLink_BPoints(), "bLink", null, 0, 1, BPoint.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -35,7 +35,7 @@ public interface BPoint extends CDOObject {
 	 * @see #setBLink(BLink)
 	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage#getBPoint_BLink()
 	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BLink#getBPoints
-	 * @model opposite="bPoints" required="true"
+	 * @model opposite="bPoints"
 	 * @generated
 	 */
 	BLink getBLink();

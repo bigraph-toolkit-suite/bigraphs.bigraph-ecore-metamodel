@@ -7,8 +7,6 @@ import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModel
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>BKind Sort Atomic</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class BKindSortAtomicImpl extends MinimalEObjectImpl.Container implements BKindSortAtomic {
+public abstract class BKindSortAtomicImpl extends BKindPlaceSortingImpl implements BKindSortAtomic {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

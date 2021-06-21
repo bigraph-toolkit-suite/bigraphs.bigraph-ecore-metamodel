@@ -2,25 +2,25 @@
  */
 package de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl;
 
-import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BDynamicSignature;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BBasicSignature;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>BDynamic Signature</b></em>'.
+ * An implementation of the model object '<em><b>BBasic Signature</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class BDynamicSignatureImpl extends BKindSignatureImpl implements BDynamicSignature {
+public class BBasicSignatureImpl extends BKindSignatureImpl implements BBasicSignature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BDynamicSignatureImpl() {
+	protected BBasicSignatureImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class BDynamicSignatureImpl extends BKindSignatureImpl implements BDynami
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SignatureBaseModelPackage.Literals.BDYNAMIC_SIGNATURE;
+		return SignatureBaseModelPackage.Literals.BBASIC_SIGNATURE;
 	}
 
-} //BDynamicSignatureImpl
+} //BBasicSignatureImpl

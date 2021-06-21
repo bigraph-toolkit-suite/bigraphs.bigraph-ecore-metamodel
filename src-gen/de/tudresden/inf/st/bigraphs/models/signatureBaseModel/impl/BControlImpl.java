@@ -4,14 +4,19 @@ package de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl;
 
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControlStatus;
+import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSorting;
 import de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BControlImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BControlImpl#getArity <em>Arity</em>}</li>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BControlImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl.BControlImpl#getBSig <em>BSig</em>}</li>
  * </ul>
  *
  * @generated
@@ -183,6 +189,93 @@ public abstract class BControlImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public BSorting getBSig() {
+		if (eContainerFeatureID() != SignatureBaseModelPackage.BCONTROL__BSIG) return null;
+		return (BSorting)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBSig(BSorting newBSig, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newBSig, SignatureBaseModelPackage.BCONTROL__BSIG, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBSig(BSorting newBSig) {
+		if (newBSig != eInternalContainer() || (eContainerFeatureID() != SignatureBaseModelPackage.BCONTROL__BSIG && newBSig != null)) {
+			if (EcoreUtil.isAncestor(this, newBSig))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newBSig != null)
+				msgs = ((InternalEObject)newBSig).eInverseAdd(this, SignatureBaseModelPackage.BSORTING__BCONTROLS, BSorting.class, msgs);
+			msgs = basicSetBSig(newBSig, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SignatureBaseModelPackage.BCONTROL__BSIG, newBSig, newBSig));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetBSig((BSorting)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				return basicSetBSig(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				return eInternalContainer().eInverseRemove(this, SignatureBaseModelPackage.BSORTING__BCONTROLS, BSorting.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SignatureBaseModelPackage.BCONTROL__NAME:
@@ -191,6 +284,8 @@ public abstract class BControlImpl extends MinimalEObjectImpl.Container implemen
 				return getArity();
 			case SignatureBaseModelPackage.BCONTROL__STATUS:
 				return getStatus();
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				return getBSig();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,6 +306,9 @@ public abstract class BControlImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case SignatureBaseModelPackage.BCONTROL__STATUS:
 				setStatus((BControlStatus)newValue);
+				return;
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				setBSig((BSorting)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,6 +331,9 @@ public abstract class BControlImpl extends MinimalEObjectImpl.Container implemen
 			case SignatureBaseModelPackage.BCONTROL__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				setBSig((BSorting)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +352,8 @@ public abstract class BControlImpl extends MinimalEObjectImpl.Container implemen
 				return arity != ARITY_EDEFAULT;
 			case SignatureBaseModelPackage.BCONTROL__STATUS:
 				return status != STATUS_EDEFAULT;
+			case SignatureBaseModelPackage.BCONTROL__BSIG:
+				return getBSig() != null;
 		}
 		return super.eIsSet(featureID);
 	}

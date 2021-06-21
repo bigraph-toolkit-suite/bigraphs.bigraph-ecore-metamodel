@@ -40,6 +40,15 @@ public interface SignatureBaseModelFactory extends EFactory {
 	BKindSignature createBKindSignature();
 
 	/**
+	 * Returns a new object of class '<em>BBasic Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>BBasic Signature</em>'.
+	 * @generated
+	 */
+	BBasicSignature createBBasicSignature();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

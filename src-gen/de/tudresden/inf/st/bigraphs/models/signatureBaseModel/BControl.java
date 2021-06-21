@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl#getName <em>Name</em>}</li>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl#getArity <em>Arity</em>}</li>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl#getStatus <em>Status</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl#getBSig <em>BSig</em>}</li>
  * </ul>
  *
  * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage#getBControl()
@@ -92,5 +93,29 @@ public interface BControl extends EObject {
 	 * @generated
 	 */
 	void setStatus(BControlStatus value);
+
+	/**
+	 * Returns the value of the '<em><b>BSig</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSorting#getBControls <em>BControls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>BSig</em>' container reference.
+	 * @see #setBSig(BSorting)
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage#getBControl_BSig()
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BSorting#getBControls
+	 * @model opposite="bControls" required="true" transient="false"
+	 * @generated
+	 */
+	BSorting getBSig();
+
+	/**
+	 * Sets the value of the '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BControl#getBSig <em>BSig</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>BSig</em>' container reference.
+	 * @see #getBSig()
+	 * @generated
+	 */
+	void setBSig(BSorting value);
 
 } // BControl

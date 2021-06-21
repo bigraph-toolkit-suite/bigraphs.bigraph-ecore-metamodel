@@ -20,17 +20,19 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface BKindSignature extends BDynamicSignature {
+public interface BKindSignature extends BSorting {
 	/**
-	 * Returns the value of the '<em><b>BKind Place Sorts</b></em>' reference list.
-	 * The list contents are of type {@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSortings}.
+	 * Returns the value of the '<em><b>BKind Place Sorts</b></em>' containment reference list.
+	 * The list contents are of type {@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting}.
+	 * It is bidirectional and its opposite is '{@link de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting#getBPlaceSorting <em>BPlace Sorting</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>BKind Place Sorts</em>' reference list.
+	 * @return the value of the '<em>BKind Place Sorts</em>' containment reference list.
 	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage#getBKindSignature_BKindPlaceSorts()
-	 * @model
+	 * @see de.tudresden.inf.st.bigraphs.models.signatureBaseModel.BKindPlaceSorting#getBPlaceSorting
+	 * @model opposite="bPlaceSorting" containment="true" required="true"
 	 * @generated
 	 */
-	EList<BKindPlaceSortings> getBKindPlaceSorts();
+	EList<BKindPlaceSorting> getBKindPlaceSorts();
 
 } // BKindSignature

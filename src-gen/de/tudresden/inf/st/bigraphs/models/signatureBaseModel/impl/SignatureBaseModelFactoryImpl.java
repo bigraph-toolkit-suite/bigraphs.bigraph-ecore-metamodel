@@ -59,6 +59,7 @@ public class SignatureBaseModelFactoryImpl extends EFactoryImpl implements Signa
 		switch (eClass.getClassifierID()) {
 			case SignatureBaseModelPackage.BDYNAMIC_SIGNATURE: return createBDynamicSignature();
 			case SignatureBaseModelPackage.BKIND_SIGNATURE: return createBKindSignature();
+			case SignatureBaseModelPackage.BBASIC_SIGNATURE: return createBBasicSignature();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -114,6 +115,17 @@ public class SignatureBaseModelFactoryImpl extends EFactoryImpl implements Signa
 	public BKindSignature createBKindSignature() {
 		BKindSignatureImpl bKindSignature = new BKindSignatureImpl();
 		return bKindSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BBasicSignature createBBasicSignature() {
+		BBasicSignatureImpl bBasicSignature = new BBasicSignatureImpl();
+		return bBasicSignature;
 	}
 
 	/**

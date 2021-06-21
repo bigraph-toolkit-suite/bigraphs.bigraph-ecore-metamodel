@@ -69,6 +69,8 @@ public class SignatureBaseModelSwitch<T> extends Switch<T> {
 			case SignatureBaseModelPackage.BDYNAMIC_SIGNATURE: {
 				BDynamicSignature bDynamicSignature = (BDynamicSignature)theEObject;
 				T result = caseBDynamicSignature(bDynamicSignature);
+				if (result == null) result = caseBKindSignature(bDynamicSignature);
+				if (result == null) result = caseBSorting(bDynamicSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -78,30 +80,44 @@ public class SignatureBaseModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SignatureBaseModelPackage.BKIND_PLACE_SORTINGS: {
-				BKindPlaceSortings bKindPlaceSortings = (BKindPlaceSortings)theEObject;
-				T result = caseBKindPlaceSortings(bKindPlaceSortings);
+			case SignatureBaseModelPackage.BKIND_PLACE_SORTING: {
+				BKindPlaceSorting bKindPlaceSorting = (BKindPlaceSorting)theEObject;
+				T result = caseBKindPlaceSorting(bKindPlaceSorting);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SignatureBaseModelPackage.BKIND_SORT_NON_ATOMIC: {
 				BKindSortNonAtomic bKindSortNonAtomic = (BKindSortNonAtomic)theEObject;
 				T result = caseBKindSortNonAtomic(bKindSortNonAtomic);
-				if (result == null) result = caseBKindPlaceSortings(bKindSortNonAtomic);
+				if (result == null) result = caseBKindPlaceSorting(bKindSortNonAtomic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SignatureBaseModelPackage.BKIND_SIGNATURE: {
 				BKindSignature bKindSignature = (BKindSignature)theEObject;
 				T result = caseBKindSignature(bKindSignature);
-				if (result == null) result = caseBDynamicSignature(bKindSignature);
+				if (result == null) result = caseBSorting(bKindSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SignatureBaseModelPackage.BKIND_SORT_ATOMIC: {
 				BKindSortAtomic bKindSortAtomic = (BKindSortAtomic)theEObject;
 				T result = caseBKindSortAtomic(bKindSortAtomic);
-				if (result == null) result = caseBKindPlaceSortings(bKindSortAtomic);
+				if (result == null) result = caseBKindPlaceSorting(bKindSortAtomic);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SignatureBaseModelPackage.BSORTING: {
+				BSorting bSorting = (BSorting)theEObject;
+				T result = caseBSorting(bSorting);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SignatureBaseModelPackage.BBASIC_SIGNATURE: {
+				BBasicSignature bBasicSignature = (BBasicSignature)theEObject;
+				T result = caseBBasicSignature(bBasicSignature);
+				if (result == null) result = caseBKindSignature(bBasicSignature);
+				if (result == null) result = caseBSorting(bBasicSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,17 +156,17 @@ public class SignatureBaseModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>BKind Place Sortings</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>BKind Place Sorting</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>BKind Place Sortings</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>BKind Place Sorting</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBKindPlaceSortings(BKindPlaceSortings object) {
+	public T caseBKindPlaceSorting(BKindPlaceSorting object) {
 		return null;
 	}
 
@@ -196,6 +212,36 @@ public class SignatureBaseModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBKindSortAtomic(BKindSortAtomic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>BSorting</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>BSorting</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBSorting(BSorting object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>BBasic Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>BBasic Signature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBBasicSignature(BBasicSignature object) {
 		return null;
 	}
 
