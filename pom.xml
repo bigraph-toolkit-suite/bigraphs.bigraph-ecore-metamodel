@@ -16,6 +16,7 @@
         <emf.ecore.version>2.25.0</emf.ecore.version>
         <emf.ecore.xmi.version>2.16.0</emf.ecore.xmi.version>
         <emf.common.version>2.23.0</emf.common.version>
+        <emf.net4j.util.version>3.21.0.v20221123-1721</emf.net4j.util.version>
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
         <emf.cdo.version>4.20.0-SNAPSHOT</emf.cdo.version><!--4.20.0.v20221124-1637-->
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
@@ -226,11 +227,11 @@
 <!--            <artifactId>org.eclipse.net4j</artifactId>-->
 <!--            <version>4.10.1-SNAPSHOT</version>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.net4j.util</groupId>-->
-<!--            <artifactId>org.eclipse.net4j.util</artifactId>-->
-<!--            <version>3.12.0.v20200901-0616</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.eclipse.net4j.util</groupId>
+            <artifactId>org.eclipse.net4j.util</artifactId>
+            <version>${emf.net4j.util.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.ecore</artifactId>

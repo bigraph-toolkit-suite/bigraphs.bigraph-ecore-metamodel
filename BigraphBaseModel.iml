@@ -23,6 +23,7 @@
     <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
     <orderEntry type="library" name="Maven: org.eclipse.emf.cdo:org.eclipse.emf.cdo:4.20.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.emf.cdo:org.eclipse.emf.cdo.common:4.20.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.net4j.util:org.eclipse.net4j.util:3.21.0.v20221123-1721" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore:2.25.0" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.16.0" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.emf:org.eclipse.emf.common:2.23.0" level="project" />
