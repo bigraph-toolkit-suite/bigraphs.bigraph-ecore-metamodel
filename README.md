@@ -113,7 +113,7 @@ Execute the following goals to deploy the Java artifacts to the [Artifactory of 
 $ mvn clean deploy
 
 # Define the Artifactory details by providing the resp. properties
-$ mvn deploy -Dusername=username -Dpassword=password
+$ mvn -DskipTests deploy -Dusername=dominik.grzelak@tu-dresden.de -Dpassword=password
 ```
 
 
