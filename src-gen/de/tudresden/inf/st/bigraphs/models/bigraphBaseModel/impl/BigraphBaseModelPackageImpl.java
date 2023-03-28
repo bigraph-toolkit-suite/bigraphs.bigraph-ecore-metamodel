@@ -646,7 +646,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				1, 1, BOuterName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nameableTypeEClass, NameableType.class, "NameableType", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(nameableTypeEClass, NameableType.class, "NameableType", IS_ABSTRACT, IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNameableType_Name(), ecorePackage.getEString(), "name", null, 0, 1, NameableType.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
