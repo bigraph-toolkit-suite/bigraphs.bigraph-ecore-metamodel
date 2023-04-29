@@ -4,6 +4,7 @@ package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.util;
 
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.*;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -129,6 +130,11 @@ public class BigraphBaseModelAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseBBigraph(BBigraph object) {
 			return createBBigraphAdapter();
+		}
+
+		@Override
+		public Adapter caseEStringToEJavaObjectMap(Map.Entry<String, Object> object) {
+			return createEStringToEJavaObjectMapAdapter();
 		}
 
 		@Override
@@ -329,6 +335,20 @@ public class BigraphBaseModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBBigraphAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>EString To EJava Object Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createEStringToEJavaObjectMapAdapter() {
 		return null;
 	}
 

@@ -4,6 +4,7 @@ package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.util;
 
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.*;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -183,6 +184,14 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 		case BigraphBaseModelPackage.BBIGRAPH: {
 			BBigraph bBigraph = (BBigraph) theEObject;
 			T result = caseBBigraph(bBigraph);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BigraphBaseModelPackage.ESTRING_TO_EJAVA_OBJECT_MAP: {
+			@SuppressWarnings("unchecked")
+			Map.Entry<String, Object> eStringToEJavaObjectMap = (Map.Entry<String, Object>) theEObject;
+			T result = caseEStringToEJavaObjectMap(eStringToEJavaObjectMap);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -384,6 +393,21 @@ public class BigraphBaseModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBBigraph(BBigraph object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EString To EJava Object Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EString To EJava Object Map</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEStringToEJavaObjectMap(Map.Entry<String, Object> object) {
 		return null;
 	}
 

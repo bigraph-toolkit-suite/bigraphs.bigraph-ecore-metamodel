@@ -4,6 +4,7 @@ package de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl;
 
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.*;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -72,6 +73,8 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 			return (EObject) createBOuterName();
 		case BigraphBaseModelPackage.BBIGRAPH:
 			return (EObject) createBBigraph();
+		case BigraphBaseModelPackage.ESTRING_TO_EJAVA_OBJECT_MAP:
+			return (EObject) createEStringToEJavaObjectMap();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -163,6 +166,16 @@ public class BigraphBaseModelFactoryImpl extends EFactoryImpl implements Bigraph
 	public BBigraph createBBigraph() {
 		BBigraphImpl bBigraph = new BBigraphImpl();
 		return bBigraph;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<String, Object> createEStringToEJavaObjectMap() {
+		EStringToEJavaObjectMapImpl eStringToEJavaObjectMap = new EStringToEJavaObjectMapImpl();
+		return eStringToEJavaObjectMap;
 	}
 
 	/**

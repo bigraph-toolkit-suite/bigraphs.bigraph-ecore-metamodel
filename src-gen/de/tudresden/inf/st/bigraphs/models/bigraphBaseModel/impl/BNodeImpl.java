@@ -6,9 +6,9 @@ import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPort;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType;
-
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  * <ul>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BNodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BNodeImpl#getBPorts <em>BPorts</em>}</li>
+ *   <li>{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BNodeImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +75,17 @@ public class BNodeImpl extends BPlaceImpl implements BNode {
 	@Override
 	public EList<BPort> getBPorts() {
 		return (EList<BPort>) eGet(BigraphBaseModelPackage.Literals.BNODE__BPORTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EMap<String, Object> getAttributes() {
+		return (EMap<String, Object>) eGet(BigraphBaseModelPackage.Literals.BNODE__ATTRIBUTES, true);
 	}
 
 	/**

@@ -18,6 +18,7 @@ import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPack
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.IndexableType;
 import de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.NameableType;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -122,6 +123,13 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * @generated
 	 */
 	private EClass bBigraphEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eStringToEJavaObjectMapEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -255,6 +263,16 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	@Override
 	public EReference getBNode_BPorts() {
 		return (EReference) bNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBNode_Attributes() {
+		return (EReference) bNodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -483,6 +501,36 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * @generated
 	 */
 	@Override
+	public EClass getEStringToEJavaObjectMap() {
+		return eStringToEJavaObjectMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEStringToEJavaObjectMap_Key() {
+		return (EAttribute) eStringToEJavaObjectMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEStringToEJavaObjectMap_Value() {
+		return (EAttribute) eStringToEJavaObjectMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public BigraphBaseModelFactory getBigraphBaseModelFactory() {
 		return (BigraphBaseModelFactory) getEFactoryInstance();
 	}
@@ -516,6 +564,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 
 		bNodeEClass = createEClass(BNODE);
 		createEReference(bNodeEClass, BNODE__BPORTS);
+		createEReference(bNodeEClass, BNODE__ATTRIBUTES);
 
 		bSiteEClass = createEClass(BSITE);
 
@@ -548,6 +597,10 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bBigraphEClass, BBIGRAPH__BEDGES);
 		createEReference(bBigraphEClass, BBIGRAPH__BINNER_NAMES);
 		createEReference(bBigraphEClass, BBIGRAPH__BOUTER_NAMES);
+
+		eStringToEJavaObjectMapEClass = createEClass(ESTRING_TO_EJAVA_OBJECT_MAP);
+		createEAttribute(eStringToEJavaObjectMapEClass, ESTRING_TO_EJAVA_OBJECT_MAP__KEY);
+		createEAttribute(eStringToEJavaObjectMapEClass, ESTRING_TO_EJAVA_OBJECT_MAP__VALUE);
 	}
 
 	/**
@@ -611,6 +664,9 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		initEReference(getBNode_BPorts(), this.getBPort(), this.getBPort_BNode(), "bPorts", null, 0, -1, BNode.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBNode_Attributes(), this.getEStringToEJavaObjectMap(), null, "attributes", null, 0, -1,
+				BNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bSiteEClass, BSite.class, "BSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -670,6 +726,14 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		initEReference(getBBigraph_BOuterNames(), this.getBOuterName(), this.getBOuterName_BBigraph(), "bOuterNames",
 				null, 0, -1, BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eStringToEJavaObjectMapEClass, Map.Entry.class, "EStringToEJavaObjectMap", !IS_ABSTRACT,
+				!IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEStringToEJavaObjectMap_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEStringToEJavaObjectMap_Value(), ecorePackage.getEJavaObject(), "value", null, 0, 1,
+				Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

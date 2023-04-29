@@ -214,13 +214,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BNODE__BPORTS = BPLACE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BNODE__ATTRIBUTES = BPLACE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>BNode</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BNODE_FEATURE_COUNT = BPLACE_FEATURE_COUNT + 2;
+	int BNODE_FEATURE_COUNT = BPLACE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>BNode</em>' class.
@@ -728,6 +737,52 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BBIGRAPH_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.EStringToEJavaObjectMapImpl <em>EString To EJava Object Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.EStringToEJavaObjectMapImpl
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getEStringToEJavaObjectMap()
+	 * @generated
+	 */
+	int ESTRING_TO_EJAVA_OBJECT_MAP = 13;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRING_TO_EJAVA_OBJECT_MAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRING_TO_EJAVA_OBJECT_MAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>EString To EJava Object Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRING_TO_EJAVA_OBJECT_MAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>EString To EJava Object Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ESTRING_TO_EJAVA_OBJECT_MAP_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BPlace <em>BPlace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -800,6 +855,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBNode_BPorts();
+
+	/**
+	 * Returns the meta object for the map '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Attributes</em>'.
+	 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BNode#getAttributes()
+	 * @see #getBNode()
+	 * @generated
+	 */
+	EReference getBNode_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BSite <em>BSite</em>}'.
@@ -1034,6 +1100,40 @@ public interface BigraphBaseModelPackage extends EPackage {
 	EReference getBBigraph_BOuterNames();
 
 	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>EString To EJava Object Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EString To EJava Object Map</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyId="true" keyDataType="org.eclipse.emf.ecore.EString"
+	 *        valueDataType="org.eclipse.emf.ecore.EJavaObject"
+	 * @generated
+	 */
+	EClass getEStringToEJavaObjectMap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getEStringToEJavaObjectMap()
+	 * @generated
+	 */
+	EAttribute getEStringToEJavaObjectMap_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getEStringToEJavaObjectMap()
+	 * @generated
+	 */
+	EAttribute getEStringToEJavaObjectMap_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1117,6 +1217,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BNODE__BPORTS = eINSTANCE.getBNode_BPorts();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BNODE__ATTRIBUTES = eINSTANCE.getBNode_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BSiteImpl <em>BSite</em>}' class.
@@ -1313,6 +1421,32 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BBIGRAPH__BOUTER_NAMES = eINSTANCE.getBBigraph_BOuterNames();
+
+		/**
+		 * The meta object literal for the '{@link de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.EStringToEJavaObjectMapImpl <em>EString To EJava Object Map</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.EStringToEJavaObjectMapImpl
+		 * @see de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl.BigraphBaseModelPackageImpl#getEStringToEJavaObjectMap()
+		 * @generated
+		 */
+		EClass ESTRING_TO_EJAVA_OBJECT_MAP = eINSTANCE.getEStringToEJavaObjectMap();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRING_TO_EJAVA_OBJECT_MAP__KEY = eINSTANCE.getEStringToEJavaObjectMap_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ESTRING_TO_EJAVA_OBJECT_MAP__VALUE = eINSTANCE.getEStringToEJavaObjectMap_Value();
 
 	}
 
