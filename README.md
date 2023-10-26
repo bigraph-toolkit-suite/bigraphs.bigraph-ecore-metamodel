@@ -15,8 +15,9 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 
 ----
 
-| Version       | Notice                                                                                               | 
-|---------------|------------------------------------------------------------------------------------------------------|
+| Version      | Notice                                                                                               | 
+|--------------|------------------------------------------------------------------------------------------------------|
+| 1.6.0 | *Release*                                                                                            |
 | 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
 | 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                        |
 | 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
