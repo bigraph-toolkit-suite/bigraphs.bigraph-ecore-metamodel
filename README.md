@@ -117,7 +117,7 @@ To use the signature and bigraph Ecore metamodels in any Maven-based Java projec
   <version>${version}</version>
 </dependency>
 
-<!-- The related EMF dependencies should be provided as well -->
+<!-- The related EMF dependencies should be provided as well to work with Ecore -->
 <dependency>
     <groupId>org.eclipse.emf</groupId>
     <artifactId>org.eclipse.emf.ecore</artifactId>
@@ -139,6 +139,17 @@ To use the signature and bigraph Ecore metamodels in any Maven-based Java projec
 ```
 
 The artifacts are deployed to Maven Central.
+
+If you want to use SNAPSHOT releases, please configure the following repository in your `pom.xml`:
+```xml
+<repository>
+    <snapshots>
+        <enabled>true</enabled>
+    </snapshots>
+    <id>ossrh</id>
+    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+</repository>
+```
 
 ## Changes Made to the Original Specification
 
