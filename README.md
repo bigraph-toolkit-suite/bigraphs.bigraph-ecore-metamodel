@@ -186,7 +186,7 @@ with the regular `mvn` command.
 The recommendation here is to build it with the regular `mvn` command.
 You will need [Maven v3.6.3 or above](https://maven.apache.org/install.html).
 
-> **Note:** The required version of Maven is 3.6.3 in combination with Java 11, and Maven 3.8.3 with Java 17.
+> **Note:** The required version of Maven is 3.6.3 in combination with Java 11, and Maven >3.8.3 with Java 17.
 > This project uses Java 17.
 
 #### Initialize
@@ -234,13 +234,15 @@ Execute the following goals to deploy a SNAPSHOT release of the Java artifact to
 
 ```bash
 # Use the default settings.xml located at ~/.m2/
-$ mvn clean deploy
+mvn clean deploy
+# mvn clean deploy -P ossrh
 ```
 
 To perform a release deployment execute:
 ```shell
 mvn versions:set -DnewVersion=<VERSION>
 mvn clean deploy -P release
+# mvn clean deploy -P release -P ossrh
 ```
 
 ## References
