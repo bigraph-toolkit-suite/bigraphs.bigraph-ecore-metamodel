@@ -9,48 +9,17 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated bigraphBaseModel -->
       <package
-            uri="http://de.tudresden.inf.st.bigraphs.models"
-            class="de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.BigraphBaseModelPackage"
+            uri="http://org.bigraphs.model"
+            class="org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage"
             genModel="model/bigraphBaseModel.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated bigraphBaseModelOverSampleSignature -->
-      <package
-            uri="http://www.example.org/"
-            class="baseModelOverSampleSig.BaseModelOverSampleSigPackage"
-            genModel="model/bigraphBaseModelOverSampleSignature.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated bigraphOverSampleSig -->
-      <package
-            uri="http://de.tudresden.inf.st.bigraphs.models.sample"
-            class="de.tudresden.inf.st.bigraphs.models.baseModelOverSampleSig.BaseModelOverSampleSigPackage"
-            genModel="model/bigraphOverSampleSig.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated bigraphBaseModelOverSampleSignature -->
-      <package
-            uri="http://de.tudresden.inf.st.bigraphs.models"
-            class="bigraphBaseModel.BigraphBaseModelPackage"
-            genModel="model/bigraphBaseModelOverSampleSignature.genmodel"/>
-   </extension>
-   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated signatureBaseModel -->
       <package
-            uri="http://de.tudresden.inf.st.bigraphs.signature"
-            class="de.tudresden.inf.st.bigraphs.models.signatureBaseModel.SignatureBaseModelPackage"
+            uri="http://org.bigraphs.model"
+            class="org.bigraphs.model.signatureBaseModel.SignatureBaseModelPackage"
             genModel="model/signatureBaseModel.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated kindSignatureBaseModel -->
-      <package
-            uri="http://de.tudresden.inf.st.bigraphs.sortings"
-            class="de.tudresden.inf.st.bigraphs.models.kindSignatureBaseModel.KindSignatureBaseModelPackage"
-            genModel="model/kindSignatureBaseModel.genmodel"/>
    </extension>
 
 </plugin>

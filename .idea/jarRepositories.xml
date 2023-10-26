@@ -7,14 +7,14 @@
       <option name="url" value="http://download.eclipse.org//releases/photon/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="centraljfrog" />
-      <option name="name" value="st-tu-dresden-release" />
-      <option name="url" value="https://stgroup.jfrog.io/artifactory/st-tu-dresden-release" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="centraljfrog" />
+      <option name="name" value="st-tu-dresden-release" />
+      <option name="url" value="https://stgroup.jfrog.io/artifactory/st-tu-dresden-release" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="TMF Repo" />

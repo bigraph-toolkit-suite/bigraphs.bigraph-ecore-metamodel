@@ -8,12 +8,15 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.tudresden.inf.st.bigraphs.models.bigraphBaseModel,
- de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.impl,
- de.tudresden.inf.st.bigraphs.models.bigraphBaseModel.util,
- de.tudresden.inf.st.bigraphs.models.signatureBaseModel,
- de.tudresden.inf.st.bigraphs.models.signatureBaseModel.impl,
- de.tudresden.inf.st.bigraphs.models.signatureBaseModel.util
+Export-Package: org.bigraphs.model.bigraph.bigraphBaseModel,
+ org.bigraphs.model.bigraph.bigraphBaseModel.impl,
+ org.bigraphs.model.bigraph.bigraphBaseModel.util,
+ org.bigraphs.model.bigraphBaseModel,
+ org.bigraphs.model.bigraphBaseModel.impl,
+ org.bigraphs.model.bigraphBaseModel.util,
+ org.bigraphs.model.signatureBaseModel,
+ org.bigraphs.model.signatureBaseModel.impl,
+ org.bigraphs.model.signatureBaseModel.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  BigraphBaseModel;visibility:=reexport,
  org.eclipse.emf.cdo;visibility:=reexport,

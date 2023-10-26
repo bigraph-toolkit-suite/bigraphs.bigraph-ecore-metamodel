@@ -3,16 +3,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.tudresden.inf.st.bigraphs.model</groupId>
+    <groupId>org.bigraphs.model</groupId>
     <artifactId>bigraph-ecore-model</artifactId>
-    <version>1.5.0-SNAPSHOT</version>
+    <version>1.6.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Bigraph Ecore Metamodel</name>
-    <description>EMOF-compliant Metamodel for Bigraphical Objects based on Ecore</description>
+    <description>
+        An EMOF-compliant metamodel based on Ecore for creating bigraphs in Java graphically with Eclipse, or via the
+        generated API.
+    </description>
+    <url>https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <emf.ecore.version>2.25.0</emf.ecore.version>
         <emf.ecore.xmi.version>2.16.0</emf.ecore.xmi.version>
         <emf.common.version>2.23.0</emf.common.version>
@@ -21,7 +35,7 @@
         <emf.cdo.version>4.20.0-SNAPSHOT</emf.cdo.version><!--4.20.0.v20221124-1637-->
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
         <emf.cdo.common.version>4.20.0-SNAPSHOT</emf.cdo.common.version><!--4.20.0.v20221106-0628-->
-        <junit.version>5.4.0</junit.version>
+        <junit.version>5.10.0</junit.version>
     </properties>
 
     <developers>
@@ -39,54 +53,22 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://git-st.inf.tu-dresden.de/bigraphs/ecore-bigraph-meta-model.git</connection>
-        <developerConnection>scm:git@git-st.inf.tu-dresden.de:bigraphs/ecore-bigraph-meta-model.git
+        <connection>scm:git:https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel.git</connection>
+        <developerConnection>scm:git@github.com:bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel.git
         </developerConnection>
-        <url>https://git-st.inf.tu-dresden.de/bigraphs/ecore-bigraph-meta-model</url>
+        <url>https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel</url>
         <tag>HEAD</tag>
     </scm>
 
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>STFactory</id>
-            <name>st-tu-dresden-artifactory</name>
-            <url>https://stgroup.jfrog.io/artifactory/st-tu-dresden-maven-repository/</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray</name>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray-plugins</name>
-            <url>https://jcenter.bintray.com</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>STFactory-releases</name>
-            <url>https://stgroup.jfrog.io/artifactory/st-tu-dresden-maven-repository</url>
-        </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <name>STFactory-snapshots</name>
-            <url>https://stgroup.jfrog.io/artifactory/st-tu-dresden-maven-repository</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 
     <build>
@@ -96,27 +78,120 @@
                 <targetPath>model</targetPath>
             </resource>
         </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.1.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.12.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.4.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.5.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.1.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.4.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.13</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                        <!-- With the property autoReleaseAfterClose set to false you can manually inspect the staging
+                        repository in the Nexus Repository Manager and trigger a release of the staging repository
+                        later with mvn nexus-staging:release If you find something went wrong you can drop the staging
+                        repository with mvn nexus-staging:drop -->
+                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
                 <configuration>
                     <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                    <failOnError>false</failOnError>
                 </configuration>
                 <executions>
                     <execution>
@@ -130,12 +205,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <!--                            <goal>jar</goal>-->
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -143,7 +218,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -159,51 +233,159 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.jfrog.buildinfo</groupId>
-                <artifactId>artifactory-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <inherited>false</inherited>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+            </plugin>
+            <!-- Package some dependencies that are not available in the Maven Central Repository -->
+            <!-- Those that were specified in the maven-install-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>build-info</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>publish</goal>
+                            <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <deployProperties>
-                                <groupId>${project.groupId}</groupId>
-                                <artifactId>${project.artifactId}</artifactId>
-                                <version>${project.version}</version>
-                            </deployProperties>
-                            <artifactory>
-                                <includeEnvVars>true</includeEnvVars>
-                                <envVarsExcludePatterns>*password*,*secret*,*key*,*token*,*passphrase*
-                                </envVarsExcludePatterns>
-                                <timeoutSec>60</timeoutSec>
-                            </artifactory>
-                            <publisher>
-                                <contextUrl>https://stgroup.jfrog.io/artifactory/</contextUrl>
-                                <!--suppress UnresolvedMavenProperty -->
-                                <username>${username}</username>
-                                <!--suppress UnresolvedMavenProperty -->
-                                <password>${password}</password>
-                                <excludePatterns>*-tests.jar</excludePatterns>
-                                <!-- Name of local repository in Artifactory @ stgroup.jfrog.io/ -->
-                                <repoKey>st-tu-dresden-maven-repository</repoKey>
-                                <snapshotRepoKey>st-tu-dresden-maven-repository</snapshotRepoKey>
-                            </publisher>
-                            <buildInfo>
-                                <buildName>bigraph-metamodel-builds</buildName>
-                                <!--suppress UnresolvedMavenProperty -->
-                                <!-- <buildNumber>${buildnumber}</buildNumber>-->
-                                <!-- <buildUrl>http://build-url.org</buildUrl>-->
-                            </buildInfo>
+                            <!--                            <minimizeJar>true</minimizeJar>-->
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <filters>
+                                <filter>
+                                    <artifact>org.eclipse.emf.cdo:org.eclipse.emf.cdo</artifact>
+                                    <includes>
+                                        <include>META-INF/**</include>
+                                        <include>org/**</include>
+                                        <include>schema/**</include>
+                                    </includes>
+                                </filter>
+                                <filter>
+                                    <artifact>org.eclipse.emf.cdo:org.eclipse.emf.cdo.common</artifact>
+                                    <includes>
+                                        <include>META-INF/**</include>
+                                        <include>org/**</include>
+                                        <include>schema/**</include>
+                                    </includes>
+                                </filter>
+                                <filter>
+                                    <artifact>org.eclipse.emf.cdo:org.eclipse.net4j.util</artifact>
+                                    <includes>
+                                        <include>META-INF/**</include>
+                                        <include>org/**</include>
+                                        <include>schema/**</include>
+                                    </includes>
+                                </filter>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install-libs-cdo</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.basedir}/libs/org.eclipse.emf.cdo_4.20.0.v20221124-1637.jar</file>
+                            <groupId>org.eclipse.emf.cdo</groupId>
+                            <artifactId>org.eclipse.emf.cdo</artifactId>
+                            <version>${emf.cdo.version}</version>
+                            <generatePom>true</generatePom>
+                            <packaging>jar</packaging>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-libs-cdo-common</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.basedir}/libs/org.eclipse.emf.cdo.common_4.20.0.v20221106-0628.jar</file>
+                            <groupId>org.eclipse.emf.cdo</groupId>
+                            <artifactId>org.eclipse.emf.cdo.common</artifactId>
+                            <version>${emf.cdo.common.version}</version>
+                            <generatePom>true</generatePom>
+                            <packaging>jar</packaging>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-libs-net4j</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.basedir}/libs/org.eclipse.net4j.util_3.21.0.v20221123-1721.jar</file>
+                            <groupId>org.eclipse.emf.cdo</groupId>
+                            <artifactId>org.eclipse.net4j.util</artifactId>
+                            <version>${emf.net4j.util.version}</version>
+                            <generatePom>true</generatePom>
+                            <packaging>jar</packaging>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+<!--            <activation>-->
+<!--                <property>-->
+<!--                    <name>performRelease</name>-->
+<!--                    <value>true</value>-->
+<!--                </property>-->
+<!--            </activation>-->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>0x153DD2CF</keyname>
+                                    <passphraseServerId>0x153DD2CF</passphraseServerId>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
         <!-- EMF/CDO -->
@@ -217,16 +399,6 @@
             <artifactId>org.eclipse.emf.cdo.common</artifactId>
             <version>${emf.cdo.common.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.emf.cdo.net4j</groupId>-->
-<!--            <artifactId>org.eclipse.emf.cdo.net4j</artifactId>-->
-<!--            <version>4.3.1.v20200825-1015</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.emf.cdo</groupId>-->
-<!--            <artifactId>org.eclipse.net4j</artifactId>-->
-<!--            <version>4.10.1-SNAPSHOT</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.eclipse.emf.cdo</groupId>
             <artifactId>org.eclipse.net4j.util</artifactId>
