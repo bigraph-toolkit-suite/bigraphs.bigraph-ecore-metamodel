@@ -3,7 +3,7 @@
 # Bigraph Ecore Metamodel (BEM): An EMOF-Compliant Specification for Bigraphs
 
 <small>
-(If you are looking just for the specification, visit the <a href="https://doi.org/10.5281/zenodo.10043063">digital repository on Zenodo</a>.)
+(If you are looking just for the specification, visit the <a href="https://zenodo.org/doi/10.5281/zenodo.10043062">digital repository on Zenodo</a>.)
 </small>
 
 The present project serves as a reference implementation of the abstract syntax specification for bigraphs, 
@@ -247,18 +247,12 @@ mvn clean deploy -P release
 
 ## References
 
-[1] _Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2._
-
-[2] Grzelak, D: "Model-oriented Programming with Bigraphical
-Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023. (Submitted)
-
-[3] _Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0_
-
-[4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
-
-[5] _Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5_
-
-[6] https://eclipsesource.com/blogs/tutorials/emf-tutorial/
+- [1] Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2.
+- [2] Grzelak, D: "Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023. (Submitted)
+- [3] Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0
+- [4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
+- [5] Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5
+- [6] [https://eclipsesource.com/blogs/tutorials/emf-tutorial/](https://eclipsesource.com/blogs/tutorials/emf-tutorial/)
 
 
 ## License
