@@ -3,7 +3,7 @@
 # Bigraph Ecore Metamodel (BEM): An EMOF-Compliant Specification for Bigraphs
 
 <small>
-(If you are looking just for the specification, visit the <a href="https://doi.org/10.5281/zenodo.10043063">digital repository on Zenodo</a>.)
+(If you are looking just for the specification, visit the <a href="https://zenodo.org/doi/10.5281/zenodo.10043062">digital repository on Zenodo</a>.)
 </small>
 
 The present project serves as a reference implementation of the abstract syntax specification for bigraphs, 
