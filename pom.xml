@@ -249,7 +249,7 @@
                         </goals>
                         <configuration>
                             <!--                            <minimizeJar>true</minimizeJar>-->
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <createDependencyReducedPom>true</createDependencyReducedPom>
                             <filters>
                                 <filter>
                                     <artifact>org.eclipse.emf.cdo:org.eclipse.emf.cdo</artifact>
@@ -393,11 +393,13 @@
             <groupId>org.eclipse.emf.cdo</groupId>
             <artifactId>org.eclipse.emf.cdo</artifactId>
             <version>${emf.cdo.version}</version>
+<!--            <scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.eclipse.emf.cdo</groupId>
             <artifactId>org.eclipse.emf.cdo.common</artifactId>
             <version>${emf.cdo.common.version}</version>
+<!--            <scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.eclipse.emf.cdo</groupId>
