@@ -17,7 +17,7 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 
 | Version        | Notice                                                                                               | 
 |----------------|------------------------------------------------------------------------------------------------------|
-| 1.6.1          | *SNAPSHOT* dependency fix                                                                            |
+| 1.6.1-SNAPSHOT | *SNAPSHOT* Dependency fix                                                                            |
 | 1.6.0          | *Release*                                                                                            |
 | 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
 | 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                        |
