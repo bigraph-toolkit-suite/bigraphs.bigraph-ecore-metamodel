@@ -15,9 +15,10 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 
 ----
 
-| Version      | Notice                                                                                               | 
-|--------------|------------------------------------------------------------------------------------------------------|
-| 1.6.0 | *Release*                                                                                            |
+| Version        | Notice                                                                                               | 
+|----------------|------------------------------------------------------------------------------------------------------|
+| 1.6.1-SNAPSHOT | *SNAPSHOT* Dependency fix                                                                            |
+| 1.6.0          | *Release*                                                                                            |
 | 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
 | 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                        |
 | 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
@@ -247,18 +248,12 @@ mvn clean deploy -P release
 
 ## References
 
-[1] _Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2._
-
-[2] Grzelak, D: "Model-oriented Programming with Bigraphical
-Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023. (Submitted)
-
-[3] _Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0_
-
-[4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
-
-[5] _Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5_
-
-[6] https://eclipsesource.com/blogs/tutorials/emf-tutorial/
+- [1] Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2.
+- [2] Grzelak, D: "Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023. (Submitted)
+- [3] Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0
+- [4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
+- [5] Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5
+- [6] [https://eclipsesource.com/blogs/tutorials/emf-tutorial/](https://eclipsesource.com/blogs/tutorials/emf-tutorial/)
 
 
 ## License
