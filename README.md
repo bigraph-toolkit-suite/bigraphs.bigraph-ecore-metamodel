@@ -17,6 +17,7 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 
 | Version        | Notice                                                                                               | 
 |----------------|------------------------------------------------------------------------------------------------------|
+| 1.6.1          | *Release*                                                                                            |
 | 1.6.1-SNAPSHOT | *SNAPSHOT* Dependency fix                                                                            |
 | 1.6.0          | *Release*                                                                                            |
 | 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
@@ -190,7 +191,7 @@ You will need [Maven v3.6.3 or above](https://maven.apache.org/install.html).
 > **Note:** The required version of Maven is 3.6.3 in combination with Java 11, and Maven >3.8.3 with Java 17.
 > This project uses Java 17.
 
-#### Initialize
+### Initialize
 
 First, checkout the `main` branch of this project:
 
@@ -203,13 +204,13 @@ The following command has to be run once:
 mvn initialize
 ```
 It installs some dependencies located in the `./libs/` folder of this project in your local Maven repository, which is usually located at `~/.m2/`.
-These are required for the development.
+These are required for the development and build process.
 
 ### Building from Source
 
 Execute the following goals to run the build:
-```bash
-$ mvn clean install
+```shell
+mvn clean install
 ```
 The `*.jar` can be found inside the `./target/` folder of this project.
 The dependency will be also installed in the local Maven repository and 
@@ -231,13 +232,17 @@ and the GPG credentials being available e.g. from `settings.xml`.
 
 More information can be found [here](https://central.sonatype.org/publish/requirements/gpg/).
 
+**Snapshot Deployment**
+
 Execute the following goals to deploy a SNAPSHOT release of the Java artifact to the snapshot repository:
 
-```bash
+```shell
 # Use the default settings.xml located at ~/.m2/
 mvn clean deploy
 # mvn clean deploy -P ossrh
 ```
+
+**Release Deployment**
 
 To perform a release deployment execute:
 ```shell
