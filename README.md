@@ -13,6 +13,8 @@ This implementation is achieved by utilizing the Ecore modeling language provide
 This EMOF-compliant specification aligns with [[1]](#References), but it is subject to minor modifications as suggested in [[2]](#References).
 Refer also to section ["Changes Made to the Original Specification"](#Changes-Made-to-the-Original-Specification) for a brief overview.
 
+[How to Cite this Artifact](#How-to-Cite-this-Artifact)
+
 ----
 
 | Version        | Notice                                                                                               | 
@@ -104,8 +106,10 @@ Ecore supports the creation of an API from the given metamodels to access the fu
 Therefore, the `*.genmodel` files are provided for each metamodel.
 The generated API and its metamodels are deployed as a Java library as discussed in the next section ["Library Approach"](#Library-Approach).
 
-That may be enough for a experimental use cases. 
-However, using the generated API directly has an artificial, less expressive character in terms of the bigraph theory (i.e., most of the nuances of the bigraphical semantics are hidden from the user), and is often cumbersome (i.e., extending the model with a signature by hand is time-consuming especially when many models with different signatures are going to be created, bigraph operators cannot be used to create complex bigraphs). 
+That may be enough for some experimental use cases. 
+However, using the generated API directly has an artificial, less expressive character in terms of the bigraph theory.
+That is, most of the nuances of the bigraphical semantics are hidden from the user.
+Moreover, it is often cumbersome because extending the model with a signature by hand is time-consuming especially when many models with different signatures are going to be created, bigraph operators cannot be used to create complex bigraphs. 
 Therefore, the [Bigraph Framework](https://bigraphs.org/products/bigraph-framework/) was developed and should be used to programmatically model bigraphs in Java.
 
 ### Library Approach
@@ -142,6 +146,8 @@ To use the signature and bigraph Ecore metamodels in any Maven-based Java projec
 ```
 
 The artifacts are deployed to Maven Central.
+
+**For SNAPSHOT Releases** 
 
 If you want to use SNAPSHOT releases, please configure the following repository in your `pom.xml`:
 ```xml
@@ -205,6 +211,11 @@ mvn initialize
 ```
 It installs some dependencies located in the `./libs/` folder of this project in your local Maven repository, which is usually located at `~/.m2/`.
 These are required for the development and build process.
+These currently include:
+- org.eclipse.emf.cdo_4.20.0.v20221124-1637.jar
+- org.eclipse.emf.cdo.common_4.20.0.v20221106-0628.jar
+- org.eclipse.net4j.util_3.21.0.v20221123-1721.jar
+They are necessary to make the bigraph Ecore model CDO-compatible.
 
 ### Building from Source
 
@@ -219,6 +230,8 @@ can be used in other projects by following the instruction given [above](#Librar
 
 ### Deploying Artifacts
 
+**Prerequisites**
+
 The Sonatype account details (username + password) for the deployment must be provided to the 
 Maven Sonatype Plugin as used in the project's `pom.xml` file.
 
@@ -228,9 +241,14 @@ It relies on the gpg command being installed:
 sudo apt install gnupg2
 ```
 
-and the GPG credentials being available e.g. from `settings.xml`.
+and the GPG credentials being available e.g. from `settings.xml` (see [here](https://central.sonatype.org/publish/publish-maven/)).
+In `settings.xml` should be a profile and server configuration both with the `<id>ossrh</id>`.
 
 More information can be found [here](https://central.sonatype.org/publish/requirements/gpg/).
+
+Listing keys: `gpg --list-keys --keyid-format short`
+
+The `pom.xml` must also conform to the minimal requirements containing all relevant tags as required by Sonatype.
 
 **Snapshot Deployment**
 
@@ -238,23 +256,42 @@ Execute the following goals to deploy a SNAPSHOT release of the Java artifact to
 
 ```shell
 # Use the default settings.xml located at ~/.m2/
-mvn clean deploy
-# mvn clean deploy -P ossrh
+mvn clean deploy -P ossrh
+# mvn clean deploy -P ossrh -DskipTests
 ```
+
+> **Note:** The version tag in the `pom.xml` must be suffixed with `-SNAPSHOT`.
 
 **Release Deployment**
 
 To perform a release deployment execute:
 ```shell
-mvn versions:set -DnewVersion=<VERSION>
-mvn clean deploy -P release
-# mvn clean deploy -P release -P ossrh
+mvn versions:set -DnewVersion=<VERSION> #without SNAPSHOT
+mvn clean deploy -P release,ossrh
+# mvn clean deploy -P release,ossrh -DskipTests
+```
+
+Artifacts must be manually released for Release Deployments in the Nexus Repository Manager.
+
+## How to Cite this Artifact
+
+BibTeX:
+```text
+@misc{grzelak_2023_10043063,
+  author       = {Grzelak, Dominik},
+  title        = {{Bigraph Ecore Metamodel (BEM): An EMOF-Compliant Specification for Bigraphs}},
+  month        = oct,
+  year         = 2023,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.10043063},
+  url          = {https://doi.org/10.5281/zenodo.10043063}
+}
 ```
 
 ## References
 
 - [1] Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2.
-- [2] Grzelak, D: "Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023. (Submitted)
+- [2] Grzelak, D: "Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023.
 - [3] Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0
 - [4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
 - [5] Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5
@@ -263,7 +300,7 @@ mvn clean deploy -P release
 
 ## License
 
-This library is Open Source software released under the Apache 2.0 license.
+The Ecore specification and Java library are Open Source software released under the Apache 2.0 license.
 
 ```text
    Copyright 2023 Dominik Grzelak
