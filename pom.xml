@@ -5,12 +5,11 @@
 
     <groupId>org.bigraphs.model</groupId>
     <artifactId>bigraph-ecore-model</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Bigraph Ecore Metamodel</name>
+    <name>Bigraph Ecore Metamodel (BEM)</name>
     <description>
-        An EMOF-compliant metamodel based on Ecore for creating bigraphs in Java graphically with Eclipse, or via the
-        generated API.
+        An Ecore-based metamodel for bigraphs.
     </description>
     <url>https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel</url>
 
@@ -27,15 +26,15 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <emf.ecore.version>2.25.0</emf.ecore.version>
-        <emf.ecore.xmi.version>2.16.0</emf.ecore.xmi.version>
-        <emf.common.version>2.23.0</emf.common.version>
+        <emf.ecore.version>2.38.0</emf.ecore.version>
+        <emf.ecore.xmi.version>2.38.0</emf.ecore.xmi.version>
+        <emf.common.version>2.40.0</emf.common.version>
         <emf.net4j.util.version>3.21.0-SNAPSHOT</emf.net4j.util.version>
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
         <emf.cdo.version>4.20.0-SNAPSHOT</emf.cdo.version><!--4.20.0.v20221124-1637-->
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
         <emf.cdo.common.version>4.20.0-SNAPSHOT</emf.cdo.common.version><!--4.20.0.v20221106-0628-->
-        <junit.version>5.10.0</junit.version>
+        <junit.version>5.11.3</junit.version>
     </properties>
 
     <developers>
@@ -83,27 +82,27 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.3.0</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.8.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.4.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.1.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -113,12 +112,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.4.5</version>
+                    <version>3.6.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.11.0</version>
+                    <version>3.13.0</version>
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
@@ -127,27 +126,27 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.3.0</version>
+                    <version>3.4.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>3.5.1</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.1.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.4.0</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.13</version>
+                    <version>1.7.0</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh</serverId>

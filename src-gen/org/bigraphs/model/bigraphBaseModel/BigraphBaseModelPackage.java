@@ -277,13 +277,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BSITE__INDEX = BPLACE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BSITE__BBIGRAPH = BPLACE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>BSite</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BSITE_FEATURE_COUNT = BPLACE_FEATURE_COUNT + 1;
+	int BSITE_FEATURE_COUNT = BPLACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>BSite</em>' class.
@@ -718,13 +727,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BBIGRAPH__BOUTER_NAMES = 3;
 
 	/**
+	 * The feature id for the '<em><b>BSites</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BBIGRAPH__BSITES = 4;
+
+	/**
 	 * The number of structural features of the '<em>BBigraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BBIGRAPH_FEATURE_COUNT = 4;
+	int BBIGRAPH_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>BBigraph</em>' class.
@@ -875,6 +893,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBSite();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.bigraphs.model.bigraphBaseModel.BSite#getBBigraph <em>BBigraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>BBigraph</em>'.
+	 * @see org.bigraphs.model.bigraphBaseModel.BSite#getBBigraph()
+	 * @see #getBSite()
+	 * @generated
+	 */
+	EReference getBSite_BBigraph();
 
 	/**
 	 * Returns the meta object for class '{@link org.bigraphs.model.bigraphBaseModel.BPoint <em>BPoint</em>}'.
@@ -1099,6 +1128,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	EReference getBBigraph_BOuterNames();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.bigraphs.model.bigraphBaseModel.BBigraph#getBSites <em>BSites</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>BSites</em>'.
+	 * @see org.bigraphs.model.bigraphBaseModel.BBigraph#getBSites()
+	 * @see #getBBigraph()
+	 * @generated
+	 */
+	EReference getBBigraph_BSites();
+
+	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>EString To EJava Object Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1234,6 +1274,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BSITE = eINSTANCE.getBSite();
+
+		/**
+		 * The meta object literal for the '<em><b>BBigraph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BSITE__BBIGRAPH = eINSTANCE.getBSite_BBigraph();
 
 		/**
 		 * The meta object literal for the '{@link org.bigraphs.model.bigraphBaseModel.impl.BPointImpl <em>BPoint</em>}' class.
@@ -1420,6 +1468,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BBIGRAPH__BOUTER_NAMES = eINSTANCE.getBBigraph_BOuterNames();
+
+		/**
+		 * The meta object literal for the '<em><b>BSites</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BBIGRAPH__BSITES = eINSTANCE.getBBigraph_BSites();
 
 		/**
 		 * The meta object literal for the '{@link org.bigraphs.model.bigraphBaseModel.impl.EStringToEJavaObjectMapImpl <em>EString To EJava Object Map</em>}' class.
