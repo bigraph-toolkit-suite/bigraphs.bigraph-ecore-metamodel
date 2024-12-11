@@ -17,13 +17,14 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 
 ----
 
-| Version        | Notice                                                                                               | 
-|----------------|------------------------------------------------------------------------------------------------------|
-| 1.6.1          | *Release*                                                                                            |
-| 1.6.1-SNAPSHOT | *SNAPSHOT* Dependency fix                                                                            |
-| 1.6.0          | *Release*                                                                                            |
-| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
-| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                        |
+| Version        | Notice                                                                                              | 
+|----------------|-----------------------------------------------------------------------------------------------------|
+| 2.0.0          | *(Release)* Opposite Edge added between BBigraph and BSite                                            |
+| 1.6.1          | *(Release)*                                                                                           |
+| 1.6.1-SNAPSHOT | *(SNAPSHOT)* Dependency fix                                                                           |
+| 1.6.0          | *(Release)*                                                                                           |
+| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                         |
+| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                       |
 | 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
 ----
 
@@ -181,7 +182,7 @@ Refer to [[2]](#References) for more details regarding the specific changes.
 Refer to [[2]](#References) for more details concerning the workflow on how to use the metamodels.
 
 
-## Build Configuration
+## Development: Build Configuration
 
 > **Note:** The Java artifact is deployed to Maven Central.
 > It includes the Ecore metamodels for signatures and pure bigraphs, and the generated APIs.
@@ -194,8 +195,7 @@ with the regular `mvn` command.
 The recommendation here is to build it with the regular `mvn` command.
 You will need [Maven v3.6.3 or above](https://maven.apache.org/install.html).
 
-> **Note:** The required version of Maven is 3.6.3 in combination with Java 11, and Maven >3.8.3 with Java 17.
-> This project uses Java 17.
+> **Note:** The required version of Maven is 3.6.3 in combination with Java 11, and Maven >=3.8.3 with Java >=17.
 
 ### Initialize
 
@@ -215,6 +215,7 @@ These currently include:
 - org.eclipse.emf.cdo_4.20.0.v20221124-1637.jar
 - org.eclipse.emf.cdo.common_4.20.0.v20221106-0628.jar
 - org.eclipse.net4j.util_3.21.0.v20221123-1721.jar
+
 They are necessary to make the bigraph Ecore model CDO-compatible.
 
 ### Building from Source
@@ -254,21 +255,23 @@ The `pom.xml` must also conform to the minimal requirements containing all relev
 
 Execute the following goals to deploy a SNAPSHOT release of the Java artifact to the snapshot repository:
 
+> **(!) Note (!)** The version tag in the `pom.xml` must be suffixed with `-SNAPSHOT`.
+
+
 ```shell
 # Use the default settings.xml located at ~/.m2/
-mvn clean deploy -P ossrh
-# mvn clean deploy -P ossrh -DskipTests
+mvn clean deploy -P ossrh -DskipTests
+# mvn clean deploy -P ossrh
 ```
 
-> **Note:** The version tag in the `pom.xml` must be suffixed with `-SNAPSHOT`.
 
 **Release Deployment**
 
 To perform a release deployment execute:
 ```shell
-mvn versions:set -DnewVersion=<VERSION> #without SNAPSHOT
-mvn clean deploy -P release,ossrh
-# mvn clean deploy -P release,ossrh -DskipTests
+mvn clean deploy -P release,ossrh -DskipTests
+# mvn clean deploy -P release,ossrh
+#mvn versions:set -DnewVersion=<VERSION> #without SNAPSHOT
 ```
 
 Artifacts must be manually released for Release Deployments in the Nexus Repository Manager.
@@ -291,7 +294,7 @@ BibTeX:
 ## References
 
 - [1] Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2.
-- [2] Grzelak, D: "Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation" (Dissertation), Technische Universität Dresden, 2023.
+- [2] D. Grzelak, Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation. Dresden University of Technology, Germany, 2024. [Online]. Available: https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-910504
 - [3] Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0
 - [4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
 - [5] Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5
@@ -303,7 +306,7 @@ BibTeX:
 The Ecore specification and Java library are Open Source software released under the Apache 2.0 license.
 
 ```text
-   Copyright 2023 Dominik Grzelak
+   Copyright 2023-present Dominik Grzelak
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

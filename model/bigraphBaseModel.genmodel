@@ -26,7 +26,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BNode/bPorts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BNode/attributes"/>
     </genClasses>
-    <genClasses ecoreClass="bigraphBaseModel.ecore#//BSite"/>
+    <genClasses ecoreClass="bigraphBaseModel.ecore#//BSite">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BSite/bBigraph"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="bigraphBaseModel.ecore#//BPoint">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BPoint/bLink"/>
     </genClasses>
@@ -56,6 +58,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bEdges"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bInnerNames"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bOuterNames"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BBigraph/bSites"/>
     </genClasses>
     <genClasses ecoreClass="bigraphBaseModel.ecore#//EStringToEJavaObjectMap">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bigraphBaseModel.ecore#//EStringToEJavaObjectMap/key"/>
