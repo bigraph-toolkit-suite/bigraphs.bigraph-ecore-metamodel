@@ -292,16 +292,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * @generated
 	 */
 	@Override
-	public EReference getBSite_BBigraph() {
-		return (EReference) bSiteEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getBPoint() {
 		return bPointEClass;
 	}
@@ -512,16 +502,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * @generated
 	 */
 	@Override
-	public EReference getBBigraph_BSites() {
-		return (EReference) bBigraphEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getEStringToEJavaObjectMap() {
 		return eStringToEJavaObjectMapEClass;
 	}
@@ -588,7 +568,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bNodeEClass, BNODE__ATTRIBUTES);
 
 		bSiteEClass = createEClass(BSITE);
-		createEReference(bSiteEClass, BSITE__BBIGRAPH);
 
 		bPointEClass = createEClass(BPOINT);
 		createEReference(bPointEClass, BPOINT__BLINK);
@@ -619,7 +598,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		createEReference(bBigraphEClass, BBIGRAPH__BEDGES);
 		createEReference(bBigraphEClass, BBIGRAPH__BINNER_NAMES);
 		createEReference(bBigraphEClass, BBIGRAPH__BOUTER_NAMES);
-		createEReference(bBigraphEClass, BBIGRAPH__BSITES);
 
 		eStringToEJavaObjectMapEClass = createEClass(ESTRING_TO_EJAVA_OBJECT_MAP);
 		createEAttribute(eStringToEJavaObjectMapEClass, ESTRING_TO_EJAVA_OBJECT_MAP__KEY);
@@ -692,9 +670,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bSiteEClass, BSite.class, "BSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBSite_BBigraph(), this.getBBigraph(), this.getBBigraph_BSites(), "bBigraph", null, 1, 1,
-				BSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bPointEClass, BPoint.class, "BPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBPoint_BLink(), this.getBLink(), this.getBLink_BPoints(), "bLink", null, 0, 1, BPoint.class,
@@ -752,9 +727,6 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		initEReference(getBBigraph_BOuterNames(), this.getBOuterName(), this.getBOuterName_BBigraph(), "bOuterNames",
 				null, 0, -1, BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBBigraph_BSites(), this.getBSite(), this.getBSite_BBigraph(), "bSites", null, 0, -1,
-				BBigraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eStringToEJavaObjectMapEClass, Map.Entry.class, "EStringToEJavaObjectMap", !IS_ABSTRACT,
 				!IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);

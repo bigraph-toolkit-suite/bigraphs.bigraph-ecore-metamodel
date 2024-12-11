@@ -17,14 +17,14 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 
 ----
 
-| Version        | Notice                                                                                              | 
-|----------------|-----------------------------------------------------------------------------------------------------|
-| 2.0.0          | *(Release)* Opposite Edge added between BBigraph and BSite                                            |
-| 1.6.1          | *(Release)*                                                                                           |
-| 1.6.1-SNAPSHOT | *(SNAPSHOT)* Dependency fix                                                                           |
-| 1.6.0          | *(Release)*                                                                                           |
-| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                         |
-| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                       |
+| Version        | Notice                                                                                             | 
+|----------------|----------------------------------------------------------------------------------------------------|
+| 2.0.1          | *(Release)*                                            |
+| 1.6.1          | *(Release)*                                                                                          |
+| 1.6.1-SNAPSHOT | *(SNAPSHOT)* Dependency fix                                                                          |
+| 1.6.0          | *(Release)*                                                                                          |
+| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                        |
+| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                      |
 | 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
 ----
 

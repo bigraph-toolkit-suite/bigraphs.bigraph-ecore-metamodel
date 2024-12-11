@@ -2,7 +2,6 @@
  */
 package org.bigraphs.model.bigraphBaseModel.impl;
 
-import org.bigraphs.model.bigraphBaseModel.BBigraph;
 import org.bigraphs.model.bigraphBaseModel.BSite;
 import org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage;
 import org.bigraphs.model.bigraphBaseModel.IndexableType;
@@ -18,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  * <ul>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BSiteImpl#getIndex <em>Index</em>}</li>
- *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BSiteImpl#getBBigraph <em>BBigraph</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,26 +59,6 @@ public class BSiteImpl extends BPlaceImpl implements BSite {
 	@Override
 	public void setIndex(int newIndex) {
 		eSet(BigraphBaseModelPackage.Literals.INDEXABLE_TYPE__INDEX, newIndex);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public BBigraph getBBigraph() {
-		return (BBigraph) eGet(BigraphBaseModelPackage.Literals.BSITE__BBIGRAPH, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setBBigraph(BBigraph newBBigraph) {
-		eSet(BigraphBaseModelPackage.Literals.BSITE__BBIGRAPH, newBBigraph);
 	}
 
 	/**
