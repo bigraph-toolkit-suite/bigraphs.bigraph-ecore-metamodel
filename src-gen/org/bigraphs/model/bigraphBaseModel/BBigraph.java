@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.BBigraph#getBEdges <em>BEdges</em>}</li>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.BBigraph#getBInnerNames <em>BInner Names</em>}</li>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.BBigraph#getBOuterNames <em>BOuter Names</em>}</li>
- *   <li>{@link org.bigraphs.model.bigraphBaseModel.BBigraph#getBSites <em>BSites</em>}</li>
  * </ul>
  *
  * @see org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage#getBBigraph()
@@ -83,19 +82,5 @@ public interface BBigraph extends CDOObject {
 	 * @generated
 	 */
 	EList<BOuterName> getBOuterNames();
-
-	/**
-	 * Returns the value of the '<em><b>BSites</b></em>' containment reference list.
-	 * The list contents are of type {@link org.bigraphs.model.bigraphBaseModel.BSite}.
-	 * It is bidirectional and its opposite is '{@link org.bigraphs.model.bigraphBaseModel.BSite#getBBigraph <em>BBigraph</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>BSites</em>' containment reference list.
-	 * @see org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage#getBBigraph_BSites()
-	 * @see org.bigraphs.model.bigraphBaseModel.BSite#getBBigraph
-	 * @model opposite="bBigraph" containment="true"
-	 * @generated
-	 */
-	EList<BSite> getBSites();
 
 } // BBigraph

@@ -17,10 +17,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//EStringToEJavaObjectMap" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BSite" eSuperTypes="#//BPlace #//IndexableType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bBigraph" lowerBound="1"
-        eType="#//BBigraph" eOpposite="#//BBigraph/bSites"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BSite" eSuperTypes="#//BPlace #//IndexableType"/>
   <eClassifiers xsi:type="ecore:EClass" name="BPoint" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bLink" eType="#//BLink"
         eOpposite="#//BLink/bPoints"/>
@@ -60,8 +57,6 @@
         eType="#//BInnerName" containment="true" eOpposite="#//BInnerName/bBigraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bOuterNames" upperBound="-1"
         eType="#//BOuterName" containment="true" eOpposite="#//BOuterName/bBigraph"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bSites" upperBound="-1"
-        eType="#//BSite" containment="true" eOpposite="#//BSite/bBigraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EStringToEJavaObjectMap" instanceClassName="java.util.Map$Entry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

@@ -7,7 +7,6 @@ import org.bigraphs.model.bigraphBaseModel.BEdge;
 import org.bigraphs.model.bigraphBaseModel.BInnerName;
 import org.bigraphs.model.bigraphBaseModel.BOuterName;
 import org.bigraphs.model.bigraphBaseModel.BRoot;
-import org.bigraphs.model.bigraphBaseModel.BSite;
 import org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage;
 
 import org.eclipse.emf.common.util.EList;
@@ -28,7 +27,6 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BBigraphImpl#getBEdges <em>BEdges</em>}</li>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BBigraphImpl#getBInnerNames <em>BInner Names</em>}</li>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BBigraphImpl#getBOuterNames <em>BOuter Names</em>}</li>
- *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BBigraphImpl#getBSites <em>BSites</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,17 +103,6 @@ public class BBigraphImpl extends CDOObjectImpl implements BBigraph {
 	@Override
 	public EList<BOuterName> getBOuterNames() {
 		return (EList<BOuterName>) eGet(BigraphBaseModelPackage.Literals.BBIGRAPH__BOUTER_NAMES, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<BSite> getBSites() {
-		return (EList<BSite>) eGet(BigraphBaseModelPackage.Literals.BBIGRAPH__BSITES, true);
 	}
 
 } //BBigraphImpl
