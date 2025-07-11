@@ -2,18 +2,15 @@
 
 # Bigraph Ecore Metamodel (BEM): An EMOF-Compliant Specification for Bigraphs
 
-<small>
-(If you are looking just for the specification, visit the <a href="https://zenodo.org/doi/10.5281/zenodo.10043062">digital repository on Zenodo</a>.)
-</small>
-
-The present project serves as a reference implementation of the abstract syntax specification for bigraphs, 
-which was first presented in [[1]](#References). 
-This implementation is achieved by utilizing the Ecore modeling language provided by the [Eclipse Modeling Framework (EMF)](https://projects.eclipse.org/projects/modeling.emf.emf).
+This project provides a reference implementation of the abstract syntax specification for bigraphs, as originally introduced in [[1]](#References). 
+The implementation is based on the Ecore metamodeling language, part of the [Eclipse Modeling Framework (EMF)](https://projects.eclipse.org/projects/modeling.emf.emf).
 
 This EMOF-compliant specification aligns with [[1]](#References), but it is subject to minor modifications as suggested in [[2]](#References).
 Refer also to section ["Changes Made to the Original Specification"](#Changes-Made-to-the-Original-Specification) for a brief overview.
 
 [How to Cite this Artifact](#How-to-Cite-this-Artifact)
+
+> **Note:** This is a highly technical document intended primarily for developers and researchers working with software tools at the modeling and integration level. It is not intended for end-users of the Bigraph Framework API.
 
 ----
 
@@ -28,46 +25,21 @@ Refer also to section ["Changes Made to the Original Specification"](#Changes-Ma
 | 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
 ----
 
-## Introduction
+## What are Bigraphs?
 
-### What Are Bigraphs?
+Bigraphs [[3]](#References), developed by Robin Milner, are a formal modeling framework rooted in category theory and widely used in computer science for representing and analyzing complex systems. Their primary applications lie in the domains of concurrency, mobility, and interaction.
 
-Bigraphs [[3]](#References), devised by Robin Milner, are a formal modeling framework grounded on category theory and is widely employed in the field of computer science for the purpose of representing and analyzing complex systems.
-Its primary application lies in the domain of concurrency, mobility, and interaction.
-Bigraphs are an integral component of the wider domain of process algebra, offering a graphical and compositional framework for modeling systems, processes and agents, or any other dynamic, discrete structure.
-The formalism of bigraphs was established by Milner to provide a means of representing non-trivial, dynamic systems in computer science.
+As part of the broader field of process algebra, bigraphs provide a graphical and compositional means of modeling systems, processes, agents, or other dynamic and discrete structures.
 
-### What Is EMF?
+## Rationale of This Specification
 
-The Eclipse Modeling Framework (EMF) is a Java framework for building advanced software application frameworks and tools based on a structured data model.
-EMF also provides code generation facilities and is part of the [Eclipse Modeling Project](https://projects.eclipse.org/projects/modeling).
+The metamodel for bigraphs is implemented using EMF’s Ecore metamodel and is called the *Bigraph Ecore Metamodel (BEM)*.
+BEM functions as a pure data model designed to enhance interoperability with other tools, frameworks, and libraries, thereby supporting the experimental evaluation of real-world applications.
 
-### What Is Ecore?
+With this purpose, BEM acts as a specification for both existing and future tools and can be regarded as a common interface. 
+To improve separation of concerns, it is recommended that additional tools build distinct behavior layers on top of this metamodel.
 
-Ecore in the context of EMF, refers to a _metamodeling language_ and is a key component of EMF that is used for defining the structure (classes, properties and relations) of models.
-Ecore is founded upon a specific subset of the [MOF](http://www.omg.org/mof/) standard (and can thus be regarded as a reference implementation), which is well recognized as a metamodeling standard.
-
-You can also say that Ecore is EMF's metamodel.
-Ecore can be considered as an EMF model, hence functioning as its own metamodel.
-The term EMF Ecore metamodel refers to the metamodel defined using Ecore.
-
-Thus, when we say _Bigraph Ecore Metamodel (BEM)_ we are talking about the specific metamodel created using the Ecore modeling language within EMF.
-
-### Why Metamodeling?
-
-Metamodeling, a core principle and practice within the domain of Model-Driven Engineering (MDE), encompasses the creation of models for the purpose of describing other models. 
-In essence, a metamodel can be described as a model that defines the structure, constraints, and relationships for instances of that metamodel.
-Metamodels offer a systematic and universally accepted approach for defining the syntax and semantics of modeling languages, as well as the organization of models inside those languages.
-
-### Rationale of This Specification
-
-The metamodel for bigraphs is implemented using EMF's Ecore metamodel and called _Bigraph Ecore Metamodel (BEM)_. 
-The BEM serves as pure data model to improve the interoperability with other bigraph tools, frameworks and libraries, thus, fostering the experimental evaluation of real-world applications. 
-
-With this in mind, BEM serves as a specification for existing and future tools, and can be regarded as a common interface.
-To enhance and streamline the process of separating concerns, it is recommended that additional tools incorporate distinct behavior superimposed on this metamodel.
-
-Hence, the aim of this project is to provide a uniform implementation-agnostic specification language (i.e., metamodel) for bigraphs by moving implementation-specific details out from the metamodel.
+Therefore, the goal of this project is to provide a uniform, implementation-agnostic specification language (i.e., metamodel) for bigraphs by isolating implementation-specific details from the metamodel itself.
 
 ## Contents
 
@@ -95,29 +67,19 @@ These files are not directly involved in code generation.
 
 ## Getting Started
 
-### Eclipse Modeling Framework
+### **Recommended Setup**
 
-Eclipse EMF can be used with the usual Eclipse IDE.
-Then, Ecore models can be edited and extended via a graphical user-interface.
-Refer to [[4, 5, 6]](#References) for an introduction.
+For the best development experience, it is recommended to use the [Eclipse Modeling Tools](https://www.eclipse.org/downloads/packages/release/2025-06/r/eclipse-modeling-tools) which includes all necessary tools for working with Ecore and EMF-based models.
 
-### Generated API
+### Overview of the Structure
 
-Ecore supports the creation of an API from the given metamodels to access the functionality for creating bigraphs and signatures in Java.
-Therefore, the `*.genmodel` files are provided for each metamodel.
-The generated API and its metamodels are deployed as a Java library as discussed in the next section ["Library Approach"](#Library-Approach).
+| ![signature-metamodel-hierarchy-ecore](etc/signature-metamodel-hierarchy-ecore.png) | ![bigraph-metamodel-hierarchy-ecore](etc/bigraph-metamodel-hierarchy-ecore.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Overview of the Base Signature MetaModel (*.ecore)           | Overview of the Base Bigraph MetaModel (*.ecore)             |
 
-That may be enough for some experimental use cases. 
-However, using the generated API directly has an artificial, less expressive character in terms of the bigraph theory.
-That is, most of the nuances of the bigraphical semantics are hidden from the user.
-Moreover, it is often cumbersome because extending the model with a signature by hand is time-consuming especially when many models with different signatures are going to be created, bigraph operators cannot be used to create complex bigraphs. 
-Therefore, the [Bigraph Framework](https://bigraphs.org/products/bigraph-framework/) was developed and should be used to programmatically model bigraphs in Java.
+### Maven Configuration
 
-### Library Approach
-
-**Maven Configuration**
-
-To use the signature and bigraph Ecore metamodels in any Maven-based Java project, the following dependencies have to be included in the `pom.xml`:
+To use the signature and bigraph Ecore metamodels in any Maven-based/Gradle-based Java project, the following dependencies have to be included in the `pom.xml`:
 ```xml
 <dependency>
   <groupId>org.bigraphs.model</groupId>
@@ -148,18 +110,33 @@ To use the signature and bigraph Ecore metamodels in any Maven-based Java projec
 
 The artifacts are deployed to Maven Central.
 
-**For SNAPSHOT Releases** 
+### Gradle Configuration
 
-If you want to use SNAPSHOT releases, please configure the following repository in your `pom.xml`:
-```xml
-<repository>
-    <snapshots>
-        <enabled>true</enabled>
-    </snapshots>
-    <id>ossrh</id>
-    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-</repository>
 ```
+ext {
+    version = '2.0.1' // or whatever the latest BEM version is
+    emfEcoreVersion = '2.23.0' // Minimum: 2.23.0
+    emfEcoreXmiVersion = '2.16.0' // Minimum: 2.16.0
+    emfCommonVersion = '2.21.0' // Minimum: 2.21.0
+}
+
+dependencies {
+    implementation "org.bigraphs.model:bigraph-ecore-model:${version}"
+
+    // EMF dependencies
+    implementation "org.eclipse.emf:org.eclipse.emf.ecore:${emfEcoreVersion}"        
+    implementation "org.eclipse.emf:org.eclipse.emf.ecore.xmi:${emfEcoreXmiVersion}"  
+    implementation "org.eclipse.emf:org.eclipse.emf.common:${emfCommonVersion}"       
+}
+```
+
+### Note on the Generated API
+
+Ecore supports the *automatic generation* of an API from metamodels, enabling the creation and manipulation of bigraphs and signatures in Java or other supported languages. For this purpose, `*.genmodel` files are provided for each metamodel.
+
+This approach may suffice for some experimental or lightweight use cases. However, using the generated API directly can feel artificial and less expressive from the perspective of bigraph theory. Many of the theoretical nuances of bigraphical semantics are abstracted away, making it harder to reason about or work with bigraphs at a conceptual level. Additionally, manually extending the model with signatures can be tedious—especially when multiple models with varying signatures are involved—and the absence of built-in bigraph operators complicates the construction of complex structures.
+
+For these reasons, the [Bigraph Framework](https://bigraphs.org/products/bigraph-framework/) was developed. It provides a higher-level, programmatic interface for working with bigraphs in Java and is the recommended tool for most practical applications.
 
 ## Changes Made to the Original Specification
 
@@ -202,12 +179,12 @@ You will need [Maven v3.6.3 or above](https://maven.apache.org/install.html).
 First, checkout the `main` branch of this project:
 
 ```shell
-git clone https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel.git
+$ git clone https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel.git
 ```
 
 The following command has to be run once:
 ```shell
-mvn initialize
+$ mvn initialize
 ```
 It installs some dependencies located in the `./libs/` folder of this project in your local Maven repository, which is usually located at `~/.m2/`.
 These are required for the development and build process.
@@ -222,59 +199,66 @@ They are necessary to make the bigraph Ecore model CDO-compatible.
 
 Execute the following goals to run the build:
 ```shell
-mvn clean install
+$ mvn clean install
 ```
 The `*.jar` can be found inside the `./target/` folder of this project.
 The dependency will be also installed in the local Maven repository and 
 can be used in other projects by following the instruction given [above](#Library-Approach)
 
 
-### Deploying Artifacts
+### Deployment
 
 **Prerequisites**
 
 The Sonatype account details (username + password) for the deployment must be provided to the 
 Maven Sonatype Plugin as used in the project's `pom.xml` file.
 
-The Maven GPG plugin is used to sign the components for the deployment.
+The Maven GPG plugin is used to sign the components for the deployment. More information can be found [here](https://central.sonatype.org/publish/requirements/gpg/).
 It relies on the gpg command being installed:
-```shell
-sudo apt install gnupg2
-```
-
-and the GPG credentials being available e.g. from `settings.xml` (see [here](https://central.sonatype.org/publish/publish-maven/)).
-In `settings.xml` should be a profile and server configuration both with the `<id>ossrh</id>`.
-
-More information can be found [here](https://central.sonatype.org/publish/requirements/gpg/).
-
-Listing keys: `gpg --list-keys --keyid-format short`
-
-The `pom.xml` must also conform to the minimal requirements containing all relevant tags as required by Sonatype.
-
-**Snapshot Deployment**
-
-Execute the following goals to deploy a SNAPSHOT release of the Java artifact to the snapshot repository:
-
-> **(!) Note (!)** The version tag in the `pom.xml` must be suffixed with `-SNAPSHOT`.
-
 
 ```shell
-# Use the default settings.xml located at ~/.m2/
-mvn clean deploy -P ossrh -DskipTests
-# mvn clean deploy -P ossrh
+$ sudo apt install gnupg2
 ```
 
+and the GPG credentials being available e.g. from `settings.xml`:
+
+- In `settings.xml` should be a profile and server configuration both with the `<id>central</id>` (see [here](https://central.sonatype.org/publish/publish-portal-maven/#credentials))
+
+- Listing keys: `gpg --list-keys --keyid-format short`
 
 **Release Deployment**
 
 To perform a release deployment execute:
 ```shell
-mvn clean deploy -P release,ossrh -DskipTests
-# mvn clean deploy -P release,ossrh
-#mvn versions:set -DnewVersion=<VERSION> #without SNAPSHOT
+# Use the default settings.xml located at ~/.m2/
+mvn clean deploy -DskipTests -P release,central
 ```
 
 Artifacts must be manually released for Release Deployments in the Nexus Repository Manager.
+
+> **Note for Snapshot-Releases:** For that the version tag in the `pom.xml` must be suffixed with `-SNAPSHOT`.
+
+## FAQ
+
+### What Is EMF?
+
+The EMF is a Java-based framework for developing structured data models and building sophisticated software tools and application frameworks around them.
+ It includes facilities for model definition, code generation, and runtime support, and is a core component of the [Eclipse Modeling Project](https://projects.eclipse.org/projects/modeling).
+
+### What Is Ecore?
+
+Ecore, in the context of EMF, is a metamodeling language and a central component of the framework. It is used to define the structure of models—such as classes, attributes, and relationships.
+Ecore is based on a subset of the [MOF](http://www.omg.org/mof/) (Meta Object Facility) standard and can be regarded as a reference implementation of it. MOF is a widely recognized standard for metamodeling in software engineering.
+
+You can also say that Ecore is EMF’s metamodel. Ecore can be considered an EMF model, thus functioning as its own metamodel.
+
+Therefore, when we say *Bigraph Ecore Metamodel (BEM)*, we refer to the custom-designed base metamodel created using the Ecore modeling language within EMF.
+
+### Why Metamodeling?
+
+Metamodeling is a fundamental concept and practice within Model-Driven Engineering (MDE) that involves creating models to describe other models. 
+In essence, a metamodel defines the structure, constraints, and relationships that its model instances must follow.
+Metamodels provide a systematic and widely accepted way to define the syntax and semantics of modeling languages, as well as the organization of models within those languages.
 
 ## How to Cite this Artifact
 
@@ -300,13 +284,12 @@ BibTeX:
 - [5] Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5
 - [6] [https://eclipsesource.com/blogs/tutorials/emf-tutorial/](https://eclipsesource.com/blogs/tutorials/emf-tutorial/)
 
-
 ## License
 
-The Ecore specification and Java library are Open Source software released under the Apache 2.0 license.
+The specification and this library are released under the Apache 2.0 license.
 
 ```text
-   Copyright 2023-present Dominik Grzelak
+Copyright 2019-present Bigraph Toolkit Developers
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -320,6 +303,3 @@ The Ecore specification and Java library are Open Source software released under
    See the License for the specific language governing permissions and
    limitations under the License. 
 ```
-
-
-

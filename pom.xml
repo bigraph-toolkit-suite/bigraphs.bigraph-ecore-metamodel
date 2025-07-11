@@ -61,12 +61,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+            <id>central</id>
+            <url>https://central.sonatype.com</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://central.sonatype.com</url>
         </repository>
     </distributionManagement>
 
@@ -144,18 +144,16 @@
                     <version>3.5.0</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.7.0</version>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.8.0</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                        <!-- With the property autoReleaseAfterClose set to false you can manually inspect the staging
-                        repository in the Nexus Repository Manager and trigger a release of the staging repository
-                        later with mvn nexus-staging:release If you find something went wrong you can drop the staging
-                        repository with mvn nexus-staging:drop -->
-                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                        <publishingServerId>central</publishingServerId>
+                        <!--                        <autoPublish>true</autoPublish>-->
+                        <!--                        <waitUntil>published</waitUntil>-->
+                        <autoPublish>false</autoPublish>
+                        <waitUntil>validated</waitUntil>
                     </configuration>
                 </plugin>
             </plugins>
@@ -232,8 +230,8 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
             </plugin>
             <!-- Package some dependencies that are not available in the Maven Central Repository -->
             <!-- Those that were specified in the maven-install-plugin -->
@@ -344,12 +342,6 @@
     <profiles>
         <profile>
             <id>release</id>
-<!--            <activation>-->
-<!--                <property>-->
-<!--                    <name>performRelease</name>-->
-<!--                    <value>true</value>-->
-<!--                </property>-->
-<!--            </activation>-->
             <build>
                 <plugins>
                     <plugin>
@@ -386,8 +378,8 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                     </plugin>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
@@ -400,13 +392,11 @@
             <groupId>org.eclipse.emf.cdo</groupId>
             <artifactId>org.eclipse.emf.cdo</artifactId>
             <version>${emf.cdo.version}</version>
-<!--            <scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.eclipse.emf.cdo</groupId>
             <artifactId>org.eclipse.emf.cdo.common</artifactId>
             <version>${emf.cdo.common.version}</version>
-<!--            <scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.eclipse.emf.cdo</groupId>
@@ -427,6 +417,12 @@
             <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.common</artifactId>
             <version>${emf.common.version}</version>
+        </dependency>
+        <!-- Deployment -->
+        <dependency>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.8.0</version>
         </dependency>
         <!-- Test -->
         <dependency>
