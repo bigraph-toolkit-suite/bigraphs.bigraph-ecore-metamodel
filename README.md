@@ -1,45 +1,52 @@
 <img src="./etc/logo-bigraph-metamodel-dark.png" style="zoom:90%;" />
 
+> Latest Version: **2.0.1**
+
+---
+
 # Bigraph Ecore Metamodel (BEM): An EMOF-Compliant Specification for Bigraphs
 
-This project provides a reference implementation of the abstract syntax specification for bigraphs, as originally introduced in [[1]](#References). 
-The implementation is based on the Ecore metamodeling language, part of the [Eclipse Modeling Framework (EMF)](https://projects.eclipse.org/projects/modeling.emf.emf).
+This project provides a **reference implementation** of the abstract syntax specification for *bigraphs*, originally introduced in [[1]](#references).  
+The implementation is built using the **Ecore metamodeling language**, part of the [Eclipse Modeling Framework (EMF)](https://projects.eclipse.org/projects/modeling.emf.emf).
 
-This EMOF-compliant specification aligns with [[1]](#References), but it is subject to minor modifications as suggested in [[2]](#References).
-Refer also to section ["Changes Made to the Original Specification"](#Changes-Made-to-the-Original-Specification) for a brief overview.
+The specification is **EMOF-compliant** and follows [[1]](#references), with minor adjustments suggested in [[2]](#references).  
+For details, see the section: [Changes Made to the Original Specification](#changes-made-to-the-original-specification).
 
 [How to Cite this Artifact](#How-to-Cite-this-Artifact)
 
-> **Note:** This is a highly technical document intended primarily for developers and researchers working with software tools at the modeling and integration level. It is not intended for end-users of the Bigraph Framework API.
+> **Note:** This document is intended for developers and researchers working with modeling and integration tools.  
+> It is **not** aimed at end-users of the Bigraph Framework API.
 
 ----
 
-| Version        | Notice                                                                                             | 
-|----------------|----------------------------------------------------------------------------------------------------|
-| 2.0.1          | *(Release)*                                            |
+| Version        | Notice                                                                                               | 
+|----------------|------------------------------------------------------------------------------------------------------|
+| 2.0.1          | *(Release)*                                                                                          |
 | 1.6.1          | *(Release)*                                                                                          |
 | 1.6.1-SNAPSHOT | *(SNAPSHOT)* Dependency fix                                                                          |
 | 1.6.0          | *(Release)*                                                                                          |
-| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                        |
-| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                      |
+| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
+| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                        |
 | 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
 ----
 
 ## What are Bigraphs?
 
-Bigraphs [[3]](#References), developed by Robin Milner, are a formal modeling framework rooted in category theory and widely used in computer science for representing and analyzing complex systems. Their primary applications lie in the domains of concurrency, mobility, and interaction.
+Bigraphs [[3]](#references), introduced by Robin Milner, are a **formal modeling framework** grounded in category theory and used in computer science to represent and analyze complex systems. 
+Their main applications are in **concurrency**, **mobility**, and **interaction**.
 
-As part of the broader field of process algebra, bigraphs provide a graphical and compositional means of modeling systems, processes, agents, or other dynamic and discrete structures.
+Within the broader field of **process algebra**, bigraphs offer a **graphical and compositional approach** to modeling systems, processes, agents, and other dynamic, discrete structures.
 
 ## Rationale of This Specification
 
-The metamodel for bigraphs is implemented using EMF’s Ecore metamodel and is called the *Bigraph Ecore Metamodel (BEM)*.
-BEM functions as a pure data model designed to enhance interoperability with other tools, frameworks, and libraries, thereby supporting the experimental evaluation of real-world applications.
+The **Bigraph Ecore Metamodel (BEM)** is implemented using EMF’s Ecore metamodel.  
+It serves as a **pure data model** aimed at maximizing interoperability with tools, frameworks, and libraries, thereby enabling experimental evaluation of real-world applications.
 
-With this purpose, BEM acts as a specification for both existing and future tools and can be regarded as a common interface. 
-To improve separation of concerns, it is recommended that additional tools build distinct behavior layers on top of this metamodel.
+BEM is intended as a **specification and common interface** for both current and future tools.  
+To promote separation of concerns, additional tools should build distinct behavioral layers on top of this metamodel.
 
-Therefore, the goal of this project is to provide a uniform, implementation-agnostic specification language (i.e., metamodel) for bigraphs by isolating implementation-specific details from the metamodel itself.
+The overarching goal of this project is to provide a **uniform, implementation-agnostic specification language** for bigraphs, isolating all implementation-specific details from the metamodel itself.
+
 
 ## Contents
 
