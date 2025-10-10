@@ -1,6 +1,6 @@
-<img src="./etc/logo-bigraph-metamodel-dark.png" style="zoom:90%;" />
+<img src="./etc/logo-bigraph-metamodel-dark.png" style="zoom:90%;" alt="logo"/>
 
-> Latest Version: **2.0.1**
+> Latest Version: **2.0.2**
 
 ---
 
@@ -14,30 +14,26 @@ For details, see the section: [Changes Made to the Original Specification](#chan
 
 [How to Cite this Artifact](#How-to-Cite-this-Artifact)
 
-> **Note:** This document is intended for developers and researchers working with modeling and integration tools.  
+[FAQ](#FAQ)
+
+> **Note:** This document is intended for developers and researchers working with modeling tools.  
 > It is **not** aimed at end-users of the Bigraph Framework API.
 
 ----
 
-| Version        | Notice                                                                                               | 
-|----------------|------------------------------------------------------------------------------------------------------|
-| 2.0.1          | *(Release)*                                                                                          |
-| 1.6.1          | *(Release)*                                                                                          |
-| 1.6.1-SNAPSHOT | *(SNAPSHOT)* Dependency fix                                                                          |
-| 1.6.0          | *(Release)*                                                                                          |
-| 1.6.0-SNAPSHOT | *(Draft) New namespace: org.bigraphs.model*                                                          |
-| 1.5.0-SNAPSHOT | *(Draft) New build and deploy workflow; Dependencies updated*                                        |
-| 1.4.0-SNAPSHOT | *(Draft) This project is an analogous implementation of [[1]](#References) with some minor changes.* |
+| Version        | Notice                                                                                                                                    |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| 2.0.2          | *[Release]* Technical Maintenance (CDO 48)                                                                                                |
+| 2.0.1          | *[Release]* (CDO 48)                                                                                                                      |
+| 1.6.1          | *[Release]* (CDO 48)                                                                                                                      |
+| 1.6.1-SNAPSHOT | *[SNAPSHOT]* Dependency fix                                                                                                               |
+| 1.6.0          | *[Release]*                                                                                                                               |
+| 1.6.0-SNAPSHOT | *[Draft]* New namespace: org.bigraphs.model                                                                                               |
+| 1.5.0-SNAPSHOT | *[Draft]* New build and deploy workflow; Dependencies updated                                                                             |
+| 1.4.0-SNAPSHOT | *[Draft]* This project is an implementation of [[1]](#References) with some [minor changes](#changes-made-to-the-original-specification). |
 ----
 
-## What are Bigraphs?
-
-Bigraphs [[3]](#references), introduced by Robin Milner, are a **formal modeling framework** grounded in category theory and used in computer science to represent and analyze complex systems. 
-Their main applications are in **concurrency**, **mobility**, and **interaction**.
-
-Within the broader field of **process algebra**, bigraphs offer a **graphical and compositional approach** to modeling systems, processes, agents, and other dynamic, discrete structures.
-
-## Rationale of This Specification
+## Rationale of this Specification
 
 The **Bigraph Ecore Metamodel (BEM)** is implemented using EMF’s Ecore metamodel.  
 It serves as a **pure data model** aimed at maximizing interoperability with tools, frameworks, and libraries, thereby enabling experimental evaluation of real-world applications.
@@ -72,21 +68,26 @@ It specifies information such as the target programming language, and other code
 The `*.aird` file is used to store and manage model-driven development workspaces, which can include multiple related models (e.g., `.ecore`, `.genmodel`) and the relationships between them.
 These files are not directly involved in code generation.
 
-## Getting Started
-
-### **Recommended Setup**
-
-For the best development experience, it is recommended to use the [Eclipse Modeling Tools](https://www.eclipse.org/downloads/packages/release/2025-06/r/eclipse-modeling-tools) which includes all necessary tools for working with Ecore and EMF-based models.
-
 ### Overview of the Structure
 
 | ![signature-metamodel-hierarchy-ecore](etc/signature-metamodel-hierarchy-ecore.png) | ![bigraph-metamodel-hierarchy-ecore](etc/bigraph-metamodel-hierarchy-ecore.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Overview of the Base Signature MetaModel (*.ecore)           | Overview of the Base Bigraph MetaModel (*.ecore)             |
 
+### Note on the Generated API
+
+Ecore supports the *automatic generation* of an API from metamodels, enabling the creation and manipulation of bigraphs and signatures in Java or other supported languages. For this purpose, `*.genmodel` files are provided for each metamodel.
+
+This approach may suffice for some experimental or lightweight use cases. However, using the generated API directly can feel artificial and less expressive from the perspective of bigraph theory. Many of the theoretical nuances of bigraphical semantics are abstracted away, making it harder to reason about or work with bigraphs at a conceptual level. Additionally, manually extending the model with signatures can be tedious—especially when multiple models with varying signatures are involved—and the absence of built-in bigraph operators complicates the construction of complex structures.
+
+For these reasons, the [Bigraph Framework](https://bigraphs.org/products/bigraph-framework/) was developed. It provides a higher-level, programmatic interface for working with bigraphs in Java and is the recommended tool for most practical applications.
+
+## Using the Metamodel in a Project
+
 ### Maven Configuration
 
 To use the signature and bigraph Ecore metamodels in any Maven-based/Gradle-based Java project, the following dependencies have to be included in the `pom.xml`:
+
 ```xml
 <dependency>
   <groupId>org.bigraphs.model</groupId>
@@ -115,8 +116,6 @@ To use the signature and bigraph Ecore metamodels in any Maven-based/Gradle-base
 </dependency>
 ```
 
-The artifacts are deployed to Maven Central.
-
 ### Gradle Configuration
 
 ```
@@ -137,15 +136,15 @@ dependencies {
 }
 ```
 
-### Note on the Generated API
+## Conceptual Usage of the Specification
 
-Ecore supports the *automatic generation* of an API from metamodels, enabling the creation and manipulation of bigraphs and signatures in Java or other supported languages. For this purpose, `*.genmodel` files are provided for each metamodel.
+![metamodel-workflow](etc/metamodel-workflow.png)
 
-This approach may suffice for some experimental or lightweight use cases. However, using the generated API directly can feel artificial and less expressive from the perspective of bigraph theory. Many of the theoretical nuances of bigraphical semantics are abstracted away, making it harder to reason about or work with bigraphs at a conceptual level. Additionally, manually extending the model with signatures can be tedious—especially when multiple models with varying signatures are involved—and the absence of built-in bigraph operators complicates the construction of complex structures.
+Refer to [[2]](#References) for more details concerning the workflow on how to use the metamodels.
 
-For these reasons, the [Bigraph Framework](https://bigraphs.org/products/bigraph-framework/) was developed. It provides a higher-level, programmatic interface for working with bigraphs in Java and is the recommended tool for most practical applications.
+## FAQ
 
-## Changes Made to the Original Specification
+### Changes Made to the Original Specification
 
 Here, the changes made to the original metamodel introduced in [[1]](#References) are described:
 
@@ -159,93 +158,12 @@ Here, the changes made to the original metamodel introduced in [[1]](#References
 
 Refer to [[2]](#References) for more details regarding the specific changes.
 
-## How to Use the Specification
+### What are Bigraphs?
 
-![metamodel-workflow](etc/metamodel-workflow.png)
+Bigraphs [[3]](#references), introduced by Robin Milner, are a **formal modeling framework** grounded in category theory and used in computer science to represent and analyze complex systems. 
+Their main applications are in **concurrency**, **mobility**, and **interaction**.
 
-Refer to [[2]](#References) for more details concerning the workflow on how to use the metamodels.
-
-
-## Development: Build Configuration
-
-> **Note:** The Java artifact is deployed to Maven Central.
-> It includes the Ecore metamodels for signatures and pure bigraphs, and the generated APIs.
-> Everything is packaged within the `*.jar`.
-
-For this project, Maven is used as the build management tool.
-It is not necessary to build from source to use the bigraph Ecore metamodel but
-if you want to try out the latest version, the project can be easily built
-with the regular `mvn` command.
-The recommendation here is to build it with the regular `mvn` command.
-You will need [Maven v3.6.3 or above](https://maven.apache.org/install.html).
-
-> **Note:** The required version of Maven is 3.6.3 in combination with Java 11, and Maven >=3.8.3 with Java >=17.
-
-### Initialize
-
-First, checkout the `main` branch of this project:
-
-```shell
-$ git clone https://github.com/bigraph-toolkit-suite/bigraphs.bigraph-ecore-metamodel.git
-```
-
-The following command has to be run once:
-```shell
-$ mvn initialize
-```
-It installs some dependencies located in the `./libs/` folder of this project in your local Maven repository, which is usually located at `~/.m2/`.
-These are required for the development and build process.
-These currently include:
-- org.eclipse.emf.cdo_4.20.0.v20221124-1637.jar
-- org.eclipse.emf.cdo.common_4.20.0.v20221106-0628.jar
-- org.eclipse.net4j.util_3.21.0.v20221123-1721.jar
-
-They are necessary to make the bigraph Ecore model CDO-compatible.
-
-### Building from Source
-
-Execute the following goals to run the build:
-```shell
-$ mvn clean install
-```
-The `*.jar` can be found inside the `./target/` folder of this project.
-The dependency will be also installed in the local Maven repository and 
-can be used in other projects by following the instruction given [above](#Library-Approach)
-
-
-### Deployment
-
-**Prerequisites**
-
-The Sonatype account details (username + password) for the deployment must be provided to the 
-Maven Sonatype Plugin as used in the project's `pom.xml` file.
-
-The Maven GPG plugin is used to sign the components for the deployment. More information can be found [here](https://central.sonatype.org/publish/requirements/gpg/).
-It relies on the gpg command being installed:
-
-```shell
-$ sudo apt install gnupg2
-```
-
-and the GPG credentials being available e.g. from `settings.xml`:
-
-- In `settings.xml` should be a profile and server configuration both with the `<id>central</id>` (see [here](https://central.sonatype.org/publish/publish-portal-maven/#credentials))
-
-- Listing keys: `gpg --list-keys --keyid-format short`
-
-**Release Deployment**
-
-To perform a release deployment execute:
-```shell
-# Use the default settings.xml located at ~/.m2/
-mvn clean deploy -DskipTests -P release,central
-```
-
-Artifacts must be manually released for Release Deployments in the Nexus Repository Manager.
-
-> **Note for Snapshot-Releases:** For that the version tag in the `pom.xml` must be suffixed with `-SNAPSHOT`.
-
-## FAQ
+Within the broader field of **process algebra**, bigraphs offer a **graphical and compositional approach** to modeling systems, processes, agents, and other dynamic, discrete structures.
 
 ### What Is EMF?
 
@@ -285,7 +203,7 @@ BibTeX:
 ## References
 
 - [1] Kehrer, T. et al. (2016). An EMOF-Compliant Abstract Syntax for Bigraphs. Electronic Proceedings in Theoretical Computer Science, 231, 16-30. DOI: https://doi.org/10.4204/EPTCS.231.2.
-- [2] D. Grzelak, Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation. Dresden University of Technology, Germany, 2024. [Online]. Available: https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-910504
+- [2] D. Grzelak, Model-oriented Programming with Bigraphical Reactive Systems: Theory and Implementation. Dresden University of Technology, Germany, 2024. https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-910504
 - [3] Milner, Robin: The Space and Motion of Communicating Agents. 1st. Aufl. New York, NY, USA : Cambridge University Press, 2009 — ISBN 978-0-521-73833-0
 - [4] [https://www.vogella.com/tutorials/EclipseEMF/article.html](https://www.vogella.com/tutorials/EclipseEMF/article.html)
 - [5] Steinberg, D.; Budinsky, F.; Paternostro, M: EMF: Eclipse Modeling Framework. 2nd Revised edition. Upper Saddle River, NJ : Addison-Wesley Professional, 2008 — ISBN 978-0-321-33188-5
@@ -302,7 +220,7 @@ Copyright 2019-present Bigraph Toolkit Developers
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
- http://www.apache.org/licenses/LICENSE-2.0
+ https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,

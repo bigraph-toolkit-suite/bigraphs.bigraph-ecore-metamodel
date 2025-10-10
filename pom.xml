@@ -5,7 +5,7 @@
 
     <groupId>org.bigraphs.model</groupId>
     <artifactId>bigraph-ecore-model</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>2.0.2</version>
     <packaging>jar</packaging>
     <name>Bigraph Ecore Metamodel (BEM)</name>
     <description>
@@ -16,25 +16,31 @@
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
 
     <properties>
-        <java.version>17</java.version>
+        <!-- General -->
+        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <emf.ecore.version>2.38.0</emf.ecore.version>
-        <emf.ecore.xmi.version>2.38.0</emf.ecore.xmi.version>
-        <emf.common.version>2.40.0</emf.common.version>
-        <emf.net4j.util.version>3.21.0-SNAPSHOT</emf.net4j.util.version>
+        <!-- Testing -->
+        <junit.version>5.11.3</junit.version>
+        <!-- Ecore -->
+        <emf.ecore.version>2.40.0</emf.ecore.version>
+        <emf.ecore.xmi.version>2.39.0</emf.ecore.xmi.version>
+        <emf.common.version>2.43.0</emf.common.version>
+        <!-- Eclipse CDO -->
+        <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
+        <emf.net4j.util.version>3.21.0-SNAPSHOT</emf.net4j.util.version><!-- 3.21.0.v20221123-1721 -->
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
         <emf.cdo.version>4.20.0-SNAPSHOT</emf.cdo.version><!--4.20.0.v20221124-1637-->
         <!-- Should match with the version in Spring Data CDO + Bigraph Framework -->
         <emf.cdo.common.version>4.20.0-SNAPSHOT</emf.cdo.common.version><!--4.20.0.v20221106-0628-->
-        <junit.version>5.11.3</junit.version>
     </properties>
 
     <developers>
@@ -83,7 +89,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.8.0</version>
+                    <version>3.12.0</version>
+                    <configuration>
+                        <doclint>none</doclint>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -115,8 +124,9 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.13.0</version>
                     <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <release>${maven.compiler.release}</release>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -146,8 +156,6 @@
                     <extensions>true</extensions>
                     <configuration>
                         <publishingServerId>central</publishingServerId>
-                        <!--                        <autoPublish>true</autoPublish>-->
-                        <!--                        <waitUntil>published</waitUntil>-->
                         <autoPublish>false</autoPublish>
                         <waitUntil>validated</waitUntil>
                     </configuration>
@@ -413,12 +421,6 @@
             <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.common</artifactId>
             <version>${emf.common.version}</version>
-        </dependency>
-        <!-- Deployment -->
-        <dependency>
-            <groupId>org.sonatype.central</groupId>
-            <artifactId>central-publishing-maven-plugin</artifactId>
-            <version>0.8.0</version>
         </dependency>
         <!-- Test -->
         <dependency>
