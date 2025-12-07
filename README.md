@@ -1,3 +1,6 @@
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Maven Central](https://img.shields.io/maven-central/v/org.bigraphs.model/bigraph-ecore-model)](https://central.sonatype.com/artifact/org.bigraphs.model/bigraph-ecore-model)
+
 <img src="./etc/logo-bigraph-metamodel-dark.png" style="zoom:90%;" alt="logo"/>
 
 > Latest Version: **2.0.3**
