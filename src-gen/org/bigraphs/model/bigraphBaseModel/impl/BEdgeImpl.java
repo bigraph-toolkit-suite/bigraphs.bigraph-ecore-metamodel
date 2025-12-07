@@ -5,7 +5,6 @@ package org.bigraphs.model.bigraphBaseModel.impl;
 import org.bigraphs.model.bigraphBaseModel.BBigraph;
 import org.bigraphs.model.bigraphBaseModel.BEdge;
 import org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

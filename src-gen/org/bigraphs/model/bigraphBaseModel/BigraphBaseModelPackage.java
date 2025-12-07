@@ -397,13 +397,22 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BLINK__BPOINTS = NAMEABLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLINK__ATTRIBUTES = NAMEABLE_TYPE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>BLink</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLINK_FEATURE_COUNT = NAMEABLE_TYPE_FEATURE_COUNT + 1;
+	int BLINK_FEATURE_COUNT = NAMEABLE_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>BLink</em>' class.
@@ -553,6 +562,15 @@ public interface BigraphBaseModelPackage extends EPackage {
 	int BEDGE__BPOINTS = BLINK__BPOINTS;
 
 	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEDGE__ATTRIBUTES = BLINK__ATTRIBUTES;
+
+	/**
 	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -606,6 +624,15 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOUTER_NAME__BPOINTS = BLINK__BPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOUTER_NAME__ATTRIBUTES = BLINK__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>BBigraph</b></em>' container reference.
@@ -917,6 +944,17 @@ public interface BigraphBaseModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBLink_BPoints();
+
+	/**
+	 * Returns the meta object for the map '{@link org.bigraphs.model.bigraphBaseModel.BLink#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Attributes</em>'.
+	 * @see org.bigraphs.model.bigraphBaseModel.BLink#getAttributes()
+	 * @see #getBLink()
+	 * @generated
+	 */
+	EReference getBLink_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link org.bigraphs.model.bigraphBaseModel.BPort <em>BPort</em>}'.
@@ -1270,6 +1308,14 @@ public interface BigraphBaseModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BLINK__BPOINTS = eINSTANCE.getBLink_BPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLINK__ATTRIBUTES = eINSTANCE.getBLink_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link org.bigraphs.model.bigraphBaseModel.impl.BPortImpl <em>BPort</em>}' class.

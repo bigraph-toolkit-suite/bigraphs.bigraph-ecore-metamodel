@@ -25,6 +25,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="BLink" abstract="true" eSuperTypes="#//NameableType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bPoints" upperBound="-1"
         eType="#//BPoint" eOpposite="#//BPoint/bLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//EStringToEJavaObjectMap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BPort" eSuperTypes="#//BPoint #//IndexableType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bNode" lowerBound="1" eType="#//BNode"

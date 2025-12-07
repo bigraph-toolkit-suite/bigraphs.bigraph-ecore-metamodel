@@ -8,6 +8,7 @@ import org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
@@ -22,6 +23,7 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  * <ul>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BLinkImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BLinkImpl#getBPoints <em>BPoints</em>}</li>
+ *   <li>{@link org.bigraphs.model.bigraphBaseModel.impl.BLinkImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,6 +87,17 @@ public abstract class BLinkImpl extends CDOObjectImpl implements BLink {
 	@Override
 	public EList<BPoint> getBPoints() {
 		return (EList<BPoint>) eGet(BigraphBaseModelPackage.Literals.BLINK__BPOINTS, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EMap<String, Object> getAttributes() {
+		return (EMap<String, Object>) eGet(BigraphBaseModelPackage.Literals.BLINK__ATTRIBUTES, true);
 	}
 
 } //BLinkImpl

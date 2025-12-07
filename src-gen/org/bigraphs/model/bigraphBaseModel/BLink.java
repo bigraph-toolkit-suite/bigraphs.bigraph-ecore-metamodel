@@ -3,6 +3,7 @@
 package org.bigraphs.model.bigraphBaseModel;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.bigraphs.model.bigraphBaseModel.BLink#getBPoints <em>BPoints</em>}</li>
+ *   <li>{@link org.bigraphs.model.bigraphBaseModel.BLink#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage#getBLink()
@@ -34,5 +36,18 @@ public interface BLink extends NameableType {
 	 * @generated
 	 */
 	EList<BPoint> getBPoints();
+
+	/**
+	 * Returns the value of the '<em><b>Attributes</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link java.lang.Object},
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attributes</em>' map.
+	 * @see org.bigraphs.model.bigraphBaseModel.BigraphBaseModelPackage#getBLink_Attributes()
+	 * @model mapType="org.bigraphs.model.bigraphBaseModel.EStringToEJavaObjectMap&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EJavaObject&gt;"
+	 * @generated
+	 */
+	EMap<String, Object> getAttributes();
 
 } // BLink

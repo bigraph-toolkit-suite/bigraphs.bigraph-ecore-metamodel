@@ -1,6 +1,6 @@
 <img src="./etc/logo-bigraph-metamodel-dark.png" style="zoom:90%;" alt="logo"/>
 
-> Latest Version: **2.0.2**
+> Latest Version: **2.0.3**
 
 ---
 
@@ -9,29 +9,30 @@
 This project provides a **reference implementation** of the abstract syntax specification for *bigraphs*, originally introduced in [[1]](#references).  
 The implementation is built using the **Ecore metamodeling language**, part of the [Eclipse Modeling Framework (EMF)](https://projects.eclipse.org/projects/modeling.emf.emf).
 
-The specification is **EMOF-compliant** and follows [[1]](#references), with minor adjustments suggested in [[2]](#references).  
-For details, see the section: [Changes Made to the Original Specification](#changes-made-to-the-original-specification).
+The specification is **EMOF-compliant** and follows [[1]](#references), with minor adjustments suggested in [[2]](#references).
 
-[How to Cite this Artifact](#How-to-Cite-this-Artifact)
+- [FAQ](#FAQ)
+    - [What are bigraphs?](#what-are-bigraphs)
+    - [Metamodeling](#why-metamodeling)
+    - [Changes Made to the Original Specification](#changes-made-to-the-original-specification)
+- [How to Cite this Artifact](#How-to-Cite-this-Artifact)
 
-[FAQ](#FAQ)
-
-> **Note:** This document is intended for developers and researchers working with modeling tools.  
+> **Note:** This document is intended for developers and researchers building modeling tools.  
 > It is **not** aimed at end-users of the Bigraph Framework API.
 
 ----
 
-| Version        | Notice                                                                                                                                    |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| 2.0.2          | *[Release]* Technical Maintenance (CDO 48)                                                                                                |
-| 2.0.1          | *[Release]* (CDO 48)                                                                                                                      |
-| 1.6.1          | *[Release]* (CDO 48)                                                                                                                      |
-| 1.6.1-SNAPSHOT | *[SNAPSHOT]* Dependency fix                                                                                                               |
-| 1.6.0          | *[Release]*                                                                                                                               |
-| 1.6.0-SNAPSHOT | *[Draft]* New namespace: org.bigraphs.model                                                                                               |
-| 1.5.0-SNAPSHOT | *[Draft]* New build and deploy workflow; Dependencies updated                                                                             |
-| 1.4.0-SNAPSHOT | *[Draft]* This project is an implementation of [[1]](#References) with some [minor changes](#changes-made-to-the-original-specification). |
-----
+| Version        | Notice                                                                                                                                    | CDO Protocol Version |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| 2.0.3          | *[Release]* Attribute Support (BLink)                                                                                                     | 48                   |
+| 2.0.2          | *[Release]* Technical Maintenance                                                                                                         | 48                   |
+| 2.0.1          | *[Release]* Technical Maintenance                                                                                                         | 48                   |
+| 1.6.1          | *[Release]* Technical Maintenance                                                                                                         | 48                   |
+| 1.6.1-SNAPSHOT | *[SNAPSHOT]* Dependency fix                                                                                                               | N.A.                 |
+| 1.6.0          | *[Release]*                                                                                                                               | N.A.                 |
+| 1.6.0-SNAPSHOT | *[Draft]* New namespace: org.bigraphs.model                                                                                               | N.A.                 |
+| 1.5.0-SNAPSHOT | *[Draft]* New build and deploy workflow; Dependencies updated                                                                             | N.A.                 |
+| 1.4.0-SNAPSHOT | *[Draft]* This project is an implementation of [[1]](#References) with some [minor changes](#changes-made-to-the-original-specification). | N.A.                 |
 
 ## Rationale of this Specification
 
@@ -144,6 +145,33 @@ Refer to [[2]](#References) for more details concerning the workflow on how to u
 
 ## FAQ
 
+### Why Metamodeling?
+
+Metamodeling is a fundamental concept and practice within Model-Driven Engineering that involves creating models to describe other models.
+In essence, a metamodel defines the structure, constraints, and relationships that its model instances must follow.
+Metamodels provide a systematic and widely accepted way to define the syntax and semantics of modeling languages.
+
+### What is EMF?
+
+The EMF is a Java-based framework for developing structured data models and building sophisticated software tools and application frameworks around them.
+It includes facilities for model definition, code generation, and runtime support, and is a core component of the [Eclipse Modeling Project](https://projects.eclipse.org/projects/modeling).
+
+### What is Ecore?
+
+Ecore, in the context of EMF, is a metamodeling language and a central component of the framework. It is used to define the structure of models—such as classes, attributes, and relationships.
+Ecore is based on a subset of the [MOF](http://www.omg.org/mof/) (Meta Object Facility) standard and can be regarded as a reference implementation of it. MOF is a widely recognized standard for metamodeling in software engineering.
+
+You can also say that Ecore is EMF’s metamodel. Ecore can be considered an EMF model, thus functioning as its own metamodel.
+
+Therefore, when we say *Bigraph Ecore Metamodel (BEM)*, we refer to the custom-designed base metamodel created using the Ecore modeling language within EMF.
+
+### What are bigraphs?
+
+Bigraphs [[3]](#references), introduced by Robin Milner, are a **formal modeling framework** grounded in category theory and used in computer science to represent and analyze complex systems.
+Their main applications are in **concurrency**, **mobility**, and **interaction**.
+
+Within the broader field of **process algebra**, bigraphs offer a **graphical and compositional approach** to modeling systems, processes, agents, and other dynamic, discrete structures.
+
 ### Changes Made to the Original Specification
 
 Here, the changes made to the original metamodel introduced in [[1]](#References) are described:
@@ -157,33 +185,6 @@ Here, the changes made to the original metamodel introduced in [[1]](#References
 
 
 Refer to [[2]](#References) for more details regarding the specific changes.
-
-### What are Bigraphs?
-
-Bigraphs [[3]](#references), introduced by Robin Milner, are a **formal modeling framework** grounded in category theory and used in computer science to represent and analyze complex systems. 
-Their main applications are in **concurrency**, **mobility**, and **interaction**.
-
-Within the broader field of **process algebra**, bigraphs offer a **graphical and compositional approach** to modeling systems, processes, agents, and other dynamic, discrete structures.
-
-### What Is EMF?
-
-The EMF is a Java-based framework for developing structured data models and building sophisticated software tools and application frameworks around them.
- It includes facilities for model definition, code generation, and runtime support, and is a core component of the [Eclipse Modeling Project](https://projects.eclipse.org/projects/modeling).
-
-### What Is Ecore?
-
-Ecore, in the context of EMF, is a metamodeling language and a central component of the framework. It is used to define the structure of models—such as classes, attributes, and relationships.
-Ecore is based on a subset of the [MOF](http://www.omg.org/mof/) (Meta Object Facility) standard and can be regarded as a reference implementation of it. MOF is a widely recognized standard for metamodeling in software engineering.
-
-You can also say that Ecore is EMF’s metamodel. Ecore can be considered an EMF model, thus functioning as its own metamodel.
-
-Therefore, when we say *Bigraph Ecore Metamodel (BEM)*, we refer to the custom-designed base metamodel created using the Ecore modeling language within EMF.
-
-### Why Metamodeling?
-
-Metamodeling is a fundamental concept and practice within Model-Driven Engineering (MDE) that involves creating models to describe other models. 
-In essence, a metamodel defines the structure, constraints, and relationships that its model instances must follow.
-Metamodels provide a systematic and widely accepted way to define the syntax and semantics of modeling languages, as well as the organization of models within those languages.
 
 ## How to Cite this Artifact
 

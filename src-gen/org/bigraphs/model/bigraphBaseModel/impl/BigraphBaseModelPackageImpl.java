@@ -332,6 +332,16 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 	 * @generated
 	 */
 	@Override
+	public EReference getBLink_Attributes() {
+		return (EReference) bLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBPort() {
 		return bPortEClass;
 	}
@@ -574,6 +584,7 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 
 		bLinkEClass = createEClass(BLINK);
 		createEReference(bLinkEClass, BLINK__BPOINTS);
+		createEReference(bLinkEClass, BLINK__ATTRIBUTES);
 
 		bPortEClass = createEClass(BPORT);
 		createEReference(bPortEClass, BPORT__BNODE);
@@ -679,6 +690,9 @@ public class BigraphBaseModelPackageImpl extends EPackageImpl implements Bigraph
 		initEClass(bLinkEClass, BLink.class, "BLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBLink_BPoints(), this.getBPoint(), this.getBPoint_BLink(), "bPoints", null, 0, -1,
 				BLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBLink_Attributes(), this.getEStringToEJavaObjectMap(), null, "attributes", null, 0, -1,
+				BLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bPortEClass, BPort.class, "BPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

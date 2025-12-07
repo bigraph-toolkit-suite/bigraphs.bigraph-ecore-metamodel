@@ -9,7 +9,7 @@
     <semanticResources>a:1.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Tp-uoEAGEem6P_98-Lx2GQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_FbkugH4oEemiXdz6qdYtMQ" name="bigraphBaseModel class diagram" repPath="#_Fbi5UH4oEemiXdz6qdYtMQ" changeId="1733953607007">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_FbkugH4oEemiXdz6qdYtMQ" name="bigraphBaseModel class diagram" repPath="#_Fbi5UH4oEemiXdz6qdYtMQ" changeId="1764438177374">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="bigraphBaseModel.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -107,6 +107,10 @@
         <children xmi:type="notation:Node" xmi:id="_FzBlNH4oEemiXdz6qdYtMQ" type="2003" element="_Fys1EH4oEemiXdz6qdYtMQ">
           <children xmi:type="notation:Node" xmi:id="_FzCMQH4oEemiXdz6qdYtMQ" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_FzCMQX4oEemiXdz6qdYtMQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_12j34M1KEfC6xICHdl7pYw" type="3010" element="_12dKMc1KEfC6xICHdl7pYw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_12j34c1KEfC6xICHdl7pYw" fontName="Ubuntu Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_12j34s1KEfC6xICHdl7pYw"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_FzCMQn4oEemiXdz6qdYtMQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_FzCMQ34oEemiXdz6qdYtMQ"/>
           </children>
@@ -580,6 +584,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_12dKMc1KEfC6xICHdl7pYw" name=" attributes : EStringToEJavaObjectMap" tooltipText="">
+        <target xmi:type="ecore:EReference" href="bigraphBaseModel.ecore#//BLink/attributes"/>
+        <semanticElements xmi:type="ecore:EReference" href="bigraphBaseModel.ecore#//BLink/attributes"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_12dxQM1KEfC6xICHdl7pYw" labelAlignment="LEFT" color="114,159,207">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_FytcIH4oEemiXdz6qdYtMQ" name="BPort" tooltipText="" outgoingEdges="_Fy63gH4oEemiXdz6qdYtMQ _BZLJ4H5FEemiXdz6qdYtMQ" incomingEdges="_Fy960H4oEemiXdz6qdYtMQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="bigraphBaseModel.ecore#//BPort"/>

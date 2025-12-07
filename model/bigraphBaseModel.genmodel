@@ -32,6 +32,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="bigraphBaseModel.ecore#//BLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BLink/bPoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BLink/attributes"/>
     </genClasses>
     <genClasses ecoreClass="bigraphBaseModel.ecore#//BPort">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bigraphBaseModel.ecore#//BPort/bNode"/>
